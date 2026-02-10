@@ -1,2 +1,24 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+/* Add custom font classes here */
+@layer components {
+	.font-main-title {
+		font-family: 'Gentium Plus', serif;
+	}
+
+	.font-title {
+		font-family: 'Reem Kufi', serif;
+	}
+
+	.font-body {
+		font-family: 'Noto Sans', serif;
+	}
+}
+
+/* Hide the scroll bar */
+@layer base {
+	::-webkit-scrollbar {
+		display: none;
+	}
+}

@@ -10,7 +10,7 @@
 
 	<div class="font-main-title">Hi I'm Bernard</div>
 
-	<p class="font-body">
+	<p class="font-body text-on-background">
 		I graduated with a First Class Honours Bachelor's degree in Computer Science from the University
 		of Warwick in 2025, and is now studying for a Masters of Advanced Computing at Imperial College
 		London. I am interested in turning creative ideas into software and code, and enjoy constantly

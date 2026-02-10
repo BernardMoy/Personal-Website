@@ -22,3 +22,13 @@
 		display: none;
 	}
 }
+
+/* Define extra colors here */
+@theme {
+	--color-holo-blue: #5194ea;
+	--color-holo-pink: #ef899a;
+	--color-holo-orange: #efa889;
+	--color-on-background: #3b3f44; /* text color */
+	--color-on-primary: #ffffff;
+	--color-primary: var(--color-holo-blue);
+}

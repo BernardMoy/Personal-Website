@@ -16,10 +16,17 @@
 	}
 }
 
-/* Hide the scroll bar */
 @layer base {
-	::-webkit-scrollbar {
+	/* Hide the scroll bar */
+	/* ::-webkit-scrollbar {
 		display: none;
+	} */
+
+	/* Change selection color */
+	::selection {
+		background: var(--color-primary);
+		color: var(--color-on-primary);
+		text-shadow: none;
 	}
 }
 

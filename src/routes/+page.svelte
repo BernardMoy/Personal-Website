@@ -20,14 +20,14 @@
 		</div>
 
 		<!-- 1 2 3 4 buttons -->
-		<div class="absolute top-0 m-4 mt-[96px] flex flex-col gap-4">
+		<div class="no-selection absolute top-0 m-4 mt-[96px] flex flex-col gap-4">
 			{#each { length: 4 } as _, i}
 				<Circle text={(i + 1).toString()} onclick={() => {}}></Circle>
 			{/each}
 		</div>
 
 		<!-- the 4 rectangles on the top right -->
-		<div class="absolute top-0 right-0 mt-[80px] grid grid-cols-2">
+		<div class="no-selection absolute top-0 right-0 mt-[80px] grid grid-cols-2">
 			<button class="h-[64px] w-[160px] cursor-pointer bg-primary"></button>
 			<button class="h-[64px] w-[160px] bg-on-primary"></button>
 			<button class="h-[64px] w-[160px] bg-on-primary"></button>
@@ -71,7 +71,9 @@
 				class="h-[160px] w-full object-cover opacity-40"
 			/>
 			<!-- header title -->
-			<p class="font-title absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-primary">
+			<p
+				class="font-title no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-primary"
+			>
 				About Me
 			</p>
 			<!-- additional deco -->
@@ -103,10 +105,17 @@
 			<div
 				class="flex flex-1 flex-col items-start justify-start gap-8 rounded-[12px] bg-primary p-8"
 			>
-				<h1 class="font-title primary-highlight text-[36px] text-on-primary">Skills</h1>
+				<!-- skills title -->
+				<h1 class="font-title primary-selection no-selection text-[36px] text-on-primary">
+					Skills
+				</h1>
+
+				<!-- skills list -->
 				<ul class="grid w-full grid-cols-2 gap-x-4">
 					{#each skills as skill}
-						<li class="font-body primary-highlight text-[18px] text-on-primary">⋄ {skill}</li>
+						<li class="font-body primary-selection text-[18px] text-on-primary">
+							<span class="no-selection">⋄&nbsp</span>{skill}
+						</li>
 					{/each}
 				</ul>
 			</div>
@@ -127,7 +136,7 @@
 	<!-- Ending -->
 
 	<!-- the fixed scroll to next page arrow down button -->
-	<div class="fixed bottom-8 flex w-full flex-col items-center">
+	<div class="no-selection fixed bottom-8 z-50 flex w-full flex-col items-center">
 		<CircleArrow onclick={() => {}}></CircleArrow>
 	</div>
 </main>

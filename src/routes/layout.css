@@ -30,15 +30,19 @@
 	}
 
 	/* selection for text on primary color */
-	.primary-highlight::selection {
+	.primary-selection::selection {
 		background: var(--color-on-primary);
 		color: var(--color-primary);
 		text-shadow: none;
 	}
 
-	/* hide image selection */
-	img::selection {
-		background: none;
+	/* disable selections */
+	img {
+		user-select: none;
+	}
+
+	.no-selection {
+		user-select: none;
 	}
 }
 

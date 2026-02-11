@@ -83,8 +83,8 @@
 			<div
 				class="flex flex-1 flex-col items-start justify-start gap-8 rounded-[12px] bg-primary p-8"
 			>
-				<h1 class="font-title text-[36px] text-on-primary">Skills</h1>
-				<p class="font-body text-[18px] text-on-primary">
+				<h1 class="font-title primary-highlight text-[36px] text-on-primary">Skills</h1>
+				<p class="font-body primary-highlight text-[18px] text-on-primary">
 					Python, Java, Kotlin, HTML, CSS, JavaScript, TypeScript, SQL, React, Git
 				</p>
 			</div>

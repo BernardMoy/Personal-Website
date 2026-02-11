@@ -28,6 +28,18 @@
 		color: var(--color-on-primary);
 		text-shadow: none;
 	}
+
+	/* selection for text on primary color */
+	.primary-highlight::selection {
+		background: var(--color-on-primary);
+		color: var(--color-primary);
+		text-shadow: none;
+	}
+
+	/* hide image selection */
+	img::selection {
+		background: none;
+	}
 }
 
 /* Define extra colors here */

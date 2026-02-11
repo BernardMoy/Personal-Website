@@ -2,6 +2,7 @@
 	import Circle from './Circle.svelte';
 	import CircleArrow from './CircleArrow.svelte';
 	import Topbar from './Topbar.svelte';
+	import skills from '../data/skills.json';
 </script>
 
 <main>
@@ -15,7 +16,7 @@
 		<!-- centered text -->
 		<div class="absolute top-1/2 flex w-full -translate-y-1/2 flex-col items-center">
 			<h1 class="font-main-title text-[64px] text-on-primary">Hi, I'm Bernard!</h1>
-			<h2 class="font-main-title text-[36px] text-on-primary">Motivational quote</h2>
+			<h2 class="font-main-title text-[36px] text-on-primary">Welcome :)</h2>
 		</div>
 
 		<!-- 1 2 3 4 buttons -->
@@ -35,7 +36,11 @@
 	</div>
 
 	<!-- About me separator -->
-	<div class="relative z-10 h-[96px] w-full bg-primary"></div>
+	<img
+		class="relative z-10 h-[96px] w-full object-cover"
+		src="/images/sep-1.png"
+		alt="separation"
+	/>
 
 	<!-- About me -->
 	<div class="relative z-0 h-screen w-full">
@@ -45,16 +50,31 @@
 			<img src="/images/bg-2.png" alt="bg-2" class=" w-full object-cover opacity-45" />
 		</div>
 
+		<!-- additional deco -->
+		<img
+			src="/svgs/deco-circle-dot.svg"
+			alt="decoration"
+			class=" absolute top-12 -left-55 scale-75 rotate-90"
+		/>
+		<img
+			src="/svgs/deco-circle-dot.svg"
+			alt="decoration"
+			class="absolute -right-48 bottom-4 rotate-260"
+		/>
+
 		<!-- header-->
 		<div class="relative">
+			<!-- header image -->
 			<img
 				src="/svgs/header-grid.svg"
 				alt="header-grid"
 				class="h-[160px] w-full object-cover opacity-40"
 			/>
+			<!-- header title -->
 			<p class="font-title absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-primary">
 				About Me
 			</p>
+			<!-- additional deco -->
 			<img
 				src="/svgs/code-text.svg"
 				alt="code"
@@ -63,7 +83,7 @@
 		</div>
 
 		<!-- content -->
-		<div class="relative mx-16 my-24 flex flex-row items-start justify-center gap-16">
+		<div class="relative mx-16 my-18 flex flex-row items-start justify-center gap-16">
 			<!-- left paragraph -->
 			<div class="flex flex-3 flex-col items-start justify-start gap-8">
 				<p class="font-body text-on-background">
@@ -84,12 +104,21 @@
 				class="flex flex-1 flex-col items-start justify-start gap-8 rounded-[12px] bg-primary p-8"
 			>
 				<h1 class="font-title primary-highlight text-[36px] text-on-primary">Skills</h1>
-				<p class="font-body primary-highlight text-[18px] text-on-primary">
-					Python, Java, Kotlin, HTML, CSS, JavaScript, TypeScript, SQL, React, Git
-				</p>
+				<ul class="grid w-full grid-cols-2 gap-x-4">
+					{#each skills as skill}
+						<li class="font-body primary-highlight text-[18px] text-on-primary">⋄ {skill}</li>
+					{/each}
+				</ul>
 			</div>
 		</div>
 	</div>
+
+	<!-- Projects separator -->
+	<img
+		class="relative z-10 h-[96px] w-full object-cover"
+		src="/images/sep-2.png"
+		alt="separation"
+	/>
 
 	<!-- Projects -->
 

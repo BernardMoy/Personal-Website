@@ -24,7 +24,7 @@
 				{#if project.github}
 					<a href={project.github} target="_blank" class="cursor-pointer" aria-label="github link">
 						<img
-							src="svgs/github.svg"
+							src="svgs/github-white.svg"
 							alt="github logo"
 							class="absolute top-2 right-2 h-[64px] w-[64px]"
 						/>

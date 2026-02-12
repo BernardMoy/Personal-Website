@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Circle from './Circle.svelte';
 	import CircleArrow from './CircleArrow.svelte';
 	import Topbar from './Topbar.svelte';
-	import skills from '../data/skills.json';
-	import projects from '../data/projects.json';
+	import AboutMe from './AboutMe.svelte';
+	import Projects from './Projects.svelte';
+	import Top from './Top.svelte';
 </script>
 
 <main>
@@ -11,30 +11,7 @@
 	<Topbar />
 
 	<!-- Top -->
-	<div class="relative text-center">
-		<img src="/images/bg-1.png" alt="bg-1" class=" h-screen w-full object-cover" />
-
-		<!-- centered text -->
-		<div class="absolute top-1/2 flex w-full -translate-y-1/2 flex-col items-center">
-			<h1 class="font-main-title text-[64px] text-on-primary">Hi, I'm Bernard!</h1>
-			<h2 class="font-main-title text-[36px] text-on-primary">Welcome :)</h2>
-		</div>
-
-		<!-- 1 2 3 4 buttons -->
-		<div class="no-selection absolute top-0 m-4 mt-[96px] flex flex-col gap-4">
-			{#each { length: 4 } as _, i}
-				<Circle text={(i + 1).toString()} onclick={() => {}}></Circle>
-			{/each}
-		</div>
-
-		<!-- the 4 rectangles on the top right -->
-		<div class="no-selection absolute top-0 right-0 mt-[80px] grid grid-cols-2">
-			<button class="h-[64px] w-[160px] cursor-pointer bg-holo-blue"></button>
-			<button class="h-[64px] w-[160px] bg-on-primary"></button>
-			<button class="h-[64px] w-[160px] bg-on-primary"></button>
-			<button class="h-[64px] w-[160px] bg-holo-blue"></button>
-		</div>
-	</div>
+	<Top />
 
 	<!-- About me separator -->
 	<img
@@ -51,10 +28,10 @@
 		</div>
 		<!-- additional deco -->
 
-		<!-- content -->
-		<div class="relative -mt-[100vh] flex w-full flex-col gap-16">
-			<!-- header image -->
+		<div class="relative -mt-[100vh] flex w-full flex-col">
+			<!-- header -->
 			<div class="relative">
+				<!-- header image -->
 				<img
 					src="/svgs/header-grid.svg"
 					alt="header-grid"
@@ -68,41 +45,8 @@
 				</h1>
 			</div>
 
-			<div class="relative mx-16 my-18 flex flex-row items-start justify-center gap-16">
-				<!-- left paragraph -->
-				<div class="flex flex-3 flex-col items-start justify-start gap-8">
-					<p class="font-body text-[18px] text-on-background">
-						I graduated with a <span class="text-holo-blue"
-							>First Class Honours Bachelor's degree in Computer Science</span
-						>
-						from the University of Warwick in 2025, and is now studying for a
-						<span class="text-holo-blue">Masters of Advanced Computing</span> at Imperial College London.
-					</p>
-					<p class="font-body text-[18px] text-on-background">
-						I am interested in turning creative ideas into software and code, and enjoy constantly
-						learning new things. Currently looking for careers in full-stack software development.
-					</p>
-				</div>
-
-				<!-- right skills -->
-				<div
-					class="flex flex-1 flex-col items-start justify-start gap-8 rounded-xl bg-holo-blue p-8"
-				>
-					<!-- skills title -->
-					<h1 class="font-title holo-blue-selection no-selection text-[36px] text-on-primary">
-						Skills
-					</h1>
-
-					<!-- skills list -->
-					<ul class="grid w-full grid-cols-2 gap-x-4">
-						{#each skills as skill}
-							<li class="font-body holo-blue-selection text-[18px] text-on-primary">
-								<span class="no-selection">⋄&nbsp</span>{skill}
-							</li>
-						{/each}
-					</ul>
-				</div>
-			</div>
+			<!-- content -->
+			<AboutMe />
 		</div>
 	</section>
 
@@ -121,10 +65,10 @@
 		</div>
 		<!-- additional deco -->
 
-		<!-- content -->
 		<div class="relative -mt-[100vh] flex w-full flex-col">
-			<!-- header image -->
+			<!-- header -->
 			<div class="relative">
+				<!-- header image -->
 				<img
 					src="/svgs/header-strip.svg"
 					alt="header-strip"
@@ -138,55 +82,8 @@
 				</h1>
 			</div>
 
-			<!-- intro paragraph -->
-			<div class="mx-16 flex flex-col gap-16 py-16">
-				<p class="font-body text-[18px] text-on-background">
-					Here is a list of technical projects that I have done.
-				</p>
-
-				<!-- project list -->
-				<div class=" grid grid-cols-3 gap-8">
-					<!-- individual project grid -->
-					{#each projects as project}
-						<div class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6">
-							<!-- image -->
-							<img
-								src={project.image}
-								alt={project.title}
-								class="h-[220px] w-full rounded-tl-xl rounded-tr-xl object-cover"
-							/>
-
-							<!-- github logo -->
-							{#if project.github}
-								<a
-									href={project.github}
-									target="_blank"
-									class="cursor-pointer"
-									aria-label="github link"
-								>
-									<img
-										src="svgs/github.svg"
-										alt="github logo"
-										class="absolute top-2 right-2 h-[64px] w-[64px]"
-									/>
-								</a>
-							{/if}
-
-							<!-- title -->
-							<h1 class="font-title relative px-6 py-4 text-[24px] text-on-background">
-								{project.title}
-							</h1>
-
-							<!-- tags -->
-							<ul class="flex max-w-full flex-wrap gap-x-4 gap-y-2 px-6">
-								{#each project.tags as tag}
-									<li class="font-body bg-amber-200 px-2 text-[18px] text-on-background">{tag}</li>
-								{/each}
-							</ul>
-						</div>
-					{/each}
-				</div>
-			</div>
+			<!-- content -->
+			<Projects />
 		</div>
 	</section>
 

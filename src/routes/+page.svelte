@@ -129,79 +129,79 @@
 	/>
 
 	<!-- Projects -->
-	<div class="relative z-0 min-h-screen w-full">
+	<section class="relative min-h-screen w-full">
 		<!-- background image -->
-		<!-- this is relative to force the viewport height by the outer wrapper -->
-		<div class="absolute bottom-0 w-full">
-			<img src="/images/bg-3.png" alt="bg-3" class=" min-h-screen w-full object-cover opacity-40" />
+		<div class="sticky top-24 h-screen w-full">
+			<img src="/images/bg-3.png" alt="bg-3" class="h-full w-full object-cover opacity-40" />
 		</div>
-
 		<!-- additional deco -->
 
-		<!-- header-->
-		<div class="relative">
-			<!-- header image -->
-			<img
-				src="/svgs/header-strip.svg"
-				alt="header-strip"
-				class="h-[160px] w-full object-cover opacity-40"
-			/>
-			<!-- header title -->
-			<h1
-				class="font-title no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-pink"
-			>
-				Projects
-			</h1>
-			<!-- additional deco -->
-		</div>
-
 		<!-- content -->
-		<p class="font-body relative mx-16 my-16 text-[18px] text-on-background">
-			Here is a list of technical projects that I have done.
-		</p>
-		<div class="relative mx-16 mb-16 grid grid-cols-3 gap-8">
-			<!-- individual project grid -->
-			{#each projects as project}
-				<div class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6">
-					<!-- image -->
-					<img
-						src={project.image}
-						alt={project.title}
-						class="h-[220px] w-full rounded-tl-xl rounded-tr-xl object-cover"
-					/>
+		<div class="relative -mt-[100vh] flex w-full flex-col gap-16">
+			<!-- header image -->
+			<div class="relative">
+				<img
+					src="/svgs/header-strip.svg"
+					alt="header-strip"
+					class="h-[160px] w-full object-cover opacity-40"
+				/>
+				<!-- header title -->
+				<h1
+					class="font-title no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-pink"
+				>
+					Projects
+				</h1>
+			</div>
 
-					<!-- github logo -->
-					{#if project.github}
-						<a
-							href={project.github}
-							target="_blank"
-							class="cursor-pointer"
-							aria-label="github link"
-						>
-							<img
-								src="svgs/github.svg"
-								alt="github logo"
-								class="absolute top-2 right-2 h-[64px] w-[64px]"
-							/>
-						</a>
-					{/if}
+			<!-- intro paragraph -->
+			<p class="font-body mx-16 text-[18px] text-on-background">
+				Here is a list of technical projects that I have done.
+			</p>
 
-					<!-- title -->
-					<h1 class="font-title relative px-6 py-4 text-[24px] text-on-background">
-						{project.title}
-					</h1>
+			<!-- project list -->
+			<div class="mx-16 grid grid-cols-3 gap-8 pb-16">
+				<!-- individual project grid -->
+				{#each projects as project}
+					<div class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6">
+						<!-- image -->
+						<img
+							src={project.image}
+							alt={project.title}
+							class="h-[220px] w-full rounded-tl-xl rounded-tr-xl object-cover"
+						/>
 
-					<!-- tags -->
+						<!-- github logo -->
+						{#if project.github}
+							<a
+								href={project.github}
+								target="_blank"
+								class="cursor-pointer"
+								aria-label="github link"
+							>
+								<img
+									src="svgs/github.svg"
+									alt="github logo"
+									class="absolute top-2 right-2 h-[64px] w-[64px]"
+								/>
+							</a>
+						{/if}
 
-					<ul class="flex max-w-full flex-wrap gap-x-4 gap-y-2 px-6">
-						{#each project.tags as tag}
-							<li class="font-body bg-amber-200 px-2 text-[18px] text-on-background">{tag}</li>
-						{/each}
-					</ul>
-				</div>
-			{/each}
+						<!-- title -->
+						<h1 class="font-title relative px-6 py-4 text-[24px] text-on-background">
+							{project.title}
+						</h1>
+
+						<!-- tags -->
+						<ul class="flex max-w-full flex-wrap gap-x-4 gap-y-2 px-6">
+							{#each project.tags as tag}
+								<li class="font-body bg-amber-200 px-2 text-[18px] text-on-background">{tag}</li>
+							{/each}
+						</ul>
+					</div>
+				{/each}
+			</div>
 		</div>
-	</div>
+	</section>
 
 	<!-- Contact me separator -->
 	<img

@@ -1,0 +1,33 @@
+[
+	{
+		"image": "/images/bg-1.png",
+		"title": "Robot Learning Project",
+		"tags": ["Python", "PyTorch", "Coursework"],
+		"github": "https://github.com/BernardMoy",
+		"description": "Text text text"
+	},
+	{
+		"image": "/images/bg-1.png",
+		"title": "Robot Learning Project aaaaaaaaaaaaaaaaa aaaa aaaaaaaaa aaaaaaaaa aaaaaaaa aaaaaaa aaa aaaa aaaa aaaa",
+		"tags": [
+			"Python",
+			"PyTorch",
+			"Coursework",
+			"Coursework",
+			"Coursework",
+			"Coursework",
+			"Coursework",
+			"Coursework",
+			"Coursework"
+		],
+		"github": null,
+		"description": "Text text text"
+	},
+	{
+		"image": "/images/bg-1.png",
+		"title": "Robot Learning Project",
+		"tags": ["Python", "PyTorch", "Coursework"],
+		"github": null,
+		"description": "Text text text"
+	}
+]

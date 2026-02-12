@@ -3,6 +3,7 @@
 	import CircleArrow from './CircleArrow.svelte';
 	import Topbar from './Topbar.svelte';
 	import skills from '../data/skills.json';
+	import projects from '../data/projects.json';
 </script>
 
 <main>
@@ -88,23 +89,21 @@
 		<div class="relative mx-16 my-18 flex flex-row items-start justify-center gap-16">
 			<!-- left paragraph -->
 			<div class="flex flex-3 flex-col items-start justify-start gap-8">
-				<p class="font-body text-on-background">
+				<p class="font-body text-[18px] text-on-background">
 					I graduated with a <span class="text-holo-blue"
 						>First Class Honours Bachelor's degree in Computer Science</span
 					>
 					from the University of Warwick in 2025, and is now studying for a
 					<span class="text-holo-blue">Masters of Advanced Computing</span> at Imperial College London.
 				</p>
-				<p class="font-body text-on-background">
+				<p class="font-body text-[18px] text-on-background">
 					I am interested in turning creative ideas into software and code, and enjoy constantly
 					learning new things. Currently looking for careers in full-stack software development.
 				</p>
 			</div>
 
 			<!-- right skills -->
-			<div
-				class="flex flex-1 flex-col items-start justify-start gap-8 rounded-[12px] bg-holo-blue p-8"
-			>
+			<div class="flex flex-1 flex-col items-start justify-start gap-8 rounded-xl bg-holo-blue p-8">
 				<!-- skills title -->
 				<h1 class="font-title holo-blue-selection no-selection text-[36px] text-on-primary">
 					Skills
@@ -130,11 +129,11 @@
 	/>
 
 	<!-- Projects -->
-	<div class="relative z-0 h-screen w-full">
+	<div class="relative z-0 min-h-screen w-full">
 		<!-- background image -->
 		<!-- this is relative to force the viewport height by the outer wrapper -->
 		<div class="absolute bottom-0 w-full">
-			<img src="/images/bg-3.png" alt="bg-3" class=" min-h-screen w-full object-cover opacity-45" />
+			<img src="/images/bg-3.png" alt="bg-3" class=" min-h-screen w-full object-cover opacity-40" />
 		</div>
 
 		<!-- additional deco -->
@@ -148,16 +147,60 @@
 				class="h-[160px] w-full object-cover opacity-40"
 			/>
 			<!-- header title -->
-			<p
+			<h1
 				class="font-title no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-pink"
 			>
 				Projects
-			</p>
+			</h1>
 			<!-- additional deco -->
 		</div>
 
 		<!-- content -->
-		<div class="relative mx-16 my-18 flex flex-row items-start justify-center gap-16"></div>
+		<p class="font-body relative mx-16 my-16 text-[18px] text-on-background">
+			Here is a list of technical projects that I have done.
+		</p>
+		<div class="relative mx-16 mb-16 grid grid-cols-3 gap-8">
+			<!-- individual project grid -->
+			{#each projects as project}
+				<div class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6">
+					<!-- image -->
+					<img
+						src={project.image}
+						alt={project.title}
+						class="h-[220px] w-full rounded-tl-xl rounded-tr-xl object-cover"
+					/>
+
+					<!-- github logo -->
+					{#if project.github}
+						<a
+							href={project.github}
+							target="_blank"
+							class="cursor-pointer"
+							aria-label="github link"
+						>
+							<img
+								src="svgs/github.svg"
+								alt="github logo"
+								class="absolute top-2 right-2 h-[64px] w-[64px]"
+							/>
+						</a>
+					{/if}
+
+					<!-- title -->
+					<h1 class="font-title relative px-6 py-4 text-[24px] text-on-background">
+						{project.title}
+					</h1>
+
+					<!-- tags -->
+
+					<ul class="flex max-w-full flex-wrap gap-x-4 gap-y-2 px-6">
+						{#each project.tags as tag}
+							<li class="font-body bg-amber-200 px-2 text-[18px] text-on-background">{tag}</li>
+						{/each}
+					</ul>
+				</div>
+			{/each}
+		</div>
 	</div>
 
 	<!-- Contact me separator -->

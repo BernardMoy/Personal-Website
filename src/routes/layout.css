@@ -53,5 +53,7 @@
 	--color-holo-orange: #efa889;
 	--color-on-background: #3b3f44; /* text color */
 	--color-on-primary: #ffffff;
-	--color-primary: var(--color-holo-blue);
+	--color-primary: var(
+		--color-holo-blue
+	); /* color that changes. if not changing, use the colors above */
 }

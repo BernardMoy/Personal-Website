@@ -16,10 +16,33 @@
 	}
 }
 
-/* Hide the scroll bar */
 @layer base {
-	::-webkit-scrollbar {
+	/* Hide the scroll bar */
+	/* ::-webkit-scrollbar {
 		display: none;
+	} */
+
+	/* Change selection color */
+	::selection {
+		background: var(--color-primary);
+		color: var(--color-on-primary);
+		text-shadow: none;
+	}
+
+	/* selection for text on primary color */
+	.primary-selection::selection {
+		background: var(--color-on-primary);
+		color: var(--color-primary);
+		text-shadow: none;
+	}
+
+	/* disable selections */
+	img {
+		user-select: none;
+	}
+
+	.no-selection {
+		user-select: none;
 	}
 }
 
@@ -30,5 +53,7 @@
 	--color-holo-orange: #efa889;
 	--color-on-background: #3b3f44; /* text color */
 	--color-on-primary: #ffffff;
-	--color-primary: var(--color-holo-blue);
+	--color-primary: var(
+		--color-holo-blue
+	); /* color that changes. if not changing, use the colors above */
 }

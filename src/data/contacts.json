@@ -1,0 +1,17 @@
+[
+	{
+		"image": "/svgs/email.svg",
+		"text": "bernardmoy3@gmail.com",
+		"link": "mailto:bernardmoy3@gmail.com"
+	},
+	{
+		"image": "/svgs/github.svg",
+		"text": "BernardMoy",
+		"link": "https://github.com/BernardMoy"
+	},
+	{
+		"image": "/svgs/linkedin.svg",
+		"text": "Bernard Moy",
+		"link": "https://www.linkedin.com/in/bernard-moy/"
+	}
+]

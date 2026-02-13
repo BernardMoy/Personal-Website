@@ -19,7 +19,10 @@
 	];
 </script>
 
-<header class="fixed top-0 flex w-full flex-row gap-16 bg-white/65 px-16 py-8">
+<!-- currently it has a fixed height of 80px -->
+<header
+	class="no-selection fixed top-0 z-50 flex h-[80px] w-full flex-row items-center gap-16 bg-white/65 px-16"
+>
 	{#each navigations as { name, navigationId }}
 		<a href={navigationId} class="font-title">{name}</a>
 	{/each}

@@ -65,12 +65,25 @@
 		</div>
 		<!-- additional deco -->
 
-		<div class="relative -mt-[100vh] flex w-full flex-col">
+		<div class="relative -mt-[100vh] flex w-full flex-col overflow-x-hidden overflow-y-hidden">
 			<!-- header -->
 			{@render HeaderProjects()}
 
 			<!-- content -->
 			<Projects />
+
+			<!-- additional deco -->
+			<img
+				src="/svgs/deco-lines.svg"
+				alt="decoration"
+				class="absolute top-69 -left-24 -z-10 h-[190px] object-cover"
+			/>
+
+			<img
+				src="/svgs/deco-lines.svg"
+				alt="decoration"
+				class="absolute top-24 -right-24 -z-10 h-[220px] rotate-150 object-cover"
+			/>
 		</div>
 	</section>
 
@@ -85,10 +98,18 @@
 	<section class="relative min-h-[75vh] w-full">
 		<!-- background image -->
 		<!-- move it down using translate because this part wont scroll normally -->
-		<div class="sticky top-0 h-[75vh] w-full translate-y-36">
+		<div class="sticky top-0 h-[75vh] w-full translate-y-36 overflow-x-hidden overflow-y-hidden">
 			<img src="/images/bg-4.png" alt="bg-4" class="-z-20 h-full w-full object-cover opacity-40" />
+
+			<!-- additional deco -->
+			<!-- need to stick with background because this is going to the bottom -->
+			<!-- this is different from above because normally the background wont stick here -->
+			<img
+				src="/svgs/deco-halftone.svg"
+				alt="decoration"
+				class="absolute -right-13 bottom-9 -z-10 h-[310px] object-cover"
+			/>
 		</div>
-		<!-- additional deco -->
 
 		<div class="relative -mt-[75vh] flex w-full flex-col">
 			<!-- header -->
@@ -101,7 +122,7 @@
 
 	<!-- Ending -->
 	<section class="relative w-full">
-		<img src="/images/bg-5.png" alt="bg-5" class="-z-10 w-full object-cover" />
+		<img src="/images/bg-5.png" alt="bg-5" class="-z-8 w-full object-cover" />
 	</section>
 
 	<!-- the fixed scroll to next page arrow down button -->

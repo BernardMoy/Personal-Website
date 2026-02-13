@@ -1,0 +1,20 @@
+{
+	"Python": "#addaff",
+	"Java": "#ffd9ad",
+	"JavaScript": "#fff7ad",
+	"Kotlin": "#daadff",
+	"SQL": "#add3ff",
+	"Coursework": "#ffadb4",
+	"React": "#adfffc",
+	"Svelte": "#ffd6ad",
+	"Node.js": "#adffca",
+	"TensorFlow": "#ffcaad",
+	"PyTorch": "#ffb9ad",
+	"Sklearn": "#ffedad",
+	"C": "#add2ff",
+	"Firebase": "#ffddad",
+	"C++": "#adbbff",
+	"Unity": "#b8b9bf",
+	"Haskell": "#ecd1ff",
+	"default": "#dedede"
+}

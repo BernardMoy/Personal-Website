@@ -1,5 +1,6 @@
 <script>
 	import projects from '../data/projects.json';
+	import projectsTagsColors from '../data/projects-tags-colors.json';
 </script>
 
 <div class="mx-16 flex flex-col gap-16 py-16">
@@ -39,7 +40,12 @@
 				<!-- tags -->
 				<ul class="flex max-w-full flex-wrap gap-x-4 gap-y-2 px-6">
 					{#each project.tags as tag}
-						<li class="font-body bg-amber-200 px-2 text-[18px] text-on-background">{tag}</li>
+						<li
+							class="font-body px-2 text-[18px] text-on-background"
+							style="background-color: {projectsTagsColors[tag]}"
+						>
+							{tag}
+						</li>
 					{/each}
 				</ul>
 			</div>

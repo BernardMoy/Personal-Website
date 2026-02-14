@@ -23,21 +23,25 @@
 					class="h-[220px] w-full rounded-tl-xl rounded-tr-xl object-cover"
 				/>
 
-				<!-- github logo -->
-				{#if project.github}
-					<a href={project.github} target="_blank" class="cursor-pointer" aria-label="github link">
-						<img
-							src="svgs/github-white.svg"
-							alt="github logo"
-							class="absolute top-2 right-2 h-[64px] w-[64px]"
-						/>
-					</a>
-				{/if}
-
 				<!-- title -->
-				<h1 class="font-title relative px-6 py-4 text-[24px] text-on-background">
-					{project.title}
-				</h1>
+				{#if project.github}
+					<a
+						class="flex flex-row items-center justify-start gap-4 self-start px-6 py-4 decoration-on-background decoration-[1px] underline-offset-4 hover:underline"
+						href={project.github}
+						target="_blank"
+					>
+						<h1 class="font-title relative text-[24px] text-on-background">
+							{project.title}
+						</h1>
+						<img src="svgs/github.svg" alt="GitHub link" , class="h-[24px] w-[24px]" />
+					</a>
+				{:else}
+					<div class="flex flex-row items-center justify-start gap-4 px-6 py-4">
+						<h1 class="font-title relative text-[24px] text-on-background">
+							{project.title}
+						</h1>
+					</div>
+				{/if}
 
 				<!-- tags -->
 				<ul class="flex max-w-full flex-wrap gap-x-4 gap-y-2 px-6">

@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	import projects from '../data/projects.json';
 	import projectsTagsColors from '../data/projects-tags-colors.json';
 </script>

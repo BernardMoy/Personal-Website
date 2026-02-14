@@ -1,8 +1,16 @@
-<script>
+<script lang="ts">
 	// @ts-nocheck
 
 	import projects from '../data/projects.json';
 	import projectsTagsColors from '../data/projects-tags-colors.json';
+
+	// stores a list of indices with overlay turned on, initially all false
+	let overlayStates = $state(new Array<boolean>(projects.length).fill(false));
+
+	// function when info button is clicked, to toggle the overlay states
+	const handleInfoClick = (index: number) => {
+		overlayStates[index] = !overlayStates[index];
+	};
 </script>
 
 <div class="mx-16 flex flex-col gap-16 py-16">
@@ -14,7 +22,7 @@
 	<!-- project list -->
 	<div class=" grid grid-cols-3 gap-8">
 		<!-- individual project grid -->
-		{#each projects as project}
+		{#each projects as project, index}
 			<div class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6">
 				<!-- image -->
 				<div class="group relative">
@@ -27,7 +35,9 @@
 					<!-- overlay -->
 					<div
 						class="font-body absolute top-0 z-30 flex h-[220px] w-full origin-bottom scale-y-0 items-center justify-center rounded-tl-xl rounded-tr-xl bg-on-background/90 p-6 text-center text-[18px]
-						break-normal text-on-primary transition-transform duration-200 ease-out"
+						break-normal text-on-primary transition-transform duration-200 ease-out {overlayStates[index]
+							? 'scale-y-100'
+							: 'scale-y-0'}"
 					>
 						{project.description}
 					</div>
@@ -46,7 +56,7 @@
 							</h1>
 
 							<!-- github icon -->
-							<img src="svgs/github.svg" alt="GitHub link" , class="mt-1 h-[24px] w-[24px]" />
+							<img src="svgs/github.svg" alt="GitHub link" , class="mt-1 h-[36px] w-[36px]" />
 						</a>
 					{:else}
 						<div class="flex flex-row items-center justify-start gap-4">
@@ -57,7 +67,18 @@
 					{/if}
 
 					<!-- info icon -->
-					<img src="svgs/info.svg" alt="GitHub link" , class="mt-1 ml-auto h-[24px] w-[24px]" />
+					<button
+						class="mt-1 ml-auto shrink-0 cursor-pointer"
+						onclick={() => handleInfoClick(index)}
+					>
+						<img
+							src="svgs/info.svg"
+							alt="GitHub link"
+							class="h-[36px] w-[36px] rounded-full {overlayStates[index]
+								? 'outline-4 outline-yellow-highlight'
+								: 'hover:outline-4 hover:outline-gray-highlight'} "
+						/>
+					</button>
 				</div>
 
 				<!-- tags -->
@@ -77,15 +98,3 @@
 		{/each}
 	</div>
 </div>
-
-<style>
-	.overlay {
-		transform: scaleY(0);
-		transform-origin: bottom;
-		transition: transform 0.4s ease;
-	}
-
-	.overlay:hover {
-		transform: scaleY(1);
-	}
-</style>

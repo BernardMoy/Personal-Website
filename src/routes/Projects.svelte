@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
 	import projects from '../data/projects.json';
 	import projectsTagsColors from '../data/projects-tags-colors.json';
@@ -44,7 +44,9 @@
 					{#each project.tags as tag}
 						<li
 							class="font-body px-2 text-[18px] text-on-background"
-							style="background-color: {projectsTagsColors[tag]}"
+							style="background-color: {projectsTagsColors[tag]
+								? projectsTagsColors[tag]
+								: projectsTagsColors['default']}"
 						>
 							{tag}
 						</li>

@@ -47,7 +47,7 @@
 				<div class="flex flex-row items-start justify-start gap-4 px-6 py-4">
 					{#if project.github}
 						<a
-							class="flex flex-row items-start justify-start gap-4 self-start decoration-on-background decoration-[1px] underline-offset-4 hover:underline"
+							class="group flex flex-row items-start justify-start gap-4 self-start decoration-on-background decoration-[1px] underline-offset-4 hover:underline"
 							href={project.github}
 							target="_blank"
 						>
@@ -56,7 +56,13 @@
 							</h1>
 
 							<!-- github icon -->
-							<img src="svgs/github.svg" alt="GitHub link" , class="mt-1 h-[36px] w-[36px]" />
+							<img
+								src="svgs/github.svg"
+								alt="GitHub link"
+								,
+								class=" mt-1 h-[28px] w-[28px] rounded-full
+							group-hover:outline-4 group-hover:outline-gray-highlight"
+							/>
 						</a>
 					{:else}
 						<div class="flex flex-row items-center justify-start gap-4">
@@ -67,16 +73,13 @@
 					{/if}
 
 					<!-- info icon -->
-					<button
-						class="mt-1 ml-auto shrink-0 cursor-pointer"
-						onclick={() => handleInfoClick(index)}
-					>
+					<button class="ml-auto shrink-0 cursor-pointer" onclick={() => handleInfoClick(index)}>
 						<img
 							src="svgs/info.svg"
 							alt="GitHub link"
-							class="h-[36px] w-[36px] rounded-full {overlayStates[index]
+							class="mt-1 h-[28px] w-[28px] rounded-full {overlayStates[index]
 								? 'outline-4 outline-yellow-highlight'
-								: 'hover:outline-4 hover:outline-gray-highlight'} "
+								: 'hover:outline-4 hover:outline-gray-highlight active:outline-4 active:outline-yellow-highlight'}"
 						/>
 					</button>
 				</div>

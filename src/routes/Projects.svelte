@@ -1,50 +1,104 @@
-<script>
-// @ts-nocheck
+<script lang="ts">
+	// @ts-nocheck
 
 	import projects from '../data/projects.json';
 	import projectsTagsColors from '../data/projects-tags-colors.json';
+	import projectsParagraph from '../data/projects-paragraph.json';
+
+	// stores a list of indices with overlay turned on, initially all false
+	let overlayStates = $state(new Array<boolean>(projects.length).fill(false));
+
+	// function when info button is clicked, to toggle the overlay states
+	const handleInfoClick = (index: number) => {
+		overlayStates[index] = !overlayStates[index];
+	};
 </script>
 
 <div class="mx-16 flex flex-col gap-16 py-16">
 	<!-- intro paragraph -->
-	<p class="font-body text-[18px] text-on-background">
-		Here is a list of technical projects that I have done.
-	</p>
+	<div class="flex flex-col items-start justify-start gap-8">
+		{#each projectsParagraph as para}
+			<p class="font-body text-[18px] text-on-background">
+				{@html para.replaceAll('[', '<span class="text-holo-pink">').replaceAll(']', '</span>')}
+			</p>
+		{/each}
+	</div>
 
 	<!-- project list -->
 	<div class=" grid grid-cols-3 gap-8">
 		<!-- individual project grid -->
-		{#each projects as project}
-			<div class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6">
+		{#each projects as project, index}
+			<div
+				class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6 shadow-xl/50 shadow-holo-pink-shadow duration-200 ease-out hover:-translate-y-1"
+			>
 				<!-- image -->
-				<img
-					src={project.image}
-					alt={project.title}
-					class="h-[220px] w-full rounded-tl-xl rounded-tr-xl object-cover"
-				/>
+				<div class="group relative">
+					<img
+						src={project.image}
+						alt={project.title}
+						class="h-[220px] w-full rounded-tl-xl rounded-tr-xl object-cover"
+					/>
 
-				<!-- github logo -->
-				{#if project.github}
-					<a href={project.github} target="_blank" class="cursor-pointer" aria-label="github link">
-						<img
-							src="svgs/github-white.svg"
-							alt="github logo"
-							class="absolute top-2 right-2 h-[64px] w-[64px]"
-						/>
-					</a>
-				{/if}
+					<!-- overlay -->
+					<div
+						class="font-body absolute top-0 z-30 flex h-[220px] w-full origin-bottom scale-y-0 items-center justify-center rounded-tl-xl rounded-tr-xl bg-on-background/90 p-6 text-center text-[18px]
+						break-normal text-on-primary transition-transform duration-200 ease-out {overlayStates[index]
+							? 'scale-y-100'
+							: 'scale-y-0'}"
+					>
+						{project.description}
+					</div>
+				</div>
 
 				<!-- title -->
-				<h1 class="font-title relative px-6 py-4 text-[24px] text-on-background">
-					{project.title}
-				</h1>
+				<div class="flex flex-row items-start justify-start gap-4 px-6 py-4">
+					{#if project.github}
+						<a
+							class="group flex flex-row items-start justify-start gap-4 self-start decoration-on-background decoration-[1px] underline-offset-4 hover:underline"
+							href={project.github}
+							target="_blank"
+						>
+							<h1 class="font-title relative text-[24px] text-on-background">
+								{project.title}
+							</h1>
+
+							<!-- github icon -->
+							<img
+								src="svgs/github.svg"
+								alt="GitHub link"
+								,
+								class=" mt-1 h-[28px] w-[28px] rounded-full
+							group-hover:outline-4 group-hover:outline-gray-highlight"
+							/>
+						</a>
+					{:else}
+						<div class="flex flex-row items-center justify-start gap-4">
+							<h1 class="font-title relative text-[24px] text-on-background">
+								{project.title}
+							</h1>
+						</div>
+					{/if}
+
+					<!-- info icon -->
+					<button class="ml-auto shrink-0 cursor-pointer" onclick={() => handleInfoClick(index)}>
+						<img
+							src="svgs/info.svg"
+							alt="GitHub link"
+							class="mt-1 h-[28px] w-[28px] rounded-full {overlayStates[index]
+								? 'outline-4 outline-yellow-highlight'
+								: 'hover:outline-4 hover:outline-gray-highlight active:outline-4 active:outline-yellow-highlight'}"
+						/>
+					</button>
+				</div>
 
 				<!-- tags -->
 				<ul class="flex max-w-full flex-wrap gap-x-4 gap-y-2 px-6">
 					{#each project.tags as tag}
 						<li
 							class="font-body px-2 text-[18px] text-on-background"
-							style="background-color: {projectsTagsColors[tag]}"
+							style="background-color: {projectsTagsColors[tag]
+								? projectsTagsColors[tag]
+								: projectsTagsColors['default']}"
 						>
 							{tag}
 						</li>

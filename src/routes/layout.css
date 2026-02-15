@@ -50,8 +50,11 @@
 @theme {
 	--color-holo-blue: #5194ea;
 	--color-holo-pink: #ef899a;
+	--color-holo-pink-shadow: #e0b2b9;
 	--color-holo-orange: #efa889;
 	--color-on-background: #3b3f44; /* text color */
+	--color-yellow-highlight: #ffe4a4;
+	--color-gray-highlight: #dad7d8;
 	--color-on-primary: #ffffff;
 	--color-primary: var(
 		--color-holo-blue

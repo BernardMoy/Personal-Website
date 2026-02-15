@@ -20,9 +20,9 @@
 
 	<!-- the 4 rectangles on the top right -->
 	<div class="no-selection absolute top-0 right-0 mt-[80px] grid grid-cols-2">
-		<button class="h-[64px] w-[160px] cursor-pointer bg-holo-blue"></button>
-		<button class="h-[64px] w-[160px] bg-on-primary"></button>
-		<button class="h-[64px] w-[160px] bg-on-primary"></button>
-		<button class="h-[64px] w-[160px] bg-holo-blue"></button>
+		<button aria-label="bg-1" class="h-[64px] w-[160px] cursor-pointer bg-holo-blue"></button>
+		<button aria-label="bg-2" class="h-[64px] w-[160px] bg-on-primary"></button>
+		<button aria-label="bg-3" class="h-[64px] w-[160px] bg-on-primary"></button>
+		<button aria-label="bg-4" class="h-[64px] w-[160px] bg-holo-blue"></button>
 	</div>
 </div>

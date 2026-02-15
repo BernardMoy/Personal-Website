@@ -6,13 +6,12 @@
 		"github": "https://github.com/BernardMoy/Personal-Website",
 		"description": "This beautiful website :)"
 	},
-
 	{
 		"image": "/project-images/cs310.png",
 		"title": "Lost and Found Mobile App",
 		"tags": ["Java", "Kotlin", "Jetpack Compose", "Firebase", "TensorFlow", "Testing"],
 		"github": "https://github.com/BernardMoy/Lost-and-Found",
-		"description": "Text text text"
+		"description": "A Lost and Found mobile app that allows users to post items. It matches items using an algorithm by comparing the images, categories and item attributes."
 	},
 	{
 		"image": "/project-images/advent-of-code.png",
@@ -27,7 +26,7 @@
 		"title": "Speed Reader",
 		"tags": ["Node.js", "React", "TypeScript"],
 		"github": "https://github.com/BernardMoy/Speed-Reader-II",
-		"description": null
+		"description": "A website that displays words in the same position, at increasing speeds, allowing us to read in a higher WPM."
 	},
 	{
 		"image": "/project-images/job-tracker.png",
@@ -41,104 +40,104 @@
 		"title": "Route Finder and Visualisation Website",
 		"tags": ["React", "TypeScript", "vis.js", "Algorithms", "Material UI"],
 		"github": "https://github.com/BernardMoy/Fun-Map-App",
-		"description": "Text text text"
+		"description": "A visualiser of a transport network, including showing the shortest path between two points using Dijkstra's algorithm."
 	},
 	{
 		"image": "/project-images/cs325.png",
 		"title": "Mini-C Compiler",
 		"tags": ["C++", "LLVM"],
 		"github": null,
-		"description": "Text text text"
+		"description": "A parser for a C-like mini-C language to generate abstract syntax trees, and a LLVM IR generator."
 	},
 	{
 		"image": "/project-images/gamejam.png",
 		"title": "The Ground Tilter",
 		"tags": ["Unity", "C#"],
 		"github": "https://github.com/BernardMoy/GameJam",
-		"description": "Text text text"
+		"description": "A Unity game that moves the player to the goal by tilting the ground."
 	},
 	{
 		"image": "/project-images/recipe-app.png",
 		"title": "Recipe App",
 		"tags": ["Java", "XML", "Algorithms"],
 		"github": "https://github.com/BernardMoy/Recipe-App",
-		"description": "Text text text"
+		"description": "A recipe and meal planning app for university life, with an algorithm to recommend recipes by utilising leftover ingredients."
 	},
 	{
 		"image": "/project-images/cs261.png",
 		"title": "Wallstreet Whisperer",
 		"tags": ["Python", "Flask", "PostgreSQL", "Testing", "Docker"],
 		"github": null,
-		"description": "Text text text"
+		"description": "A website that visualises stock prices and news articles from APIs, and make prediction on prices using sentiment analysis."
 	},
 	{
 		"image": "/project-images/cs262.png",
 		"title": "Resolution (Logic) Solver",
 		"tags": ["Prolog"],
 		"github": null,
-		"description": "Text text text"
+		"description": "A resolution (logic) solver to determine if a conjunctive normal form sentence is a tautology."
 	},
 	{
 		"image": "/project-images/cs258.png",
 		"title": "Gig System Database Design",
 		"tags": ["PostgreSQL", "Java", "JDBC"],
 		"github": null,
-		"description": "Text text text"
+		"description": "Implemented database design with complex queries, for a gig event system."
 	},
 	{
 		"image": "/project-images/cs255.png",
 		"title": "Agent for the Connect Game",
 		"tags": ["Python", "Algorithms"],
 		"github": null,
-		"description": "Text text text"
+		"description": "An AI agent to play the connect game (an expansion of connect four), using the minimax algorithm with alpha-beta pruning."
 	},
 	{
 		"image": "/project-images/cs241.png",
 		"title": "Intrusion Detection System",
 		"tags": ["C", "Multithreading"],
 		"github": null,
-		"description": "Text text text"
+		"description": "A multithreaded system that identifies SYN attacks and ARP cache poisoning attacks, by parsing TCP headers."
 	},
 	{
 		"image": "/project-images/discord-bot.png",
 		"title": "Personal Discord Bot",
 		"tags": ["Python", "SQLite"],
 		"github": "https://github.com/BernardMoy/Discord-Bot-2025",
-		"description": "A lightweight Discord Bot with utility features that friendly servers may need."
+		"description": "A lightweight Discord Bot providing utility features that friendly servers may need."
 	},
 	{
 		"image": "/project-images/cs139.png",
 		"title": "The Giginator Website",
 		"tags": ["HTML", "CSS", "Python", "Flask", "SQLite", "SQLAlchemy"],
 		"github": "https://github.com/BernardMoy/The-Giginator-Website",
-		"description": "Text text text"
+		"description": "An event and ticket creation and management system, with users classified into regular users and admins."
 	},
 	{
 		"image": "/project-images/cs141.png",
 		"title": "The Bean's Gambit Game",
 		"tags": ["Haskell"],
 		"github": null,
-		"description": "Text text text"
+		"description": "An AI player for the Bean's Gambit game implemented using Haskell, which is a game similar to chess."
 	},
 	{
 		"image": "/project-images/cs126.png",
 		"title": "Warwick Plus Movie Platform",
 		"tags": ["Java", "Data Structures"],
 		"github": null,
-		"description": "Text text text"
+		"description": "A platform to display and query movies, ratings and casts efficiently using data structures such as an AVL tree."
 	},
 	{
 		"image": "/project-images/cs132.png",
 		"title": "Robot Arm Tower of Hanoi Solver",
 		"tags": ["C"],
 		"github": null,
-		"description": "Text text text"
+		"description": "A moving robot arm to solve the Tower of Hanoi problem, controlled using C."
 	},
 	{
 		"image": "/project-images/cs118.png",
 		"title": "Robot Maze Navigator",
 		"tags": ["Java", "Algorithms"],
 		"github": null,
-		"description": "Text text text"
+		"description": "A Java robot controller to navigate in a maze, using different approaches such as Depth-first search."
 	}
 ]

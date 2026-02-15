@@ -3,6 +3,7 @@
 
 	import projects from '../data/projects.json';
 	import projectsTagsColors from '../data/projects-tags-colors.json';
+	import projectsParagraph from '../data/projects-paragraph.json';
 
 	// stores a list of indices with overlay turned on, initially all false
 	let overlayStates = $state(new Array<boolean>(projects.length).fill(false));
@@ -15,15 +16,21 @@
 
 <div class="mx-16 flex flex-col gap-16 py-16">
 	<!-- intro paragraph -->
-	<p class="font-body text-[18px] text-on-background">
-		Here is a list of technical projects that I have done.
-	</p>
+	<div class="flex flex-col items-start justify-start gap-8">
+		{#each projectsParagraph as para}
+			<p class="font-body text-[18px] text-on-background">
+				{@html para.replaceAll('[', '<span class="text-holo-pink">').replaceAll(']', '</span>')}
+			</p>
+		{/each}
+	</div>
 
 	<!-- project list -->
 	<div class=" grid grid-cols-3 gap-8">
 		<!-- individual project grid -->
 		{#each projects as project, index}
-			<div class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6">
+			<div
+				class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6 shadow-xl/50 shadow-holo-pink-shadow duration-200 ease-out hover:-translate-y-1"
+			>
 				<!-- image -->
 				<div class="group relative">
 					<img

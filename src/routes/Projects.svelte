@@ -54,12 +54,17 @@
 				<div class="flex flex-row items-start justify-start gap-4 px-6 py-4">
 					{#if project.github}
 						<a
-							class="group flex flex-row items-start justify-start gap-4 self-start decoration-on-background decoration-[1px] underline-offset-4 hover:underline"
+							class="group flex flex-row items-start justify-start gap-4 self-start"
 							href={project.github}
 							target="_blank"
 						>
-							<h1 class="font-title relative text-[24px] text-on-background">
-								{project.title}
+							<h1 class=" font-title relative text-[24px] text-on-background">
+								<!-- span wrapper to make the text inline -->
+								<!-- so the sliding underline animation works when -->
+								<!-- the text is broken into multiple lines -->
+								<span class="project-title">
+									{project.title}
+								</span>
 							</h1>
 
 							<!-- github icon -->
@@ -67,7 +72,7 @@
 								src="svgs/github.svg"
 								alt="GitHub link"
 								,
-								class=" mt-1 h-[28px] w-[28px] rounded-full
+								class="mt-1 h-[28px] w-[28px] rounded-full
 							group-hover:outline-4 group-hover:outline-gray-highlight"
 							/>
 						</a>
@@ -108,3 +113,24 @@
 		{/each}
 	</div>
 </div>
+
+<style>
+	.project-title {
+		box-decoration-break: clone;
+		background: linear-gradient(to right, var(--color-holo-pink), var(--color-holo-pink));
+
+		background-size: 0% 0.1em;
+		background-position: 0% 100%;
+		background-repeat: no-repeat;
+
+		transition:
+			background-size 250ms ease-out,
+			color 250ms ease-out;
+	}
+
+	.group:hover .project-title,
+	.group:focus .project-title {
+		background-size: 100% 0.1em;
+		color: var(--color-holo-pink);
+	}
+</style>

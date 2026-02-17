@@ -1,10 +1,29 @@
 <script>
 	import Circle from './Circle.svelte';
 	import top from '../data/top.json';
+
+	const backgrounds = [
+		{
+			name: 'bg-1',
+			url: '/images/bg-1-1.png'
+		},
+		{
+			name: 'bg-2',
+			url: '/images/bg-1-2.png'
+		},
+		{
+			name: 'bg-3',
+			url: '/images/bg-1-3.png'
+		},
+		{
+			name: 'bg-4',
+			url: '/images/bg-1-4.png'
+		}
+	];
 </script>
 
 <div class="relative text-center">
-	<img src="/images/bg-1.png" alt="bg-1" class=" h-screen w-full object-cover" />
+	<img src="/images/bg-1-1.png" alt="bg-1" class=" h-screen w-full object-cover" />
 
 	<!-- centered text -->
 	<div class="absolute top-1/2 flex w-full -translate-y-1/2 flex-col items-center">
@@ -21,9 +40,12 @@
 
 	<!-- the 4 rectangles on the top right -->
 	<div class="no-selection absolute top-0 right-0 mt-[80px] grid grid-cols-2">
-		<button aria-label="bg-1" class="h-[64px] w-[160px] cursor-pointer bg-holo-blue"></button>
-		<button aria-label="bg-2" class="h-[64px] w-[160px] bg-on-primary"></button>
-		<button aria-label="bg-3" class="h-[64px] w-[160px] bg-on-primary"></button>
-		<button aria-label="bg-4" class="h-[64px] w-[160px] bg-holo-blue"></button>
+		{#each backgrounds as bg}
+			<button
+				aria-label={bg.name}
+				class="h-[64px] w-[160px] cursor-pointer bg-cover bg-center"
+				style={`background-image: url(${bg.url})`}
+			></button>
+		{/each}
 	</div>
 </div>

@@ -1,5 +1,6 @@
 <script>
 	import Circle from './Circle.svelte';
+	import top from '../data/top.json';
 </script>
 
 <div class="relative text-center">
@@ -7,8 +8,8 @@
 
 	<!-- centered text -->
 	<div class="absolute top-1/2 flex w-full -translate-y-1/2 flex-col items-center">
-		<h1 class="font-main-title text-[64px] text-on-primary">Hi, I'm Bernard!</h1>
-		<h2 class="font-main-title text-[36px] text-on-primary">Welcome :)</h2>
+		<h1 class="font-main-title text-[64px] text-on-primary">{top.title}</h1>
+		<h2 class="font-main-title text-[36px] text-on-primary">{top.subtitle}</h2>
 	</div>
 
 	<!-- 1 2 3 4 buttons -->

@@ -2,17 +2,23 @@
 	import Circle from './Circle.svelte';
 	import top from '../data/top.json';
 	import backgrounds from '../data/backgrounds.json';
+	import { fade, fly, scale } from 'svelte/transition';
 
 	// the current index of the image displayed
 	var currentIndex = $state(0);
 </script>
 
-<div class="relative text-center">
-	<img
-		src={backgrounds[currentIndex].url}
-		alt={backgrounds[currentIndex].name}
-		class="h-screen w-full object-cover"
-	/>
+<div class="relative h-screen w-full overflow-x-clip text-center">
+	<!-- large background image -->
+	{#key currentIndex}
+		<img
+			src={backgrounds[currentIndex].url}
+			alt={backgrounds[currentIndex].name}
+			class="absolute top-0 left-0 h-screen w-full object-cover"
+			in:scale={{ start: 1.05, duration: 1500 }}
+			out:fade={{ duration: 1000 }}
+		/>
+	{/key}
 
 	<!-- centered text -->
 	<div class="absolute top-1/2 flex w-full -translate-y-1/2 flex-col items-center">

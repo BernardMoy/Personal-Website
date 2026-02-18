@@ -39,13 +39,18 @@
 	</div>
 
 	<!-- the 4 rectangles on the top right -->
-	<div class="no-selection absolute top-0 right-0 mt-[80px] grid grid-cols-2">
-		{#each backgrounds as bg}
-			<button
-				aria-label={bg.name}
-				class="h-[64px] w-[160px] cursor-pointer bg-cover bg-center"
-				style={`background-image: url(${bg.url})`}
-			></button>
-		{/each}
+	<div class="absolute top-0 right-0 mt-[80px] flex flex-col">
+		<div class="no-selection grid grid-cols-2">
+			{#each backgrounds as bg}
+				<button
+					aria-label={bg.name}
+					class="h-[64px] w-[160px] cursor-pointer bg-cover bg-center"
+					style={`background-image: url(${bg.url})`}
+				></button>
+			{/each}
+		</div>
+
+		<!-- Progress bar -->
+		<div class="no-selection h-1 w-full bg-on-primary"></div>
 	</div>
 </div>

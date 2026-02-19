@@ -142,7 +142,7 @@
 		/>
 		<!-- header title -->
 		<h1
-			class="font-title no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-blue"
+			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-blue"
 		>
 			About Me
 		</h1>
@@ -165,7 +165,7 @@
 		/>
 		<!-- header title -->
 		<h1
-			class="font-title no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-pink"
+			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-pink"
 		>
 			Projects
 		</h1>
@@ -182,7 +182,7 @@
 		/>
 		<!-- header title -->
 		<h1
-			class="font-title no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-orange"
+			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-orange"
 		>
 			Contact Me
 		</h1>

@@ -1,11 +1,21 @@
-<script>
+<script lang="ts">
 	import Circle from './Circle.svelte';
 	import top from '../data/top.json';
 	import backgrounds from '../data/backgrounds.json';
 	import { fade, fly, scale } from 'svelte/transition';
 
 	// the current index of the image displayed
-	var currentIndex = $state(0);
+	var currentIndex = $state<number>(0);
+
+	function setIndex(index: number) {
+		currentIndex = index;
+
+		// change the primary color to match the index
+		document.documentElement.style.setProperty(
+			'--color-primary',
+			backgrounds[index]['primary-color']
+		);
+	}
 </script>
 
 <div class="relative h-screen w-full overflow-x-clip text-center">
@@ -22,8 +32,8 @@
 
 	<!-- centered text -->
 	<div class="absolute top-1/2 flex w-full -translate-y-1/2 flex-col items-center">
-		<h1 class="font-main-title text-[64px] text-on-primary">{top.title}</h1>
-		<h2 class="font-main-title text-[36px] text-on-primary">{top.subtitle}</h2>
+		<h1 class="glow-primary font-main-title text-[64px] text-on-primary">{top.title}</h1>
+		<h2 class="glow-primary font-main-title text-[36px] text-on-primary">{top.subtitle}</h2>
 	</div>
 
 	<!-- number buttons on the left -->
@@ -32,7 +42,7 @@
 			<Circle
 				text={(i + 1).toString()}
 				onclick={() => {
-					currentIndex = i;
+					setIndex(i);
 				}}
 				selected={i == currentIndex}
 			></Circle>
@@ -47,7 +57,7 @@
 				<button
 					aria-label={bg.name}
 					class="group h-[64px] w-[160px] cursor-pointer overflow-hidden"
-					onclick={() => (currentIndex = index)}
+					onclick={() => setIndex(index)}
 				>
 					<img
 						src={bg.url}
@@ -62,3 +72,13 @@
 		<div class="no-selection h-1 w-full bg-on-primary"></div>
 	</div>
 </div>
+
+<style>
+	/* the glow for title */
+	.glow-primary {
+		text-shadow:
+			0px 0px 32px var(--color-primary),
+			0px 0px 16px var(--color-primary),
+			0px 0px 8px var(--color-primary);
+	}
+</style>

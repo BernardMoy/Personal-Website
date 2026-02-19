@@ -7,7 +7,7 @@
 	<!-- left paragraph -->
 	<div class="flex flex-3 flex-col items-start justify-start gap-8">
 		{#each aboutMe as para}
-			<p class="font-body text-[18px] text-on-background">
+			<p class="font-body glow text-[18px] text-on-background">
 				{@html para.replaceAll('[', '<span class="text-holo-blue">').replaceAll(']', '</span>')}
 			</p>
 		{/each}

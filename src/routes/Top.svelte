@@ -43,12 +43,18 @@
 	<div class="absolute top-0 right-0 mt-[80px] flex flex-col">
 		<div class="no-selection grid grid-cols-2">
 			{#each backgrounds as bg, index}
+				<!-- scale within container -->
 				<button
 					aria-label={bg.name}
-					class="h-[64px] w-[160px] cursor-pointer bg-cover bg-center"
-					style={`background-image: url(${bg.url})`}
+					class="group h-[64px] w-[160px] cursor-pointer overflow-hidden"
 					onclick={() => (currentIndex = index)}
-				></button>
+				>
+					<img
+						src={bg.url}
+						alt={bg.name}
+						class="h-full w-full object-cover object-center duration-500 group-hover:scale-110 group-focus:scale-110"
+					/>
+				</button>
 			{/each}
 		</div>
 

@@ -34,6 +34,7 @@
 				onclick={() => {
 					currentIndex = i;
 				}}
+				selected={i == currentIndex}
 			></Circle>
 		{/each}
 	</div>

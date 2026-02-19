@@ -1,13 +1,27 @@
 <script lang="ts">
-	let { text, onclick }: { text: string; onclick: () => void } = $props();
+	let { text, onclick, selected }: { text: string; onclick: () => void; selected: boolean } =
+		$props();
 </script>
 
 <!-- Fixed blue circle right now -->
+<!-- use overflow hidden on the root button to clip the sliding background -->
 <button
-	class="flex h-[48px] w-[48px] cursor-pointer items-center justify-center rounded-full border-1 border-on-primary bg-holo-blue"
+	class="group relative flex h-[48px] w-[48px] cursor-pointer items-center justify-center overflow-hidden rounded-full border-1
+	{selected ? 'border-primary bg-on-primary' : 'border-on-primary bg-primary'} hover:border-primary"
 	{onclick}
 >
-	<div class="font-title text-[18px] text-on-primary">
+	<!-- the background hover cover that scales from left to right -->
+	<span
+		class="cover absolute z-15 h-[48px] w-[48px] origin-left scale-x-0 bg-on-primary duration-500 ease-in-out group-hover:scale-x-100"
+	>
+	</span>
+
+	<!-- the number text -->
+	<div
+		class="font-title z-16 text-[18px] {selected
+			? 'text-primary'
+			: 'text-on-primary'} group-hover:text-primary"
+	>
 		{text}
 	</div>
 </button>

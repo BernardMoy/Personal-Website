@@ -3,7 +3,7 @@
 		{
 			name: 'Top',
 			navigationId: '#top',
-			color: 'var(--color-holo-blue)'
+			color: 'var(--color-primary)'
 		},
 		{
 			name: 'About Me',

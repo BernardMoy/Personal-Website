@@ -2,10 +2,21 @@
 	import Circle from './Circle.svelte';
 	import top from '../data/top.json';
 	import backgrounds from '../data/backgrounds.json';
-	import { fade, fly, scale } from 'svelte/transition';
+	import { fade, scale } from 'svelte/transition';
+	import { onMount } from 'svelte';
 
 	// the current index of the image displayed
 	var currentIndex = $state<number>(0);
+
+	// store the interval to display images one by one automatically
+	var interval: NodeJS.Timeout;
+
+	function createInterval() {
+		interval = setInterval(() => {
+			// display the next image
+			currentIndex = (currentIndex + 1) % backgrounds.length;
+		}, 8000);
+	}
 
 	function setIndex(index: number) {
 		currentIndex = index;
@@ -15,7 +26,19 @@
 			'--color-primary',
 			backgrounds[index]['primary-color']
 		);
+
+		// reset the interval
+		if (interval) {
+			clearInterval(interval);
+			createInterval();
+		}
 	}
+
+	// increments the index every certain seconds
+	onMount(() => {
+		createInterval();
+		return () => clearInterval(interval);
+	});
 </script>
 
 <div class="relative h-screen w-full overflow-x-clip text-center">
@@ -62,7 +85,7 @@
 					<img
 						src={bg.url}
 						alt={bg.name}
-						class="h-full w-full object-cover object-center duration-500 group-hover:scale-110 group-focus:scale-110"
+						class="h-full w-full object-cover object-center duration-500 group-hover:scale-110"
 					/>
 				</button>
 			{/each}

@@ -3,18 +3,19 @@
 	import top from '../data/top.json';
 	import backgrounds from '../data/backgrounds.json';
 	import { fade, scale } from 'svelte/transition';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	// the current index of the image displayed
 	var currentIndex = $state<number>(0);
 
 	// store the interval to display images one by one automatically
 	var interval: NodeJS.Timeout;
+	var progressBar: HTMLElement | null;
 
 	function createInterval() {
 		interval = setInterval(() => {
 			// display the next image
-			currentIndex = (currentIndex + 1) % backgrounds.length;
+			setIndex((currentIndex + 1) % backgrounds.length);
 		}, 8000);
 	}
 
@@ -27,6 +28,19 @@
 			backgrounds[index]['primary-color']
 		);
 
+		// reset the progress bar
+		// instantly go from scale 100 to scale 0
+		progressBar?.classList.remove('transition-transform');
+		progressBar?.classList.add('transition-none');
+		progressBar?.classList.remove('scale-x-100');
+		progressBar?.classList.add('scale-x-0');
+		progressBar?.offsetHeight; // refresh the element
+		// scale 0 to 100 in _ seconds
+		progressBar?.classList.remove('transition-none');
+		progressBar?.classList.add('transition-transform');
+		progressBar?.classList.remove('scale-x-0');
+		progressBar?.classList.add('scale-x-100');
+
 		// reset the interval
 		if (interval) {
 			clearInterval(interval);
@@ -36,8 +50,18 @@
 
 	// increments the index every certain seconds
 	onMount(() => {
+		console.log('Mounted');
+		progressBar = document.getElementById('progress-bar');
 		createInterval();
+
+		// set index to instantly trigger the effects
+		setIndex(0);
+
 		return () => clearInterval(interval);
+	});
+
+	onDestroy(() => {
+		console.log('Destroyed');
 	});
 </script>
 
@@ -92,7 +116,12 @@
 		</div>
 
 		<!-- Progress bar -->
-		<div class="no-selection h-1 w-full bg-on-primary"></div>
+		<div
+			id="progress-bar"
+			class=" no-selection h-1 w-full origin-left scale-x-0 bg-on-primary opacity-75
+			shadow-2xl/50 shadow-primary transition-transform
+			duration-7500 ease-linear"
+		></div>
 	</div>
 </div>
 

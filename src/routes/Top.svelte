@@ -3,7 +3,7 @@
 	import top from '../data/top.json';
 	import backgrounds from '../data/backgrounds.json';
 	import { fade, scale } from 'svelte/transition';
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
 	// the current index of the image displayed
 	var currentIndex = $state<number>(0);
@@ -50,7 +50,6 @@
 
 	// increments the index every certain seconds
 	onMount(() => {
-		console.log('Mounted');
 		progressBar = document.getElementById('progress-bar');
 		createInterval();
 
@@ -58,10 +57,6 @@
 		setIndex(0);
 
 		return () => clearInterval(interval);
-	});
-
-	onDestroy(() => {
-		console.log('Destroyed');
 	});
 </script>
 

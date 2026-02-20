@@ -16,6 +16,7 @@
 	}
 }
 
+/* Define global css styles here */
 @layer base {
 	/* Hide the scroll bar */
 	/* ::-webkit-scrollbar {
@@ -44,19 +45,53 @@
 	.no-selection {
 		user-select: none;
 	}
+
+	/* text glow */
+	.glow {
+		text-shadow:
+			0px 0px 16px var(--color-on-primary),
+			0px 0px 8px var(--color-on-primary),
+			0px 0px 4px var(--color-on-primary);
+	}
+
+	/* make color primary changes gradually */
+	:root {
+		transition: --color-primary 500ms;
+	}
 }
 
 /* Define extra colors here */
 @theme {
+	/* fixed theme colors */
 	--color-holo-blue: #5194ea;
 	--color-holo-pink: #ef899a;
+	--color-holo-orange: #e99d7c;
+
+	/* shadow colors used for cards and texts */
 	--color-holo-pink-shadow: #e0b2b9;
-	--color-holo-orange: #efa889;
-	--color-on-background: #3b3f44; /* text color */
+
+	/* highlight colors, for example used in focus border */
 	--color-yellow-highlight: #ffe4a4;
 	--color-gray-highlight: #dad7d8;
+
+	/* text colors */
+	--color-on-background: #3b3f44;
 	--color-on-primary: #ffffff;
-	--color-primary: var(
-		--color-holo-blue
-	); /* color that changes. if not changing, use the colors above */
+
+	/* the primary color changes when scrolling. if not changing, use the colors above */
+	--color-primary: var(--color-holo-blue);
+
+	/* the primary colors are changed to these based on bg colors */
+	--color-bg-1: #5194ea;
+	--color-bg-2: #73b5cd;
+	--color-bg-3: #6b7fb6;
+	--color-bg-4: #38629e;
+}
+
+/* registers the primary color as a color property */
+/* this allows color to interpolate when setting a duration to gradually transform */
+@property --color-primary {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #5194ea;
 }

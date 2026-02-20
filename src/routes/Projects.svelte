@@ -18,7 +18,7 @@
 	<!-- intro paragraph -->
 	<div class="flex flex-col items-start justify-start gap-8">
 		{#each projectsParagraph as para}
-			<p class="font-body text-[18px] text-on-background">
+			<p class="font-body glow text-[18px] text-on-background">
 				{@html para.replaceAll('[', '<span class="text-holo-pink">').replaceAll(']', '</span>')}
 			</p>
 		{/each}
@@ -29,7 +29,8 @@
 		<!-- individual project grid -->
 		{#each projects as project, index}
 			<div
-				class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6 shadow-xl/50 shadow-holo-pink-shadow duration-200 ease-out hover:-translate-y-1"
+				class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6 shadow-xl/50 shadow-holo-pink-shadow
+				transition-transform duration-200 ease-out hover:-translate-y-1"
 			>
 				<!-- image -->
 				<div class="group relative">
@@ -75,17 +76,10 @@
 									d="M11.84 19.735c-3.61-.435-6.153-3.021-6.153-6.37 0-1.36.493-2.83 1.313-3.81-.355-.899-.3-2.804.11-3.594 1.093-.136 2.57.436 3.445 1.225 1.039-.326 2.133-.49 3.472-.49 1.34 0 2.434.164 3.418.463.848-.762 2.352-1.334 3.446-1.198.382.735.437 2.64.082 3.566.875 1.035 1.34 2.423 1.34 3.839 0 3.348-2.543 5.88-6.207 6.342.93.599 1.558 1.906 1.558 3.403v2.83c0 .817.684 1.28 1.504.953A13.8 13.8 0 0 0 28 13.992C28 6.288 21.71 0 13.973 0 6.234 0 0 6.288 0 13.992c0 6.043 3.855 11.051 9.05 12.93.74.272 1.45-.218 1.45-.953V23.79a3.5 3.5 0 0 1-1.313.272c-1.804 0-2.87-.98-3.636-2.803-.301-.735-.63-1.17-1.258-1.253-.328-.027-.438-.163-.438-.326 0-.327.547-.572 1.094-.572.793 0 1.477.49 2.188 1.497.547.79 1.12 1.144 1.804 1.144s1.121-.245 1.75-.872c.465-.462.82-.87 1.149-1.143"
 								/></svg
 							>
-							<!-- <img
-								src="svgs/github.svg"
-								alt="GitHub link"
-								,
-								class="mt-1 h-[28px] w-[28px] rounded-full
-							group-hover:outline-4 group-hover:outline-gray-highlight"
-							/> -->
 						</a>
 					{:else}
 						<div class="flex flex-row items-center justify-start gap-4">
-							<h1 class="font-title relative text-[24px] text-on-background">
+							<h1 class="font-title glow relative text-[24px] text-on-background">
 								{project.title}
 							</h1>
 						</div>

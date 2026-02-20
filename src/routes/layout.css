@@ -53,6 +53,11 @@
 			0px 0px 8px var(--color-on-primary),
 			0px 0px 4px var(--color-on-primary);
 	}
+
+	/* make color primary changes gradually */
+	:root {
+		transition: --color-primary 500ms;
+	}
 }
 
 /* Define extra colors here */
@@ -61,7 +66,6 @@
 	--color-holo-blue: #5194ea;
 	--color-holo-pink: #ef899a;
 	--color-holo-orange: #e99d7c;
-	transition-duration: 500;
 
 	/* shadow colors used for cards and texts */
 	--color-holo-pink-shadow: #e0b2b9;
@@ -81,5 +85,13 @@
 	--color-bg-1: #5194ea;
 	--color-bg-2: #73b5cd;
 	--color-bg-3: #6b7fb6;
-	--color-bg-4: #6794d3;
+	--color-bg-4: #38629e;
+}
+
+/* registers the primary color as a color property */
+/* this allows color to interpolate when setting a duration to gradually transform */
+@property --color-primary {
+	syntax: '<color>';
+	inherits: true;
+	initial-value: #5194ea;
 }

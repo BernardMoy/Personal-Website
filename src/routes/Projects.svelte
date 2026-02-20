@@ -29,7 +29,8 @@
 		<!-- individual project grid -->
 		{#each projects as project, index}
 			<div
-				class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6 shadow-xl/50 shadow-holo-pink-shadow duration-200 ease-out hover:-translate-y-1"
+				class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6 shadow-xl/50 shadow-holo-pink-shadow
+				transition-transform duration-200 ease-out hover:-translate-y-1"
 			>
 				<!-- image -->
 				<div class="group relative">

@@ -31,13 +31,13 @@
 	{/key}
 
 	<!-- centered text -->
-	<div class="absolute top-1/2 flex w-full -translate-y-1/2 flex-col items-center">
+	<div class="absolute top-1/2 z-24 flex w-full -translate-y-1/2 flex-col items-center">
 		<h1 class="glow-primary font-main-title text-[64px] text-on-primary">{top.title}</h1>
 		<h2 class="glow-primary font-main-title text-[36px] text-on-primary">{top.subtitle}</h2>
 	</div>
 
 	<!-- number buttons on the left -->
-	<div class="no-selection absolute top-0 m-4 mt-[96px] flex flex-col gap-4">
+	<div class="no-selection absolute top-0 z-26 m-4 mt-[96px] flex flex-col gap-4">
 		{#each { length: backgrounds.length } as _, i}
 			<Circle
 				text={(i + 1).toString()}
@@ -50,7 +50,7 @@
 	</div>
 
 	<!-- the rectangles on the top right displayed in 2 columns -->
-	<div class="absolute top-0 right-0 mt-[80px] flex flex-col">
+	<div class="absolute top-0 right-0 z-25 mt-[80px] flex flex-col">
 		<div class="no-selection grid grid-cols-2">
 			{#each backgrounds as bg, index}
 				<!-- scale within container -->

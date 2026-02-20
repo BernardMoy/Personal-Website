@@ -23,7 +23,7 @@
 	];
 </script>
 
-<!-- currently it has a fixed height of 80px -->
+<!-- currently it has a fixed height of 80px with z=50 -->
 <header
 	class="no-selection fixed top-0 z-50 flex h-[80px] w-full flex-row items-center gap-16 bg-white/75 px-16"
 >

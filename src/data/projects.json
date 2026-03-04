@@ -7,11 +7,25 @@
 		"description": "This beautiful website :)"
 	},
 	{
-		"image": "/project-images/cs310.png",
-		"title": "Lost and Found Mobile App",
-		"tags": ["Java", "Kotlin", "Jetpack Compose", "Firebase", "TensorFlow", "Testing"],
-		"github": "https://github.com/BernardMoy/Lost-and-Found",
-		"description": "A Lost and Found mobile app that allows users to post items. It matches items using an algorithm by comparing the images, categories and item attributes."
+		"image": "/project-images/nlp.png",
+		"title": "PCL Classification",
+		"tags": ["NLP", "PyTorch", "Language Models"],
+		"github": "https://github.com/BernardMoy/NLP-PCL-Classification",
+		"description": "Fine-tuning an ensemble of BERT and RoBERTa model for Patronizing and Condescending Language (PCL) classification."
+	},
+	{
+		"image": "/project-images/robot.png",
+		"title": "Robot Controller",
+		"tags": ["Reinforcement Learning", "PyTorch"],
+		"github": null,
+		"description": "Used robot learning algorithms to navigate a robot to the goal while avoiding obstacles."
+	},
+	{
+		"image": "/project-images/dl.png",
+		"title": "Deep Learning",
+		"tags": ["PyTorch"],
+		"github": null,
+		"description": "Implemented Variational Autoencoder and Latent Diffusion Model to generate hotdog images using PyTorch."
 	},
 	{
 		"image": "/project-images/advent-of-code.png",
@@ -19,6 +33,13 @@
 		"tags": ["Data Structures", "Algorithms"],
 		"github": "https://github.com/BernardMoy/Advent-of-Code-2025",
 		"description": "I participate in the Advent of Code programming challenges over the Christmas period every year."
+	},
+	{
+		"image": "/project-images/cs310.png",
+		"title": "Lost and Found Mobile App",
+		"tags": ["Java", "Kotlin", "Jetpack Compose", "Firebase", "TensorFlow", "Testing"],
+		"github": "https://github.com/BernardMoy/Lost-and-Found",
+		"description": "A Lost and Found mobile app that allows users to post items. It matches items using an algorithm by comparing the images, categories and item attributes."
 	},
 
 	{

@@ -16,7 +16,8 @@
 
 	<!-- About me separator -->
 	<img
-		class="relative z-10 h-[96px] w-full object-cover"
+		id="about-me"
+		class="relative z-10 h-[80px] w-full object-cover"
 		src="/images/sep-1.png"
 		alt="separation"
 	/>
@@ -52,7 +53,8 @@
 
 	<!-- Projects separator -->
 	<img
-		class="relative z-10 h-[96px] w-full object-cover"
+		id="projects"
+		class="relative z-10 h-[80px] w-full object-cover"
 		src="/images/sep-2.png"
 		alt="separation"
 	/>
@@ -89,7 +91,8 @@
 
 	<!-- Contact me separator -->
 	<img
-		class="relative z-10 h-[96px] w-full object-cover"
+		id="contact-me"
+		class="relative z-10 h-[80px] w-full object-cover"
 		src="/images/sep-3.png"
 		alt="separation"
 	/>

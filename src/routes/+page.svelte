@@ -6,25 +6,44 @@
 	import Top from './Top.svelte';
 	import ContactMe from './ContactMe.svelte';
 	import { onMount } from 'svelte';
+	import navigations from '../data/navigations.json';
 
-	let passedTopBar = false;
+	/*
+	Scroll index refers to which part the user has scrolled to: 
+	0 = top, 1 = about me, 2 = projects, 3 = contact me (according to the order in navigations.json)
+	which is used to control the change of primary colors. 
+	Changed when over 50% of the area is scrolled to the next page. 
+	*/
+	let scrollIndex: number = 0;
 
 	onMount(() => {
-		const topBar = document.getElementById('top');
-
+		// create observer that detects when the user intersects an element by 50%
 		const observer = new IntersectionObserver(
 			(entries) => {
-				passedTopBar = !entries[0].isIntersecting; // detect when the element no longer intersects (passed)
+				entries.forEach((entry, index) => {
+					// cast to html element
+					const el: HTMLElement = entry.target as HTMLElement;
+
+					// if intersects, change the scroll index to the data-scrollIndex data attribute
+					if (entry.isIntersecting) {
+						scrollIndex = Number(el.dataset.scrollindex);
+					}
+				});
 			},
 			{ threshold: 0.5 } // trigger the event when 50% of the element has been passed
 		);
 
-		if (topBar) observer.observe(topBar);
+		// observe all separator elements from navigation.json
+		for (const nav of navigations) {
+			const sep = document.querySelector(nav.navigationId);
+			if (sep) observer.observe(sep);
+		}
 
 		return () => observer.disconnect();
 	});
 
-	$: console.log(passedTopBar);
+	// test: Whenever the scroll index changes, log its new value
+	$: console.log(`Scroll index changed: ${scrollIndex}`);
 </script>
 
 <main>
@@ -32,7 +51,7 @@
 	<Topbar />
 
 	<!-- Top separator, for consistency -->
-	<div id="top"></div>
+	<div id="top" data-scrollindex="0"></div>
 
 	<!-- Top -->
 	<Top />
@@ -40,6 +59,7 @@
 	<!-- About me separator -->
 	<img
 		id="about-me"
+		data-scrollindex="1"
 		class="relative z-10 h-[80px] w-full object-cover"
 		src="/images/sep-1.png"
 		alt="separation"
@@ -77,6 +97,7 @@
 	<!-- Projects separator -->
 	<img
 		id="projects"
+		data-scrollindex="2"
 		class="relative z-10 h-[80px] w-full object-cover"
 		src="/images/sep-2.png"
 		alt="separation"
@@ -115,6 +136,7 @@
 	<!-- Contact me separator -->
 	<img
 		id="contact-me"
+		data-scrollindex="3"
 		class="relative z-10 h-[80px] w-full object-cover"
 		src="/images/sep-3.png"
 		alt="separation"

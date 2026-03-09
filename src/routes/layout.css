@@ -19,9 +19,9 @@
 /* Define global css styles here */
 @layer base {
 	/* Hide the scroll bar */
-	/* ::-webkit-scrollbar {
+	::-webkit-scrollbar {
 		display: none;
-	} */
+	}
 
 	/* Change selection color */
 	::selection {

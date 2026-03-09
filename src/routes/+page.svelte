@@ -5,11 +5,34 @@
 	import Projects from './Projects.svelte';
 	import Top from './Top.svelte';
 	import ContactMe from './ContactMe.svelte';
+	import { onMount } from 'svelte';
+
+	let passedTopBar = false;
+
+	onMount(() => {
+		const topBar = document.getElementById('top');
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				passedTopBar = !entries[0].isIntersecting; // detect when the element no longer intersects (passed)
+			},
+			{ threshold: 0.5 } // trigger the event when 50% of the element has been passed
+		);
+
+		if (topBar) observer.observe(topBar);
+
+		return () => observer.disconnect();
+	});
+
+	$: console.log(passedTopBar);
 </script>
 
 <main>
 	<!-- the fixed position top navigation bar -->
 	<Topbar />
+
+	<!-- Top separator, for consistency -->
+	<div id="top"></div>
 
 	<!-- Top -->
 	<Top />

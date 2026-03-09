@@ -1,26 +1,5 @@
 <script>
-	const navigations = [
-		{
-			name: 'Top',
-			navigationId: '#top',
-			color: 'var(--color-primary)'
-		},
-		{
-			name: 'About Me',
-			navigationId: '#about-me',
-			color: 'var(--color-holo-blue)'
-		},
-		{
-			name: 'Projects',
-			navigationId: '#projects',
-			color: 'var(--color-holo-pink)'
-		},
-		{
-			name: 'Contact Me',
-			navigationId: '#contact-me',
-			color: 'var(--color-holo-orange)'
-		}
-	];
+	import navigations from '../data/navigations.json';
 </script>
 
 <!-- currently it has a fixed height of 80px with z=50 -->

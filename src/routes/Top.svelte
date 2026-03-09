@@ -60,7 +60,7 @@
 	});
 </script>
 
-<div class="relative h-screen w-full overflow-x-clip text-center" id="top">
+<div class="relative h-screen w-full overflow-x-clip text-center">
 	<!-- large background image -->
 	{#key currentIndex}
 		<img

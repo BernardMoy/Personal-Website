@@ -30,7 +30,7 @@
 					}
 				});
 			},
-			{ threshold: 0.5 } // trigger the event when 50% of the element has been passed
+			{ rootMargin: '0px 0px -100% 0px', threshold: 0 } // trigger the event when the separator touches the top y of the screen
 		);
 
 		// observe all separator elements from navigation.json
@@ -50,121 +50,143 @@
 	<!-- the fixed position top navigation bar -->
 	<Topbar />
 
-	<!-- Top separator, for consistency -->
-	<div id="top" data-scrollindex="0"></div>
-
 	<!-- Top -->
-	<Top />
-
-	<!-- About me separator -->
-	<img
-		id="about-me"
-		data-scrollindex="1"
-		class="relative z-10 h-[80px] w-full object-cover"
-		src="/images/sep-1.png"
-		alt="separation"
-	/>
+	<section>
+		<!-- Top separator -->
+		<div id="top" data-scrollindex="0"></div>
+		<!-- Top (images) content -->
+		<Top />
+	</section>
 
 	<!-- About me -->
-	<section class="relative min-h-screen w-full">
-		<!-- background image -->
-		<div class="sticky top-0 h-screen w-full">
-			<img src="/images/bg-2.png" alt="bg-2" class="-z-20 h-full w-full object-cover opacity-40" />
-		</div>
-		<!-- additional deco -->
+	<section>
+		<!-- About me separator -->
+		<img
+			id="about-me"
+			data-scrollindex="1"
+			class="relative z-10 h-[80px] w-full object-cover"
+			src="/images/sep-1.png"
+			alt="separation"
+		/>
 
-		<div class="relative -mt-[100vh] flex w-full flex-col overflow-x-hidden overflow-y-hidden">
-			<!-- header -->
-			{@render HeaderAboutMe()}
-
-			<!-- content -->
-			<AboutMe />
+		<div class="relative min-h-screen w-full">
+			<!-- background image -->
+			<div class="sticky top-0 h-screen w-full">
+				<img
+					src="/images/bg-2.png"
+					alt="bg-2"
+					class="-z-20 h-full w-full object-cover opacity-40"
+				/>
+			</div>
 
 			<!-- additional deco -->
-			<img
-				src="/svgs/deco-circle-dot.svg"
-				alt="decoration"
-				class="absolute top-12 -left-55 -z-10 scale-75 rotate-90"
-			/>
-			<img
-				src="/svgs/deco-circle-dot.svg"
-				alt="decoration"
-				class="absolute -right-48 -bottom-4 -z-10 rotate-260"
-			/>
+			<div class="relative -mt-[100vh] flex w-full flex-col overflow-x-hidden overflow-y-hidden">
+				<!-- header -->
+				{@render HeaderAboutMe()}
+
+				<!-- content -->
+				<AboutMe />
+
+				<!-- additional deco -->
+				<img
+					src="/svgs/deco-circle-dot.svg"
+					alt="decoration"
+					class="absolute top-12 -left-55 -z-10 scale-75 rotate-90"
+				/>
+				<img
+					src="/svgs/deco-circle-dot.svg"
+					alt="decoration"
+					class="absolute -right-48 -bottom-4 -z-10 rotate-260"
+				/>
+			</div>
 		</div>
 	</section>
 
-	<!-- Projects separator -->
-	<img
-		id="projects"
-		data-scrollindex="2"
-		class="relative z-10 h-[80px] w-full object-cover"
-		src="/images/sep-2.png"
-		alt="separation"
-	/>
+	<!-- projects -->
+	<section>
+		<!-- Projects separator -->
+		<img
+			id="projects"
+			data-scrollindex="2"
+			class="relative z-10 h-[80px] w-full object-cover"
+			src="/images/sep-2.png"
+			alt="separation"
+		/>
 
-	<!-- Projects -->
-	<section class="relative min-h-screen w-full">
-		<!-- background image -->
-		<div class="sticky top-24 h-screen w-full">
-			<img src="/images/bg-3.png" alt="bg-3" class="-z-20 h-full w-full object-cover opacity-40" />
-		</div>
-		<!-- additional deco -->
-
-		<div class="relative -mt-[100vh] flex w-full flex-col overflow-x-hidden overflow-y-hidden">
-			<!-- header -->
-			{@render HeaderProjects()}
-
-			<!-- content -->
-			<Projects />
+		<!-- Projects -->
+		<div class="relative min-h-screen w-full">
+			<!-- background image -->
+			<div class="sticky top-24 h-screen w-full">
+				<img
+					src="/images/bg-3.png"
+					alt="bg-3"
+					class="-z-20 h-full w-full object-cover opacity-40"
+				/>
+			</div>
 
 			<!-- additional deco -->
-			<img
-				src="/svgs/deco-lines.svg"
-				alt="decoration"
-				class="absolute top-69 -left-24 -z-10 h-[190px] object-cover"
-			/>
+			<div class="relative -mt-[100vh] flex w-full flex-col overflow-x-hidden overflow-y-hidden">
+				<!-- header -->
+				{@render HeaderProjects()}
 
-			<img
-				src="/svgs/deco-lines.svg"
-				alt="decoration"
-				class="absolute top-24 -right-24 -z-10 h-[220px] rotate-150 object-cover"
-			/>
+				<!-- content -->
+				<Projects />
+
+				<!-- additional deco -->
+				<img
+					src="/svgs/deco-lines.svg"
+					alt="decoration"
+					class="absolute top-69 -left-24 -z-10 h-[190px] object-cover"
+				/>
+
+				<img
+					src="/svgs/deco-lines.svg"
+					alt="decoration"
+					class="absolute top-24 -right-24 -z-10 h-[220px] rotate-150 object-cover"
+				/>
+			</div>
 		</div>
 	</section>
 
-	<!-- Contact me separator -->
-	<img
-		id="contact-me"
-		data-scrollindex="3"
-		class="relative z-10 h-[80px] w-full object-cover"
-		src="/images/sep-3.png"
-		alt="separation"
-	/>
+	<!-- contact me -->
+	<section>
+		<!-- Contact me separator -->
+		<img
+			id="contact-me"
+			data-scrollindex="3"
+			class="relative z-10 h-[80px] w-full object-cover"
+			src="/images/sep-3.png"
+			alt="separation"
+		/>
 
-	<!-- Contact me -->
-	<section class="relative min-h-[75vh] w-full">
-		<!-- background image -->
-		<!-- move it down using translate because this part wont scroll normally -->
-		<div class="sticky top-0 h-[75vh] w-full translate-y-36 overflow-x-hidden overflow-y-hidden">
-			<img src="/images/bg-4.png" alt="bg-4" class="-z-20 h-full w-full object-cover opacity-40" />
+		<!-- Contact me -->
+		<div class="relative min-h-[75vh] w-full">
+			<!-- background image -->
+			<!-- move it down using translate because this part wont scroll normally -->
+			<div class="sticky top-0 h-[75vh] w-full translate-y-36 overflow-x-hidden overflow-y-hidden">
+				<img
+					src="/images/bg-4.png"
+					alt="bg-4"
+					class="-z-20 h-full w-full object-cover opacity-40"
+				/>
 
-			<!-- additional deco -->
-			<!-- need to stick with background because this is going to the bottom -->
-			<!-- this is different from above because normally the background wont stick here -->
-			<img
-				src="/svgs/deco-halftone.svg"
-				alt="decoration"
-				class="absolute -right-13 bottom-9 -z-10 h-[310px] object-cover"
-			/>
-		</div>
+				<!-- additional deco -->
+				<!-- need to stick with background because this is going to the bottom -->
+				<!-- this is different from above because normally the background wont stick here -->
+				<img
+					src="/svgs/deco-halftone.svg"
+					alt="decoration"
+					class="absolute -right-13 bottom-9 -z-10 h-[310px] object-cover"
+				/>
+			</div>
 
-		<div class="relative -mt-[75vh] flex w-full flex-col">
-			<!-- header -->
-			{@render HeaderContactMe()}
+			<div class="relative -mt-[75vh] flex w-full flex-col">
+				<!-- header -->
+				{@render HeaderContactMe()}
 
-			<!-- content -->
-			<ContactMe />
+				<!-- content -->
+				<ContactMe />
+			</div>
 		</div>
 	</section>
 

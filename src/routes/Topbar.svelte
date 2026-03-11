@@ -27,6 +27,7 @@
 			color 250ms ease-out;
 	}
 
+	/* when the top bar items are hovered, change the color and grow the background from center horizontally */
 	.sections:hover {
 		background-size: 100% 0.1em;
 		color: var(--hover-color);

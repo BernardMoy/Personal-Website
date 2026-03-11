@@ -18,7 +18,7 @@
 
 	onMount(() => {
 		// create observer that detects when the user intersects an element by 50%
-		const observer = new IntersectionObserver(
+		const observerForward = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry, index) => {
 					// cast to html element
@@ -33,13 +33,36 @@
 			{ rootMargin: '0px 0px -100% 0px', threshold: 0 } // trigger the event when the separator touches the top y of the screen
 		);
 
+		const observerBackward = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry, index) => {
+					// cast to html element
+					const el: HTMLElement = entry.target as HTMLElement;
+
+					// if intersects, change the scroll index to the data-scrollIndex data attribute
+					if (entry.isIntersecting) {
+						const n = Number(el.dataset.scrollindex);
+						if (scrollIndex == n && scrollIndex > 0) {
+							// scroll index = n mean the user is scrolling from bottom to top:
+							scrollIndex = n - 1;
+						}
+					}
+				});
+			},
+			{ rootMargin: '-100% 0px 0px 0px', threshold: 0 } // trigger the event when the separator touches the bottom y of the screen
+		);
+
 		// observe all separator elements from navigation.json
 		for (const nav of navigations) {
 			const sep = document.querySelector(nav.navigationId);
-			if (sep) observer.observe(sep);
+			if (sep) observerForward.observe(sep);
+			if (sep) observerBackward.observe(sep);
 		}
 
-		return () => observer.disconnect();
+		return () => {
+			observerForward.disconnect();
+			observerBackward.disconnect();
+		};
 	});
 
 	// test: Whenever the scroll index changes, log its new value

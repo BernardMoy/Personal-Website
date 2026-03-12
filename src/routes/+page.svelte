@@ -14,7 +14,7 @@
 	which is used to control the change of primary colors. 
 	Changed when over 50% of the area is scrolled to the next page. 
 	*/
-	let scrollIndex: number = 0;
+	let scrollIndex: number = $state(0);
 
 	onMount(() => {
 		// create observer that detects when the user intersects an element by 50%
@@ -66,7 +66,15 @@
 	});
 
 	// test: Whenever the scroll index changes, log its new value
-	$: console.log(`Scroll index changed: ${scrollIndex}`);
+	// $: console.log(`Scroll index changed: ${scrollIndex}`);
+
+	// change the primary color according when the scroll index changes
+	$effect(() => {
+		document.documentElement.style.setProperty(
+			'--color-primary',
+			navigations[scrollIndex]['color']
+		);
+	});
 </script>
 
 <main>

@@ -5,6 +5,10 @@
 	import { fade, scale } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
+	// the scrollIndex is passed from the root page to here
+	// to stop the transition when it is not 0 (Top)
+	let props = $props();
+
 	// the current index of the image displayed
 	var currentIndex = $state<number>(0);
 
@@ -51,12 +55,24 @@
 	// increments the index every certain seconds
 	onMount(() => {
 		progressBar = document.getElementById('progress-bar');
-		createInterval();
+		// createInterval();
 
 		// set index to instantly trigger the effects
 		setIndex(0);
 
 		return () => clearInterval(interval);
+	});
+
+	// clear the interval when the scroll index is not 0
+	$effect(() => {
+		const index = props.scrollIndex;
+		// re-create the interval if index changes to 0, else clear it
+		if (interval) {
+			clearInterval(interval);
+		}
+		if (index === 0) {
+			createInterval(); // also handles the initial creation, when the page lands at scroll index = 0
+		}
 	});
 </script>
 

@@ -86,7 +86,7 @@
 		<!-- Top separator -->
 		<div id="top" data-scrollindex="0"></div>
 		<!-- Top (images) content -->
-		<Top />
+		<Top {scrollIndex} />
 	</section>
 
 	<!-- About me -->

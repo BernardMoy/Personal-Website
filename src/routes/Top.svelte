@@ -16,7 +16,22 @@
 	var interval: NodeJS.Timeout;
 	var progressBar: HTMLElement | null;
 
+	// create an interval for the switching images that triggers by incrementing index
 	function createInterval() {
+		// reset the progress bar
+		// instantly go from scale 100 to scale 0
+		progressBar?.classList.remove('transition-transform');
+		progressBar?.classList.add('transition-none');
+		progressBar?.classList.remove('scale-x-100');
+		progressBar?.classList.add('scale-x-0');
+		progressBar?.offsetHeight; // refresh the element
+		// scale 0 to 100 in _ seconds
+		progressBar?.classList.remove('transition-none');
+		progressBar?.classList.add('transition-transform');
+		progressBar?.classList.remove('scale-x-0');
+		progressBar?.classList.add('scale-x-100');
+
+		// create the interval
 		interval = setInterval(() => {
 			// display the next image
 			setIndex((currentIndex + 1) % backgrounds.length);
@@ -57,10 +72,10 @@
 		progressBar = document.getElementById('progress-bar');
 		// createInterval();
 
-		// set index to instantly trigger the effects
-		setIndex(0);
+		// // set index to instantly trigger the effects
+		// setIndex(0);  -- handled in the creare interval function
 
-		return () => clearInterval(interval);
+		// return () => clearInterval(interval);
 	});
 
 	// clear the interval when the scroll index is not 0
@@ -73,6 +88,10 @@
 		if (index === 0) {
 			createInterval(); // also handles the initial creation, when the page lands at scroll index = 0
 		}
+
+		return () => {
+			if (interval) clearInterval(interval);
+		};
 	});
 </script>
 

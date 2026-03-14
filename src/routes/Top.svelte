@@ -18,18 +18,8 @@
 
 	// create an interval for the switching images that triggers by incrementing index
 	function createInterval() {
-		// reset the progress bar
-		// instantly go from scale 100 to scale 0
-		progressBar?.classList.remove('transition-transform');
-		progressBar?.classList.add('transition-none');
-		progressBar?.classList.remove('scale-x-100');
-		progressBar?.classList.add('scale-x-0');
-		progressBar?.offsetHeight; // refresh the element
-		// scale 0 to 100 in _ seconds
-		progressBar?.classList.remove('transition-none');
-		progressBar?.classList.add('transition-transform');
-		progressBar?.classList.remove('scale-x-0');
-		progressBar?.classList.add('scale-x-100');
+		// call the set index function immediately
+		setIndex(currentIndex);
 
 		// create the interval
 		interval = setInterval(() => {
@@ -59,12 +49,6 @@
 		progressBar?.classList.add('transition-transform');
 		progressBar?.classList.remove('scale-x-0');
 		progressBar?.classList.add('scale-x-100');
-
-		// reset the interval
-		if (interval) {
-			clearInterval(interval);
-			createInterval();
-		}
 	}
 
 	// increments the index every certain seconds
@@ -89,6 +73,7 @@
 			createInterval(); // also handles the initial creation, when the page lands at scroll index = 0
 		}
 
+		// cleanup function
 		return () => {
 			if (interval) clearInterval(interval);
 		};
@@ -120,6 +105,12 @@
 				text={(i + 1).toString()}
 				onclick={() => {
 					setIndex(i);
+
+					// reset the interval
+					if (interval) {
+						clearInterval(interval);
+						createInterval();
+					}
 				}}
 				selected={i == currentIndex}
 			></Circle>
@@ -134,7 +125,15 @@
 				<button
 					aria-label={bg.name}
 					class="group h-[64px] w-[160px] cursor-pointer overflow-hidden"
-					onclick={() => setIndex(index)}
+					onclick={() => {
+						setIndex(index);
+
+						// reset the interval
+						if (interval) {
+							clearInterval(interval);
+							createInterval();
+						}
+					}}
 				>
 					<img
 						src={bg.url}

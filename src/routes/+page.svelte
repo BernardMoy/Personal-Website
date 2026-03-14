@@ -65,11 +65,10 @@
 		};
 	});
 
-	// test: Whenever the scroll index changes, log its new value
-	// $: console.log(`Scroll index changed: ${scrollIndex}`);
-
 	// change the primary color according when the scroll index changes
+	// except when the scrollIndex = 0, which is handled in Top.svelte
 	$effect(() => {
+		if (scrollIndex == 0) return;
 		document.documentElement.style.setProperty(
 			'--color-primary',
 			navigations[scrollIndex]['color']

@@ -227,7 +227,7 @@
 
 	<!-- the fixed scroll to next page arrow down button -->
 	<div class="no-selection fixed bottom-8 z-50 flex w-full flex-col items-center">
-		<CircleArrow onclick={() => {}}></CircleArrow>
+		<CircleArrow scrollindex={scrollIndex} onclick={() => {}}></CircleArrow>
 	</div>
 </main>
 

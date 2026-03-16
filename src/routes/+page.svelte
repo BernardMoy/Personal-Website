@@ -17,6 +17,17 @@
 	let scrollIndex: number = $state(0);
 
 	onMount(() => {
+		// retrieve saved scroll index from browser
+		const savedScrollIndex = localStorage.getItem('scrollIndex');
+		if (savedScrollIndex) {
+			scrollIndex = Number(savedScrollIndex);
+		}
+
+		// whenever scroll index changes, update its browser storage value
+		$effect(() => {
+			localStorage.setItem('scrollIndex', scrollIndex.toString());
+		});
+
 		// create observer that detects when the user intersects an element by 50%
 		const observerForward = new IntersectionObserver(
 			(entries) => {

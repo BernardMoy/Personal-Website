@@ -1,5 +1,12 @@
-<script>
+<script lang="ts">
 	import navigations from '../data/navigations.json';
+
+	function handleHeaderClick(navigationId: string) {
+		const element = document.getElementById(navigationId);
+		element?.scrollIntoView({
+			behavior: 'smooth'
+		});
+	}
 </script>
 
 <!-- currently it has a fixed height of 80px with z=50 -->
@@ -7,9 +14,9 @@
 	class="no-selection fixed top-0 z-50 flex h-[80px] w-full flex-row items-center gap-16 bg-white/75 px-16"
 >
 	{#each navigations as { name, navigationId, color }}
-		<a href={navigationId} class="font-title text-[16px]"
-			><span class="sections" style={`--hover-color: ${color};`}>{name}</span></a
-		>
+		<button class="font-title text-[16px]" onclick={() => handleHeaderClick(navigationId)}
+			><span class="sections" style={`--hover-color: ${color};`}>{name}</span>
+		</button>
 	{/each}
 </header>
 

@@ -65,7 +65,7 @@
 
 		// observe all separator elements from navigation.json
 		for (const nav of navigations) {
-			const sep = document.querySelector(nav.navigationId);
+			const sep = document.getElementById(nav.navigationId);
 			if (sep) observerForward.observe(sep);
 			if (sep) observerBackward.observe(sep);
 		}
@@ -85,6 +85,16 @@
 			navigations[scrollIndex]['color']
 		);
 	});
+
+	// for the floating down / up button click
+	function handleCircleButtonClick() {
+		const newIndex: number = (scrollIndex + 1) % navigations.length;
+		const element: HTMLElement | null = document.getElementById(navigations[newIndex].navigationId);
+		console.log(element);
+		element?.scrollIntoView({
+			behavior: 'smooth'
+		});
+	}
 </script>
 
 <main>
@@ -238,7 +248,7 @@
 
 	<!-- the fixed scroll to next page arrow down button -->
 	<div class="no-selection fixed bottom-8 z-50 flex w-full flex-col items-center">
-		<CircleArrow scrollindex={scrollIndex} onclick={() => {}}></CircleArrow>
+		<CircleArrow scrollindex={scrollIndex} onclick={handleCircleButtonClick}></CircleArrow>
 	</div>
 </main>
 

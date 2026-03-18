@@ -14,7 +14,9 @@
 	class="no-selection fixed top-0 z-50 flex h-[80px] w-full flex-row items-center gap-16 bg-white/75 px-16"
 >
 	{#each navigations as { name, navigationId, color }}
-		<button class="font-title text-[16px]" onclick={() => handleHeaderClick(navigationId)}
+		<button
+			class="font-title text-[16px] hover:cursor-pointer"
+			onclick={() => handleHeaderClick(navigationId)}
 			><span class="sections" style={`--hover-color: ${color};`}>{name}</span>
 		</button>
 	{/each}

@@ -22,12 +22,12 @@
 <button
 	class="group flex h-[48px] w-[48px] items-center justify-center rounded-full
 	border-1 border-on-primary bg-primary shadow-xl/50 shadow-primary
-	transition-transform duration-300 ease-out not-first:cursor-pointer hover:-translate-y-1"
+	transition-transform duration-300 ease-out hover:-translate-y-1 hover:cursor-pointer"
 	aria-label="next page"
 	{onclick}
 >
 	<!-- wrap in a div to enable scaling of the arrow down icon -->
-	<div class="h-[15px] w-[28px] duration-300 ease-out group-hover:scale-80" id="circle-arrow">
+	<div class="h-[15px] w-[28px] duration-300 ease-out group-active:scale-80" id="circle-arrow">
 		<svg fill="none" viewBox="0 0 28 15"
 			><path
 				fill="#fff"

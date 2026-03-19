@@ -63,16 +63,34 @@
 			{ rootMargin: '-100% 0px 0px 0px', threshold: 0 } // trigger the event when the separator touches the bottom y of the screen
 		);
 
+		// observer to perform scroll snapping when the user navigates a certain percentage to the next element
+		// const observerSnap = new IntersectionObserver((entries) => {
+		// 	entries.forEach(
+		// 		(entry, index) => {
+		// 			if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
+		// 				console.log('Here');
+		// 				// scroll to the element
+		// 				entry.target.scrollIntoView({
+		// 					behavior: 'smooth'
+		// 				});
+		// 			}
+		// 		},
+		// 		{ rootMargin: '0px 0px -120% 0px', threshold: 0 }
+		// 	);
+		// });
+
 		// observe all separator elements from navigation.json
 		for (const nav of navigations) {
 			const sep = document.getElementById(nav.navigationId);
 			if (sep) observerForward.observe(sep);
 			if (sep) observerBackward.observe(sep);
+			// if (sep) observerSnap.observe(sep);
 		}
 
 		return () => {
 			observerForward.disconnect();
 			observerBackward.disconnect();
+			// observerSnap.disconnect();
 		};
 	});
 
@@ -104,7 +122,7 @@
 	<!-- Top -->
 	<section>
 		<!-- Top separator -->
-		<div id="top" data-scrollindex="0"></div>
+		<div id="top" data-scrollindex="0" class="separator"></div>
 		<!-- Top (images) content -->
 		<Top {scrollIndex} />
 	</section>
@@ -115,7 +133,7 @@
 		<img
 			id="about-me"
 			data-scrollindex="1"
-			class="relative z-10 h-[80px] w-full object-cover"
+			class="separator relative z-10 h-[80px] w-full object-cover"
 			src="/images/sep-1.png"
 			alt="separation"
 		/>
@@ -159,7 +177,7 @@
 		<img
 			id="projects"
 			data-scrollindex="2"
-			class="relative z-10 h-[80px] w-full object-cover"
+			class="separator relative z-10 h-[80px] w-full object-cover"
 			src="/images/sep-2.png"
 			alt="separation"
 		/>
@@ -205,7 +223,7 @@
 		<img
 			id="contact-me"
 			data-scrollindex="3"
-			class="relative z-10 h-[80px] w-full object-cover"
+			class="separator relative z-10 h-[80px] w-full object-cover"
 			src="/images/sep-3.png"
 			alt="separation"
 		/>

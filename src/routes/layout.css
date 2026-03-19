@@ -54,9 +54,16 @@
 			0px 0px 4px var(--color-on-primary);
 	}
 
+	/* make all separators scroll snapped */
+	.separator {
+		scroll-snap-align: start;
+	}
+
 	/* make color primary changes gradually */
 	:root {
 		transition: --color-primary 500ms;
+		scroll-snap-type: y proximity;
+		scroll-behavior: smooth;
 	}
 }
 

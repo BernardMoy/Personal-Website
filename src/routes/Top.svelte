@@ -5,6 +5,10 @@
 	import { fade, scale } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
+	// the scrollIndex is passed from the root page to here
+	// to stop the transition when it is not 0 (Top)
+	let props = $props();
+
 	// the current index of the image displayed
 	var currentIndex = $state<number>(0);
 
@@ -12,7 +16,12 @@
 	var interval: NodeJS.Timeout;
 	var progressBar: HTMLElement | null;
 
+	// create an interval for the switching images that triggers by incrementing index
 	function createInterval() {
+		// call the set index function immediately
+		setIndex(currentIndex);
+
+		// create the interval
 		interval = setInterval(() => {
 			// display the next image
 			setIndex((currentIndex + 1) % backgrounds.length);
@@ -40,23 +49,34 @@
 		progressBar?.classList.add('transition-transform');
 		progressBar?.classList.remove('scale-x-0');
 		progressBar?.classList.add('scale-x-100');
-
-		// reset the interval
-		if (interval) {
-			clearInterval(interval);
-			createInterval();
-		}
 	}
 
 	// increments the index every certain seconds
 	onMount(() => {
 		progressBar = document.getElementById('progress-bar');
-		createInterval();
+		// createInterval();
 
-		// set index to instantly trigger the effects
-		setIndex(0);
+		// // set index to instantly trigger the effects
+		// setIndex(0);  -- handled in the creare interval function
 
-		return () => clearInterval(interval);
+		// return () => clearInterval(interval);
+	});
+
+	// clear the interval when the scroll index is not 0
+	$effect(() => {
+		const index = props.scrollIndex;
+		// re-create the interval if index changes to 0, else clear it
+		if (interval) {
+			clearInterval(interval);
+		}
+		if (index === 0) {
+			createInterval(); // also handles the initial creation, when the page lands at scroll index = 0
+		}
+
+		// cleanup function
+		return () => {
+			if (interval) clearInterval(interval);
+		};
 	});
 </script>
 
@@ -85,6 +105,12 @@
 				text={(i + 1).toString()}
 				onclick={() => {
 					setIndex(i);
+
+					// reset the interval
+					if (interval) {
+						clearInterval(interval);
+						createInterval();
+					}
 				}}
 				selected={i == currentIndex}
 			></Circle>
@@ -99,7 +125,15 @@
 				<button
 					aria-label={bg.name}
 					class="group h-[64px] w-[160px] cursor-pointer overflow-hidden"
-					onclick={() => setIndex(index)}
+					onclick={() => {
+						setIndex(index);
+
+						// reset the interval
+						if (interval) {
+							clearInterval(interval);
+							createInterval();
+						}
+					}}
 				>
 					<img
 						src={bg.url}

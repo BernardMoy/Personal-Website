@@ -1,16 +1,33 @@
 <script lang="ts">
-	let { onclick }: { onclick: () => void } = $props();
+	import { onMount } from 'svelte';
+	import navigations from '../data/navigations.json';
+	let { scrollindex, onclick }: { scrollindex: number; onclick: () => void } = $props();
+
+	var arrow: HTMLElement | null;
+	onMount(() => {
+		arrow = document.getElementById('circle-arrow');
+	});
+
+	// when the scrollIndex reaches the last index (i.e. the user scrolled to the last section)
+	// then rotate the svg to point back up
+	$effect(() => {
+		if (scrollindex === navigations.length - 1) {
+			arrow?.classList.add('rotate-180');
+		} else {
+			arrow?.classList.remove('rotate-180');
+		}
+	});
 </script>
 
 <button
-	class="group flex h-[48px] w-[48px] cursor-pointer items-center justify-center rounded-full
+	class="group flex h-[48px] w-[48px] items-center justify-center rounded-full
 	border-1 border-on-primary bg-primary shadow-xl/50 shadow-primary
-	transition-transform duration-300 ease-out hover:-translate-y-1"
+	transition-transform duration-300 ease-out hover:-translate-y-1 hover:cursor-pointer"
 	aria-label="next page"
 	{onclick}
 >
 	<!-- wrap in a div to enable scaling of the arrow down icon -->
-	<div class="h-[15px] w-[28px] duration-300 ease-out group-hover:scale-80">
+	<div class="h-[15px] w-[28px] duration-300 ease-out group-active:scale-80" id="circle-arrow">
 		<svg fill="none" viewBox="0 0 28 15"
 			><path
 				fill="#fff"

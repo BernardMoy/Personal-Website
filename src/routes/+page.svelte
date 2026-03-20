@@ -277,7 +277,7 @@
 		<img
 			src="/svgs/header-grid.svg"
 			alt="header-grid"
-			class="h-[160px] w-full object-cover opacity-40"
+			class="h-[160px] w-full object-cover object-left opacity-40"
 		/>
 		<!-- header title -->
 		<h1
@@ -289,7 +289,7 @@
 		<img
 			src="/svgs/code-text.svg"
 			alt="decoration"
-			class="absolute top-0 right-0 h-[160px] object-cover"
+			class="absolute top-0 -right-35 h-[160px] object-cover md:right-0"
 		/>
 	</div>
 {/snippet}
@@ -300,7 +300,7 @@
 		<img
 			src="/svgs/header-strip.svg"
 			alt="header-strip"
-			class="h-[160px] w-full object-cover opacity-40"
+			class="h-[160px] w-full object-cover object-left opacity-40"
 		/>
 		<!-- header title -->
 		<h1
@@ -317,7 +317,7 @@
 		<img
 			src="/svgs/header-dots.svg"
 			alt="header-dots"
-			class="h-[160px] w-full object-cover opacity-65"
+			class="h-[160px] w-full object-cover object-left opacity-65"
 		/>
 		<!-- header title -->
 		<h1

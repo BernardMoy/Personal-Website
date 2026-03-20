@@ -18,7 +18,7 @@
 
 	<!-- the number text -->
 	<div
-		class="font-title z-16 text-[18px] {selected
+		class="font-title z-16 text-[1rem] {selected
 			? 'text-primary'
 			: 'text-on-primary'} group-hover:text-primary"
 	>

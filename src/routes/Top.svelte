@@ -94,8 +94,12 @@
 
 	<!-- centered text -->
 	<div class="absolute top-1/2 z-24 flex w-full -translate-y-1/2 flex-col items-center">
-		<h1 class="glow-primary font-main-title text-[64px] text-on-primary">{top.title}</h1>
-		<h2 class="glow-primary font-main-title text-[36px] text-on-primary">{top.subtitle}</h2>
+		<h1 class="glow-primary font-main-title text-[3rem] text-on-primary sm:text-[4rem]">
+			{top.title}
+		</h1>
+		<h2 class="glow-primary font-main-title text-[1.5rem] text-on-primary sm:text-[2rem]">
+			{top.subtitle}
+		</h2>
 	</div>
 
 	<!-- number buttons on the left -->

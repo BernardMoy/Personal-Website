@@ -19,7 +19,7 @@
 					><path fill="var(--color-on-background)" d={contact.svgData} class="svg-icon" /></svg
 				>
 
-				<p class="font-body glow text-[24px] text-on-background">
+				<p class="font-body glow text-[1.5rem] text-on-background">
 					<span class="contact-text">
 						{contact.text}
 					</span>

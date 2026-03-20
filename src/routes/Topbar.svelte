@@ -11,11 +11,11 @@
 
 <!-- currently it has a fixed height of 80px with z=50 -->
 <header
-	class="no-selection fixed top-0 z-50 flex h-[80px] w-full flex-row items-center gap-16 bg-white/75 px-16"
+	class="no-selection fixed top-0 z-50 flex h-[80px] w-full flex-row items-center justify-between bg-white/75 px-16 md:justify-start md:gap-16"
 >
 	{#each navigations as { name, navigationId, color }}
 		<button
-			class="font-title text-[16px] hover:cursor-pointer"
+			class="font-title text-[1rem] hover:cursor-pointer"
 			onclick={() => handleHeaderClick(navigationId)}
 			><span class="sections" style={`--hover-color: ${color};`}>{name}</span>
 		</button>

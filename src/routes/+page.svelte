@@ -144,7 +144,7 @@
 				<img
 					src="/images/bg-2.png"
 					alt="bg-2"
-					class="-z-20 h-full w-full object-cover opacity-40"
+					class="-z-20 h-full w-full object-cover opacity-30"
 				/>
 			</div>
 
@@ -189,7 +189,7 @@
 				<img
 					src="/images/bg-3.png"
 					alt="bg-3"
-					class="-z-20 h-full w-full object-cover opacity-40"
+					class="-z-20 h-full w-full object-cover opacity-30"
 				/>
 			</div>
 
@@ -236,7 +236,7 @@
 				<img
 					src="/images/bg-4.png"
 					alt="bg-4"
-					class="-z-20 h-full w-full object-cover opacity-40"
+					class="-z-20 h-full w-full object-cover opacity-30"
 				/>
 
 				<!-- additional deco -->
@@ -281,7 +281,7 @@
 		/>
 		<!-- header title -->
 		<h1
-			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-blue"
+			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[3rem] text-holo-blue"
 		>
 			About Me
 		</h1>
@@ -304,7 +304,7 @@
 		/>
 		<!-- header title -->
 		<h1
-			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-pink"
+			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[3rem] text-holo-pink"
 		>
 			Projects
 		</h1>
@@ -321,7 +321,7 @@
 		/>
 		<!-- header title -->
 		<h1
-			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-orange"
+			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[3rem] text-holo-orange"
 		>
 			Contact Me
 		</h1>

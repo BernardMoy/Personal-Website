@@ -18,7 +18,7 @@
 	<!-- intro paragraph -->
 	<div class="flex flex-col items-start justify-start gap-8">
 		{#each projectsParagraph as para}
-			<p class="font-body glow text-[18px] text-on-background">
+			<p class="font-body glow text-[1rem] text-on-background">
 				{@html para.replaceAll('[', '<span class="text-holo-pink">').replaceAll(']', '</span>')}
 			</p>
 		{/each}
@@ -42,7 +42,7 @@
 
 					<!-- overlay -->
 					<div
-						class="font-body absolute top-0 z-30 flex h-[220px] w-full origin-bottom scale-y-0 items-center justify-center rounded-tl-xl rounded-tr-xl bg-on-background/90 p-6 text-center text-[18px]
+						class="font-body absolute top-0 z-30 flex h-[220px] w-full origin-bottom scale-y-0 items-center justify-center rounded-tl-xl rounded-tr-xl bg-on-background/90 p-6 text-center text-[1rem]
 						break-normal text-on-primary transition-transform duration-200 ease-out {overlayStates[index]
 							? 'scale-y-100'
 							: 'scale-y-0'}"
@@ -59,7 +59,7 @@
 							href={project.github}
 							target="_blank"
 						>
-							<h1 class=" font-title relative text-[24px] text-on-background">
+							<h1 class=" font-title relative text-[1.5rem] text-on-background">
 								<!-- span wrapper to make the text inline -->
 								<!-- so the sliding underline animation works when -->
 								<!-- the text is broken into multiple lines -->
@@ -79,7 +79,7 @@
 						</a>
 					{:else}
 						<div class="flex flex-row items-center justify-start gap-4">
-							<h1 class="font-title glow relative text-[24px] text-on-background">
+							<h1 class="font-title glow relative text-[1.5rem] text-on-background">
 								{project.title}
 							</h1>
 						</div>
@@ -111,7 +111,7 @@
 				<ul class="flex max-w-full flex-wrap gap-x-4 gap-y-2 px-6">
 					{#each project.tags as tag}
 						<li
-							class="font-body px-2 text-[18px] text-on-background"
+							class="font-body px-2 text-[1rem] text-on-background"
 							style="background-color: {projectsTagsColors[tag]
 								? projectsTagsColors[tag]
 								: projectsTagsColors['default']}"

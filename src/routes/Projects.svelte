@@ -16,7 +16,8 @@
 
 	// number of projects to display vertically, cols 1, per page
 	const ITEMS_PER_PAGE = 6;
-	let displayedProjects = $state(projects);
+	let limit = $state(ITEMS_PER_PAGE);
+	let displayedProjects = $derived(projects.slice(0, limit));
 </script>
 
 <div class="mx-16 flex flex-col gap-16 py-16">
@@ -131,7 +132,15 @@
 
 	<!-- the show more button -->
 	<div class="mx-auto shrink items-center">
-		<Rectangle text="Show more" onclick={() => {}} />
+		{#if limit !== projects.length}
+			<Rectangle
+				text="Show more"
+				onclick={() => {
+					// increase the limit by 6, or until max is reached
+					limit = Math.min(limit + 6, projects.length);
+				}}
+			/>
+		{/if}
 	</div>
 </div>
 

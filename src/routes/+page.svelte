@@ -289,7 +289,7 @@
 		<img
 			src="/svgs/code-text.svg"
 			alt="decoration"
-			class="absolute top-0 -right-35 h-[160px] object-cover md:right-0"
+			class="absolute top-0 -right-55 h-[160px] object-cover sm:-right-35 md:right-0"
 		/>
 	</div>
 {/snippet}

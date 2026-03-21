@@ -4,6 +4,7 @@
 	import projects from '../data/projects.json';
 	import projectsTagsColors from '../data/projects-tags-colors.json';
 	import projectsParagraph from '../data/projects-paragraph.json';
+	import Rectangle from './Rectangle.svelte';
 
 	// stores a list of indices with overlay turned on, initially all false
 	let overlayStates = $state(new Array<boolean>(projects.length).fill(false));
@@ -12,6 +13,10 @@
 	const handleInfoClick = (index: number) => {
 		overlayStates[index] = !overlayStates[index];
 	};
+
+	// number of projects to display vertically, cols 1, per page
+	const ITEMS_PER_PAGE = 6;
+	let displayedProjects = $state(projects);
 </script>
 
 <div class="mx-16 flex flex-col gap-16 py-16">
@@ -27,7 +32,7 @@
 	<!-- project list -->
 	<div class=" grid grid-cols-1 gap-8 md:grid-cols-3">
 		<!-- individual project grid -->
-		{#each projects as project, index}
+		{#each displayedProjects as project, index}
 			<div
 				class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6 shadow-xl/50 shadow-holo-pink-shadow
 				transition-transform duration-200 ease-out hover:-translate-y-1"
@@ -122,6 +127,11 @@
 				</ul>
 			</div>
 		{/each}
+	</div>
+
+	<!-- the show more button -->
+	<div class="mx-auto shrink items-center">
+		<Rectangle text="Show more" onclick={() => {}} />
 	</div>
 </div>
 

@@ -7,6 +7,7 @@
 	import ContactMe from './ContactMe.svelte';
 	import { onMount } from 'svelte';
 	import navigations from '../data/navigations.json';
+	import Ending from './Ending.svelte';
 
 	/*
 	Scroll index refers to which part the user has scrolled to: 
@@ -246,7 +247,7 @@
 	<!-- Ending -->
 	<!-- Add an min height to avoid shrinking too much, causing it to auto scroll back above -->
 	<section class="relative w-full">
-		<img src="/images/bg-5.png" alt="bg-5" class="-z-8 min-h-[75vh] w-full object-cover" />
+		<Ending />
 	</section>
 
 	<!-- the fixed scroll to next page arrow down button -->

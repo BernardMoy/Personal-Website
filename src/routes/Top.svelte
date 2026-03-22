@@ -95,12 +95,17 @@
 
 	<!-- centered text -->
 	<div class="absolute top-1/2 z-24 flex w-full -translate-y-1/2 flex-col items-center">
-		<h1 class="glow-primary font-main-title text-[3rem] text-on-primary sm:text-[4rem]">
-			{top.title}
-		</h1>
-		<h2 class="glow-primary font-main-title text-[1.5rem] text-on-primary sm:text-[2rem]">
-			{top.subtitle}
-		</h2>
+		<FadeIn delay={250} effect="zoom">
+			<h1 class="glow-primary font-main-title text-[3rem] text-on-primary sm:text-[4rem]">
+				{top.title}
+			</h1>
+		</FadeIn>
+
+		<FadeIn delay={450} effect="zoom">
+			<h2 class="glow-primary font-main-title text-[1.5rem] text-on-primary sm:text-[2rem]">
+				{top.subtitle}
+			</h2>
+		</FadeIn>
 	</div>
 
 	<!-- number buttons on the left -->
@@ -128,7 +133,7 @@
 	<div class="absolute top-0 right-0 z-25 mt-[80px] flex flex-col">
 		<div class="no-selection grid grid-cols-2">
 			{#each backgrounds as bg, index}
-				<FadeIn delay={200 * index + 50} translate={false}>
+				<FadeIn delay={200 * index + 50} effect="none">
 					<!-- scale within container -->
 					<button
 						aria-label={bg.name}

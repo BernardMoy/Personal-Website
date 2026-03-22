@@ -1,6 +1,10 @@
+<!--Circular button with sliding hovering effect -->
 <script lang="ts">
-	let { text, onclick, selected }: { text: string; onclick: () => void; selected: boolean } =
-		$props();
+	let {
+		text,
+		onclick,
+		selected = false
+	}: { text: string; onclick: () => void; selected: boolean } = $props();
 </script>
 
 <!-- Fixed blue circle right now -->
@@ -12,15 +16,15 @@
 >
 	<!-- the background hover cover that scales from left to right -->
 	<span
-		class="cover absolute z-15 h-[48px] w-[48px] origin-left scale-x-0 bg-on-primary duration-500 ease-in-out group-hover:scale-x-100"
+		class="absolute z-15 h-[48px] w-[48px] origin-left scale-x-0 bg-on-primary duration-500 ease-in-out group-hover:scale-x-100"
 	>
 	</span>
 
 	<!-- the number text -->
 	<div
-		class="font-title z-16 text-[18px] {selected
+		class="font-title z-16 text-[1.2rem] {selected
 			? 'text-primary'
-			: 'text-on-primary'} group-hover:text-primary"
+			: 'text-on-primary'} duration-300 group-hover:text-primary group-active:scale-80"
 	>
 		{text}
 	</div>

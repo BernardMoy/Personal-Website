@@ -49,9 +49,9 @@
 	/* text glow */
 	.glow {
 		text-shadow:
-			0px 0px 16px var(--color-on-primary),
-			0px 0px 8px var(--color-on-primary),
-			0px 0px 4px var(--color-on-primary);
+			0px 0px 2rem var(--color-on-primary),
+			0px 0px 1rem var(--color-on-primary),
+			0px 0px 0.5rem var(--color-on-primary);
 	}
 
 	/* make all separators scroll snapped */
@@ -64,6 +64,7 @@
 		transition: --color-primary 500ms;
 		scroll-snap-type: y proximity;
 		scroll-behavior: smooth;
+		font-size: 16px; /* use browser default, 16px = 1 rem */
 	}
 }
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CircleArrow from './CircleArrow.svelte';
+	import FloatingArrowButton from './FloatingArrowButton.svelte';
 	import Topbar from './Topbar.svelte';
 	import AboutMe from './AboutMe.svelte';
 	import Projects from './Projects.svelte';
@@ -7,6 +7,7 @@
 	import ContactMe from './ContactMe.svelte';
 	import { onMount } from 'svelte';
 	import navigations from '../data/navigations.json';
+	import Ending from './Ending.svelte';
 
 	/*
 	Scroll index refers to which part the user has scrolled to: 
@@ -63,22 +64,6 @@
 			{ rootMargin: '-100% 0px 0px 0px', threshold: 0 } // trigger the event when the separator touches the bottom y of the screen
 		);
 
-		// observer to perform scroll snapping when the user navigates a certain percentage to the next element
-		// const observerSnap = new IntersectionObserver((entries) => {
-		// 	entries.forEach(
-		// 		(entry, index) => {
-		// 			if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
-		// 				console.log('Here');
-		// 				// scroll to the element
-		// 				entry.target.scrollIntoView({
-		// 					behavior: 'smooth'
-		// 				});
-		// 			}
-		// 		},
-		// 		{ rootMargin: '0px 0px -120% 0px', threshold: 0 }
-		// 	);
-		// });
-
 		// observe all separator elements from navigation.json
 		for (const nav of navigations) {
 			const sep = document.getElementById(nav.navigationId);
@@ -105,7 +90,7 @@
 	});
 
 	// for the floating down / up button click
-	function handleCircleButtonClick() {
+	function handleFloatingArrowClick() {
 		const newIndex: number = (scrollIndex + 1) % navigations.length;
 		const element: HTMLElement | null = document.getElementById(navigations[newIndex].navigationId);
 		console.log(element);
@@ -144,7 +129,7 @@
 				<img
 					src="/images/bg-2.png"
 					alt="bg-2"
-					class="-z-20 h-full w-full object-cover opacity-40"
+					class="-z-20 h-full w-full object-cover opacity-30"
 				/>
 			</div>
 
@@ -160,7 +145,7 @@
 				<img
 					src="/svgs/deco-circle-dot.svg"
 					alt="decoration"
-					class="absolute top-12 -left-55 -z-10 scale-75 rotate-90"
+					class="absolute top-12 -left-60 -z-10 scale-75 rotate-90"
 				/>
 				<img
 					src="/svgs/deco-circle-dot.svg"
@@ -189,7 +174,7 @@
 				<img
 					src="/images/bg-3.png"
 					alt="bg-3"
-					class="-z-20 h-full w-full object-cover opacity-40"
+					class="-z-20 h-full w-full object-cover opacity-30"
 				/>
 			</div>
 
@@ -205,13 +190,13 @@
 				<img
 					src="/svgs/deco-lines.svg"
 					alt="decoration"
-					class="absolute top-69 -left-24 -z-10 h-[190px] object-cover"
+					class="absolute top-69 -left-32 -z-10 h-[190px] object-cover md:-left-24"
 				/>
 
 				<img
 					src="/svgs/deco-lines.svg"
 					alt="decoration"
-					class="absolute top-24 -right-24 -z-10 h-[220px] rotate-150 object-cover"
+					class="absolute top-24 -right-32 -z-10 h-[220px] rotate-150 object-cover md:-right-24"
 				/>
 			</div>
 		</div>
@@ -236,7 +221,7 @@
 				<img
 					src="/images/bg-4.png"
 					alt="bg-4"
-					class="-z-20 h-full w-full object-cover opacity-40"
+					class="-z-20 h-full w-full object-cover opacity-30"
 				/>
 
 				<!-- additional deco -->
@@ -245,7 +230,7 @@
 				<img
 					src="/svgs/deco-halftone.svg"
 					alt="decoration"
-					class="absolute -right-13 bottom-9 -z-10 h-[310px] object-cover"
+					class="absolute -right-48 bottom-9 -z-10 h-[310px] object-cover md:-right-18"
 				/>
 			</div>
 
@@ -260,13 +245,15 @@
 	</section>
 
 	<!-- Ending -->
+	<!-- Add an min height to avoid shrinking too much, causing it to auto scroll back above -->
 	<section class="relative w-full">
-		<img src="/images/bg-5.png" alt="bg-5" class="-z-8 w-full object-cover" />
+		<Ending />
 	</section>
 
 	<!-- the fixed scroll to next page arrow down button -->
 	<div class="no-selection fixed bottom-8 z-50 flex w-full flex-col items-center">
-		<CircleArrow scrollindex={scrollIndex} onclick={handleCircleButtonClick}></CircleArrow>
+		<FloatingArrowButton scrollindex={scrollIndex} onclick={handleFloatingArrowClick}
+		></FloatingArrowButton>
 	</div>
 </main>
 
@@ -277,11 +264,11 @@
 		<img
 			src="/svgs/header-grid.svg"
 			alt="header-grid"
-			class="h-[160px] w-full object-cover opacity-40"
+			class="h-[160px] w-full object-cover object-left opacity-40"
 		/>
 		<!-- header title -->
 		<h1
-			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-blue"
+			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[3rem] text-holo-blue"
 		>
 			About Me
 		</h1>
@@ -289,7 +276,7 @@
 		<img
 			src="/svgs/code-text.svg"
 			alt="decoration"
-			class="absolute top-0 right-0 h-[160px] object-cover"
+			class="absolute top-0 -right-55 h-[160px] object-cover sm:-right-35 md:right-0"
 		/>
 	</div>
 {/snippet}
@@ -300,11 +287,11 @@
 		<img
 			src="/svgs/header-strip.svg"
 			alt="header-strip"
-			class="h-[160px] w-full object-cover opacity-40"
+			class="h-[160px] w-full object-cover object-left opacity-40"
 		/>
 		<!-- header title -->
 		<h1
-			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-pink"
+			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[3rem] text-holo-pink"
 		>
 			Projects
 		</h1>
@@ -317,11 +304,11 @@
 		<img
 			src="/svgs/header-dots.svg"
 			alt="header-dots"
-			class="h-[160px] w-full object-cover opacity-65"
+			class="h-[160px] w-full object-cover object-left opacity-65"
 		/>
 		<!-- header title -->
 		<h1
-			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[48px] text-holo-orange"
+			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[3rem] text-holo-orange"
 		>
 			Contact Me
 		</h1>

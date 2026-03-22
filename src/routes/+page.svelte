@@ -260,8 +260,9 @@
 	</section>
 
 	<!-- Ending -->
+	<!-- Add an min height to avoid shrinking too much, causing it to auto scroll back above -->
 	<section class="relative w-full">
-		<img src="/images/bg-5.png" alt="bg-5" class="-z-8 w-full object-cover" />
+		<img src="/images/bg-5.png" alt="bg-5" class="-z-8 min-h-[75vh] w-full object-cover" />
 	</section>
 
 	<!-- the fixed scroll to next page arrow down button -->

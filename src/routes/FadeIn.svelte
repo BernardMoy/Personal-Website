@@ -1,7 +1,11 @@
 <script lang="ts">
-	import { onMount, type Snippet } from 'svelte';
+	import { type Snippet } from 'svelte';
 
-	let { delay, children }: { delay: number; children: Snippet } = $props();
+	let {
+		delay,
+		children,
+		translate = true
+	}: { delay: number; children: Snippet; translate?: boolean } = $props();
 
 	// state to handle whether the element is visible on the screen
 	let visible = $state(false);
@@ -36,7 +40,7 @@
 </script>
 
 <!-- Fade in wrapper decoration, renders conetents only to avoid breaking layouts -->
-<div class="fadeinwrapper" class:loaded={visible} use:fadeIn>
+<div class="fadeinwrapper" class:translate class:loaded={visible} use:fadeIn>
 	{@render children()}
 </div>
 
@@ -49,8 +53,12 @@
 	/* Specifies the initial styles before the elements are loaded */
 	.fadeinwrapper :global(> *) {
 		opacity: 0;
+		transition: opacity 0.9s ease-out;
+	}
+
+	.fadeinwrapper.translate :global(> *) {
 		transform: translateY(10px);
-		transition:
+		transition:   /* Overwrites the one above */
 			opacity 0.9s ease-out,
 			transform 0.9s;
 	}
@@ -58,6 +66,9 @@
 	/* Specifies the styles after the elements are loaded */
 	.fadeinwrapper.loaded :global(> *) {
 		opacity: 1;
+	}
+
+	.fadeinwrapper.translate.loaded :global(> *) {
 		transform: translateY(0);
 	}
 </style>

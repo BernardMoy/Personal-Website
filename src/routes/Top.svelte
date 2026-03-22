@@ -4,6 +4,7 @@
 	import backgrounds from '../data/backgrounds.json';
 	import { fade, scale } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import FadeIn from './FadeIn.svelte';
 
 	// the scrollIndex is passed from the root page to here
 	// to stop the transition when it is not 0 (Top)
@@ -104,31 +105,10 @@
 
 	<!-- number buttons on the left -->
 	<div class="no-selection absolute top-0 z-26 m-4 mt-[96px] flex flex-col gap-4">
-		{#each { length: backgrounds.length } as _, i}
-			<Circle
-				text={(i + 1).toString()}
-				onclick={() => {
-					setIndex(i);
-
-					// reset the interval
-					if (interval) {
-						clearInterval(interval);
-						createInterval();
-					}
-				}}
-				selected={i == currentIndex}
-			></Circle>
-		{/each}
-	</div>
-
-	<!-- the rectangles on the top right displayed in 2 columns -->
-	<div class="absolute top-0 right-0 z-25 mt-[80px] flex flex-col">
-		<div class="no-selection grid grid-cols-2">
-			{#each backgrounds as bg, index}
-				<!-- scale within container -->
-				<button
-					aria-label={bg.name}
-					class="group h-[64px] w-[160px] cursor-pointer overflow-hidden"
+		{#each { length: backgrounds.length } as _, index}
+			<FadeIn delay={200 * (index + 1)}>
+				<Circle
+					text={(index + 1).toString()}
 					onclick={() => {
 						setIndex(index);
 
@@ -138,13 +118,38 @@
 							createInterval();
 						}
 					}}
-				>
-					<img
-						src={bg.url}
-						alt={bg.name}
-						class="h-full w-full object-cover object-center duration-500 group-hover:scale-110"
-					/>
-				</button>
+					selected={index == currentIndex}
+				></Circle>
+			</FadeIn>
+		{/each}
+	</div>
+
+	<!-- the rectangles on the top right displayed in 2 columns -->
+	<div class="absolute top-0 right-0 z-25 mt-[80px] flex flex-col">
+		<div class="no-selection grid grid-cols-2">
+			{#each backgrounds as bg, index}
+				<FadeIn delay={200 * index + 50} translate={false}>
+					<!-- scale within container -->
+					<button
+						aria-label={bg.name}
+						class="group h-[64px] w-[160px] cursor-pointer overflow-hidden"
+						onclick={() => {
+							setIndex(index);
+
+							// reset the interval
+							if (interval) {
+								clearInterval(interval);
+								createInterval();
+							}
+						}}
+					>
+						<img
+							src={bg.url}
+							alt={bg.name}
+							class="h-full w-full object-cover object-center duration-500 group-hover:scale-110"
+						/>
+					</button>
+				</FadeIn>
 			{/each}
 		</div>
 

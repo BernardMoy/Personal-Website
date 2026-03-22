@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CircleArrow from './CircleArrow.svelte';
+	import FloatingArrowButton from './FloatingArrowButton.svelte';
 	import Topbar from './Topbar.svelte';
 	import AboutMe from './AboutMe.svelte';
 	import Projects from './Projects.svelte';
@@ -63,22 +63,6 @@
 			{ rootMargin: '-100% 0px 0px 0px', threshold: 0 } // trigger the event when the separator touches the bottom y of the screen
 		);
 
-		// observer to perform scroll snapping when the user navigates a certain percentage to the next element
-		// const observerSnap = new IntersectionObserver((entries) => {
-		// 	entries.forEach(
-		// 		(entry, index) => {
-		// 			if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
-		// 				console.log('Here');
-		// 				// scroll to the element
-		// 				entry.target.scrollIntoView({
-		// 					behavior: 'smooth'
-		// 				});
-		// 			}
-		// 		},
-		// 		{ rootMargin: '0px 0px -120% 0px', threshold: 0 }
-		// 	);
-		// });
-
 		// observe all separator elements from navigation.json
 		for (const nav of navigations) {
 			const sep = document.getElementById(nav.navigationId);
@@ -105,7 +89,7 @@
 	});
 
 	// for the floating down / up button click
-	function handleCircleButtonClick() {
+	function handleFloatingArrowClick() {
 		const newIndex: number = (scrollIndex + 1) % navigations.length;
 		const element: HTMLElement | null = document.getElementById(navigations[newIndex].navigationId);
 		console.log(element);
@@ -205,13 +189,13 @@
 				<img
 					src="/svgs/deco-lines.svg"
 					alt="decoration"
-					class="absolute top-69 -left-24 -z-10 h-[190px] object-cover"
+					class="absolute top-69 -left-32 -z-10 h-[190px] object-cover md:-left-24"
 				/>
 
 				<img
 					src="/svgs/deco-lines.svg"
 					alt="decoration"
-					class="absolute top-24 -right-24 -z-10 h-[220px] rotate-150 object-cover"
+					class="absolute top-24 -right-32 -z-10 h-[220px] rotate-150 object-cover md:-right-24"
 				/>
 			</div>
 		</div>
@@ -245,7 +229,7 @@
 				<img
 					src="/svgs/deco-halftone.svg"
 					alt="decoration"
-					class="absolute -right-13 bottom-9 -z-10 h-[310px] object-cover"
+					class="absolute -right-48 bottom-9 -z-10 h-[310px] object-cover md:-right-18"
 				/>
 			</div>
 
@@ -267,7 +251,8 @@
 
 	<!-- the fixed scroll to next page arrow down button -->
 	<div class="no-selection fixed bottom-8 z-50 flex w-full flex-col items-center">
-		<CircleArrow scrollindex={scrollIndex} onclick={handleCircleButtonClick}></CircleArrow>
+		<FloatingArrowButton scrollindex={scrollIndex} onclick={handleFloatingArrowClick}
+		></FloatingArrowButton>
 	</div>
 </main>
 

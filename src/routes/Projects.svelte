@@ -138,6 +138,9 @@
 				onclick={() => {
 					// increase the limit by 6, or until max is reached
 					limit = Math.min(limit + 6, projects.length);
+
+					console.log(limit);
+					console.log(projects.length);
 				}}
 			/>
 		{/if}

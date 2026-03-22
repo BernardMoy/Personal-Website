@@ -20,7 +20,7 @@
 	let displayedProjects = $derived(projects.slice(0, limit));
 </script>
 
-<div class="mx-16 flex flex-col gap-16 py-16">
+<div class="mx-12 flex flex-col gap-16 py-16 md:mx-16">
 	<!-- intro paragraph -->
 	<div class="flex flex-col items-start justify-start gap-8">
 		{#each projectsParagraph as para}

@@ -25,7 +25,7 @@
 	<div
 		class="font-title z-16 text-[1.5rem] {selected
 			? 'text-primary'
-			: 'text-on-primary'} group-hover:text-primary"
+			: 'text-on-primary'} duration-300 group-hover:text-primary group-active:scale-90"
 	>
 		{text}
 	</div>

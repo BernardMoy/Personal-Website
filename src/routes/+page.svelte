@@ -160,7 +160,7 @@
 				<img
 					src="/svgs/deco-circle-dot.svg"
 					alt="decoration"
-					class="absolute top-12 -left-55 -z-10 scale-75 rotate-90"
+					class="absolute top-12 -left-60 -z-10 scale-75 rotate-90"
 				/>
 				<img
 					src="/svgs/deco-circle-dot.svg"

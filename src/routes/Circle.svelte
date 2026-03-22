@@ -22,9 +22,9 @@
 
 	<!-- the number text -->
 	<div
-		class="font-title z-16 text-[1rem] {selected
+		class="font-title z-16 text-[1.2rem] {selected
 			? 'text-primary'
-			: 'text-on-primary'} group-hover:text-primary"
+			: 'text-on-primary'} duration-300 group-hover:text-primary group-active:scale-80"
 	>
 		{text}
 	</div>

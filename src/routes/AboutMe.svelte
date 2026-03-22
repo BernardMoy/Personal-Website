@@ -3,7 +3,9 @@
 	import aboutMe from '../data/about-me.json';
 </script>
 
-<div class="relative mx-16 flex flex-col items-start justify-center gap-16 py-16 md:flex-row">
+<div
+	class="relative mx-12 flex flex-col items-start justify-center gap-16 py-16 md:mx-16 md:flex-row"
+>
 	<!-- left paragraph -->
 	<div class="flex flex-col items-start justify-start gap-8 md:flex-3">
 		{#each aboutMe as para}

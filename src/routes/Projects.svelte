@@ -38,11 +38,11 @@
 		<!-- individual project grid -->
 		{#each displayedProjects as project, index}
 			<FadeIn delay={200 * (index % ITEMS_PER_PAGE)}>
-				<div
-					class="relative flex w-full flex-col rounded-xl bg-on-primary pb-6 shadow-xl/50 shadow-holo-pink-shadow"
-				>
+				<div class="relative flex w-full flex-col">
 					<!-- Wrap hover transitions in an inner div, to prevent them being overridden by the fade in effect above -->
-					<div class="transition-transform ease-out hover:-translate-y-1 hover:duration-200">
+					<div
+						class="rounded-xl bg-on-primary pb-6 shadow-xl/50 shadow-holo-pink-shadow transition-transform ease-out hover:-translate-y-1 hover:duration-200"
+					>
 						<!-- image -->
 						<div class="group relative">
 							<img

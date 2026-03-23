@@ -94,6 +94,9 @@
 	--color-bg-2: #73b5cd;
 	--color-bg-3: #6b7fb6;
 	--color-bg-4: #38629e;
+
+	/* background (main) color */
+	--color-main: #ffffff;
 }
 
 /* registers the primary color as a color property */

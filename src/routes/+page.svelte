@@ -8,6 +8,10 @@
 	import { onMount } from 'svelte';
 	import navigations from '../data/navigations.json';
 	import Ending from './Ending.svelte';
+	import Loading from './Loading.svelte';
+
+	/* whether the page is loading. If yes, the entire screen is filled with a loading wheel */
+	let isLoading: boolean = $state(false);
 
 	/*
 	Scroll index refers to which part the user has scrolled to: 
@@ -100,161 +104,167 @@
 	}
 </script>
 
-<main>
-	<!-- the fixed position top navigation bar -->
-	<Topbar />
+{#if isLoading}
+	<Loading />
+{:else}
+	<main class="bg-main">
+		<!-- the fixed position top navigation bar -->
+		<Topbar />
 
-	<!-- Top -->
-	<section>
-		<!-- Top separator -->
-		<div id="top" data-scrollindex="0" class="separator"></div>
-		<!-- Top (images) content -->
-		<Top {scrollIndex} />
-	</section>
+		<!-- Top -->
+		<section>
+			<!-- Top separator -->
+			<div id="top" data-scrollindex="0" class="separator"></div>
+			<!-- Top (images) content -->
+			<Top {scrollIndex} />
+		</section>
 
-	<!-- About me -->
-	<section>
-		<!-- About me separator -->
-		<img
-			id="about-me"
-			data-scrollindex="1"
-			class="separator relative z-10 h-[80px] w-full object-cover"
-			src="/images/sep-1.png"
-			alt="separation"
-		/>
+		<!-- About me -->
+		<section>
+			<!-- About me separator -->
+			<img
+				id="about-me"
+				data-scrollindex="1"
+				class="separator relative z-10 h-[80px] w-full object-cover"
+				src="/images/sep-1.png"
+				alt="separation"
+			/>
 
-		<div class="relative min-h-screen w-full">
-			<!-- background image -->
-			<div class="sticky top-0 h-screen w-full">
-				<img
-					src="/images/bg-2.png"
-					alt="bg-2"
-					class="-z-20 h-full w-full object-cover opacity-30"
-				/>
+			<div class="relative min-h-screen w-full">
+				<!-- background image -->
+				<div class="sticky top-0 h-screen w-full">
+					<img
+						src="/images/bg-2.png"
+						alt="bg-2"
+						class="-z-20 h-full w-full object-cover opacity-30"
+					/>
+				</div>
+
+				<!-- About me content -->
+				<div class="relative -mt-[100vh] flex w-full flex-col overflow-x-hidden overflow-y-hidden">
+					<!-- header -->
+					{@render HeaderAboutMe()}
+
+					<!-- content -->
+					<AboutMe />
+
+					<!-- additional deco -->
+					<img
+						src="/svgs/deco-circle-dot.svg"
+						alt="decoration"
+						class="absolute top-12 -left-60 -z-10 scale-75 rotate-90"
+					/>
+					<img
+						src="/svgs/deco-circle-dot.svg"
+						alt="decoration"
+						class="absolute -right-48 -bottom-4 -z-10 rotate-260"
+					/>
+				</div>
 			</div>
+		</section>
 
-			<!-- About me content -->
-			<div class="relative -mt-[100vh] flex w-full flex-col overflow-x-hidden overflow-y-hidden">
-				<!-- header -->
-				{@render HeaderAboutMe()}
+		<!-- projects -->
+		<section>
+			<!-- Projects separator -->
+			<img
+				id="projects"
+				data-scrollindex="2"
+				class="separator relative z-10 h-[80px] w-full object-cover"
+				src="/images/sep-2.png"
+				alt="separation"
+			/>
 
-				<!-- content -->
-				<AboutMe />
+			<div class="relative min-h-screen w-full">
+				<!-- background image -->
+				<div class="sticky top-24 h-screen w-full">
+					<img
+						src="/images/bg-3.png"
+						alt="bg-3"
+						class="-z-20 h-full w-full object-cover opacity-30"
+					/>
+				</div>
 
-				<!-- additional deco -->
-				<img
-					src="/svgs/deco-circle-dot.svg"
-					alt="decoration"
-					class="absolute top-12 -left-60 -z-10 scale-75 rotate-90"
-				/>
-				<img
-					src="/svgs/deco-circle-dot.svg"
-					alt="decoration"
-					class="absolute -right-48 -bottom-4 -z-10 rotate-260"
-				/>
+				<!-- projects content -->
+				<div class="relative -mt-[100vh] flex w-full flex-col overflow-x-hidden overflow-y-hidden">
+					<!-- header -->
+					{@render HeaderProjects()}
+
+					<!-- content -->
+					<Projects />
+
+					<!-- additional deco -->
+					<img
+						src="/svgs/deco-lines.svg"
+						alt="decoration"
+						class="absolute top-69 -left-32 -z-10 h-[190px] object-cover md:-left-24"
+					/>
+
+					<img
+						src="/svgs/deco-lines.svg"
+						alt="decoration"
+						class="absolute top-24 -right-32 -z-10 h-[220px] rotate-150 object-cover md:-right-24"
+					/>
+				</div>
 			</div>
+		</section>
+
+		<!-- contact me -->
+		<section>
+			<!-- Contact me separator -->
+			<img
+				id="contact-me"
+				data-scrollindex="3"
+				class="separator relative z-10 h-[80px] w-full object-cover"
+				src="/images/sep-3.png"
+				alt="separation"
+			/>
+
+			<div class="relative min-h-[75vh] w-full">
+				<!-- background image -->
+				<!-- move it down using translate because this part wont scroll normally -->
+				<div
+					class="sticky top-0 h-[75vh] w-full translate-y-36 overflow-x-hidden overflow-y-hidden"
+				>
+					<img
+						src="/images/bg-4.png"
+						alt="bg-4"
+						class="-z-20 h-full w-full object-cover opacity-30"
+					/>
+				</div>
+
+				<!-- contact me content -->
+				<div
+					class="relative -mt-[75vh] flex min-h-[75vh] w-full flex-col overflow-x-hidden overflow-y-hidden"
+				>
+					<!-- header -->
+					{@render HeaderContactMe()}
+
+					<!-- content -->
+					<ContactMe />
+
+					<!-- additional deco -->
+					<img
+						src="/svgs/deco-halftone.svg"
+						alt="decoration"
+						class="absolute -right-48 -bottom-25 -z-10 h-[310px] object-cover md:-right-36"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<!-- Ending -->
+		<!-- Add an min height to avoid shrinking too much, causing it to auto scroll back above -->
+		<section class="relative w-full">
+			<Ending />
+		</section>
+
+		<!-- the fixed scroll to next page arrow down button -->
+		<div class="no-selection fixed bottom-8 z-50 flex w-full flex-col items-center">
+			<FloatingArrowButton scrollindex={scrollIndex} onclick={handleFloatingArrowClick}
+			></FloatingArrowButton>
 		</div>
-	</section>
-
-	<!-- projects -->
-	<section>
-		<!-- Projects separator -->
-		<img
-			id="projects"
-			data-scrollindex="2"
-			class="separator relative z-10 h-[80px] w-full object-cover"
-			src="/images/sep-2.png"
-			alt="separation"
-		/>
-
-		<div class="relative min-h-screen w-full">
-			<!-- background image -->
-			<div class="sticky top-24 h-screen w-full">
-				<img
-					src="/images/bg-3.png"
-					alt="bg-3"
-					class="-z-20 h-full w-full object-cover opacity-30"
-				/>
-			</div>
-
-			<!-- projects content -->
-			<div class="relative -mt-[100vh] flex w-full flex-col overflow-x-hidden overflow-y-hidden">
-				<!-- header -->
-				{@render HeaderProjects()}
-
-				<!-- content -->
-				<Projects />
-
-				<!-- additional deco -->
-				<img
-					src="/svgs/deco-lines.svg"
-					alt="decoration"
-					class="absolute top-69 -left-32 -z-10 h-[190px] object-cover md:-left-24"
-				/>
-
-				<img
-					src="/svgs/deco-lines.svg"
-					alt="decoration"
-					class="absolute top-24 -right-32 -z-10 h-[220px] rotate-150 object-cover md:-right-24"
-				/>
-			</div>
-		</div>
-	</section>
-
-	<!-- contact me -->
-	<section>
-		<!-- Contact me separator -->
-		<img
-			id="contact-me"
-			data-scrollindex="3"
-			class="separator relative z-10 h-[80px] w-full object-cover"
-			src="/images/sep-3.png"
-			alt="separation"
-		/>
-
-		<div class="relative min-h-[75vh] w-full">
-			<!-- background image -->
-			<!-- move it down using translate because this part wont scroll normally -->
-			<div class="sticky top-0 h-[75vh] w-full translate-y-36 overflow-x-hidden overflow-y-hidden">
-				<img
-					src="/images/bg-4.png"
-					alt="bg-4"
-					class="-z-20 h-full w-full object-cover opacity-30"
-				/>
-			</div>
-
-			<!-- contact me content -->
-			<div
-				class="relative -mt-[75vh] flex min-h-[75vh] w-full flex-col overflow-x-hidden overflow-y-hidden"
-			>
-				<!-- header -->
-				{@render HeaderContactMe()}
-
-				<!-- content -->
-				<ContactMe />
-
-				<!-- additional deco -->
-				<img
-					src="/svgs/deco-halftone.svg"
-					alt="decoration"
-					class="absolute -right-48 -bottom-25 -z-10 h-[310px] object-cover md:-right-36"
-				/>
-			</div>
-		</div>
-	</section>
-
-	<!-- Ending -->
-	<!-- Add an min height to avoid shrinking too much, causing it to auto scroll back above -->
-	<section class="relative w-full">
-		<Ending />
-	</section>
-
-	<!-- the fixed scroll to next page arrow down button -->
-	<div class="no-selection fixed bottom-8 z-50 flex w-full flex-col items-center">
-		<FloatingArrowButton scrollindex={scrollIndex} onclick={handleFloatingArrowClick}
-		></FloatingArrowButton>
-	</div>
-</main>
+	</main>
+{/if}
 
 <!-- header components -->
 {#snippet HeaderAboutMe()}

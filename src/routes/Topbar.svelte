@@ -11,7 +11,7 @@
 
 <!-- currently it has a fixed height of 80px with z=50 -->
 <header
-	class="no-selection fixed top-0 z-50 flex h-[80px] w-full flex-row items-center justify-between bg-white/75 px-8 md:justify-start md:gap-16 md:px-16"
+	class="no-selection fixed top-0 z-50 flex h-[80px] w-full flex-row items-center justify-between bg-main/75 px-8 md:justify-start md:gap-16 md:px-16"
 >
 	{#each navigations as { name, navigationId, color }}
 		<button

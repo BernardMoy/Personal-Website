@@ -133,7 +133,7 @@
 				/>
 			</div>
 
-			<!-- additional deco -->
+			<!-- About me content -->
 			<div class="relative -mt-[100vh] flex w-full flex-col overflow-x-hidden overflow-y-hidden">
 				<!-- header -->
 				{@render HeaderAboutMe()}
@@ -167,7 +167,6 @@
 			alt="separation"
 		/>
 
-		<!-- Projects -->
 		<div class="relative min-h-screen w-full">
 			<!-- background image -->
 			<div class="sticky top-24 h-screen w-full">
@@ -178,7 +177,7 @@
 				/>
 			</div>
 
-			<!-- additional deco -->
+			<!-- projects content -->
 			<div class="relative -mt-[100vh] flex w-full flex-col overflow-x-hidden overflow-y-hidden">
 				<!-- header -->
 				{@render HeaderProjects()}
@@ -213,7 +212,6 @@
 			alt="separation"
 		/>
 
-		<!-- Contact me -->
 		<div class="relative min-h-[75vh] w-full">
 			<!-- background image -->
 			<!-- move it down using translate because this part wont scroll normally -->
@@ -223,23 +221,24 @@
 					alt="bg-4"
 					class="-z-20 h-full w-full object-cover opacity-30"
 				/>
-
-				<!-- additional deco -->
-				<!-- need to stick with background because this is going to the bottom -->
-				<!-- this is different from above because normally the background wont stick here -->
-				<img
-					src="/svgs/deco-halftone.svg"
-					alt="decoration"
-					class="absolute -right-48 bottom-9 -z-10 h-[310px] object-cover md:-right-18"
-				/>
 			</div>
 
-			<div class="relative -mt-[75vh] flex w-full flex-col">
+			<!-- contact me content -->
+			<div
+				class="relative -mt-[75vh] flex min-h-[75vh] w-full flex-col overflow-x-hidden overflow-y-hidden"
+			>
 				<!-- header -->
 				{@render HeaderContactMe()}
 
 				<!-- content -->
 				<ContactMe />
+
+				<!-- additional deco -->
+				<img
+					src="/svgs/deco-halftone.svg"
+					alt="decoration"
+					class="absolute -right-48 -bottom-25 -z-10 h-[310px] object-cover md:-right-36"
+				/>
 			</div>
 		</div>
 	</section>

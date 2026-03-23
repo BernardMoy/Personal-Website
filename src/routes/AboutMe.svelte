@@ -7,7 +7,7 @@
 <div class="relative mx-16 flex flex-col items-start justify-center gap-16 py-16 md:flex-row">
 	<!-- left paragraph -->
 	<FadeIn delay={500}>
-		<div class="flex flex-3 flex-col items-start justify-start gap-8">
+		<div class="flex flex-1 flex-col items-start justify-start gap-8 lg:flex-3">
 			{#each aboutMe as para}
 				<p class="font-body glow text-[18px] text-on-background">
 					{@html para.replaceAll('[', '<span class="text-holo-blue">').replaceAll(']', '</span>')}

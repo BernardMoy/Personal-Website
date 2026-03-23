@@ -4,7 +4,7 @@
 
 <div class="mx-12 flex flex-col gap-16 py-16 md:mx-16">
 	<!-- the row of contact sources -->
-	<div class="flex w-full flex-col items-center justify-around gap-16 md:flex-row">
+	<div class="flex w-full flex-col items-center justify-around gap-16 lg:flex-row lg:gap-0">
 		{#each contacts as contact}
 			<a
 				href={contact.link}
@@ -12,6 +12,7 @@
 				class="group flex flex-row items-center justify-center gap-4 duration-200 ease-out hover:-translate-y-1"
 			>
 				<svg
+					class="shrink-0"
 					viewBox="0 0 {contact.w} {contact.h}"
 					width={contact.w}
 					height={contact.h}

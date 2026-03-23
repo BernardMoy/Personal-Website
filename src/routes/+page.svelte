@@ -9,9 +9,10 @@
 	import navigations from '../data/navigations.json';
 	import Ending from './Ending.svelte';
 	import Loading from './Loading.svelte';
+	import { fade } from 'svelte/transition';
 
 	/* whether the page is loading. If yes, the entire screen is filled with a loading wheel */
-	let isLoading: boolean = $state(false);
+	let isLoading: boolean = $state(true);
 
 	/*
 	Scroll index refers to which part the user has scrolled to: 
@@ -76,10 +77,24 @@
 			// if (sep) observerSnap.observe(sep);
 		}
 
+		// function to be called when everything is loaded
+		const handleLoaded = () => {
+			isLoading = false;
+		};
+
+		// if already loaded, directly call it, else add event listener
+		if (document.readyState === 'complete') {
+			handleLoaded();
+		} else {
+			window.addEventListener('load', handleLoaded);
+		}
+
 		return () => {
 			observerForward.disconnect();
 			observerBackward.disconnect();
 			// observerSnap.disconnect();
+
+			window.removeEventListener('load', handleLoaded);
 		};
 	});
 
@@ -102,10 +117,23 @@
 			behavior: 'smooth'
 		});
 	}
+
+	// load time is 400 if first time load, otherwise 0 if refresh
+	// for removing the loading screen
+	function getLoadOptions() {
+		if (document.cookie.indexOf('visited') == -1) {
+			document.cookie = 'visited';
+			return { delay: 500, duration: 400 };
+		} else {
+			return { delay: 0, duration: 0 };
+		}
+	}
 </script>
 
 {#if isLoading}
-	<Loading />
+	<main class="fixed z-80" out:fade={getLoadOptions()}>
+		<Loading />
+	</main>
 {:else}
 	<main class="bg-main">
 		<!-- the fixed position top navigation bar -->

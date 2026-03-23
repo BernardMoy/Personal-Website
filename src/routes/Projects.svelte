@@ -41,7 +41,7 @@
 				<div class="relative flex w-full flex-col">
 					<!-- Wrap hover transitions in an inner div, to prevent them being overridden by the fade in effect above -->
 					<div
-						class="rounded-xl bg-on-primary pb-6 shadow-xl/50 shadow-holo-pink-shadow transition-transform ease-out hover:-translate-y-1 hover:duration-200"
+						class="h-full rounded-xl bg-on-primary pb-6 shadow-xl/50 shadow-holo-pink-shadow transition-transform ease-out hover:-translate-y-1 hover:duration-200"
 					>
 						<!-- image -->
 						<div class="group relative">

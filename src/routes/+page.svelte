@@ -159,7 +159,7 @@
 				id="about-me"
 				data-scrollindex="1"
 				class="separator relative z-10 h-[80px] w-full object-cover"
-				src="/images/sep-1.png"
+				src="images/sep-1.png"
 				alt="separation"
 			/>
 
@@ -167,7 +167,7 @@
 				<!-- background image -->
 				<div class="sticky top-0 h-screen w-full">
 					<img
-						src="/images/bg-2.png"
+						src="images/bg-2.png"
 						alt="bg-2"
 						class="-z-20 h-full w-full object-cover opacity-30"
 					/>
@@ -183,12 +183,12 @@
 
 					<!-- additional deco -->
 					<img
-						src="/svgs/deco-circle-dot.svg"
+						src="svgs/deco-circle-dot.svg"
 						alt="decoration"
 						class="absolute top-12 -left-60 -z-10 scale-75 rotate-90"
 					/>
 					<img
-						src="/svgs/deco-circle-dot.svg"
+						src="svgs/deco-circle-dot.svg"
 						alt="decoration"
 						class="absolute -right-48 -bottom-4 -z-10 rotate-260"
 					/>
@@ -203,7 +203,7 @@
 				id="projects"
 				data-scrollindex="2"
 				class="separator relative z-10 h-[80px] w-full object-cover"
-				src="/images/sep-2.png"
+				src="images/sep-2.png"
 				alt="separation"
 			/>
 
@@ -211,7 +211,7 @@
 				<!-- background image -->
 				<div class="sticky top-24 h-screen w-full">
 					<img
-						src="/images/bg-3.png"
+						src="images/bg-3.png"
 						alt="bg-3"
 						class="-z-20 h-full w-full object-cover opacity-30"
 					/>
@@ -227,13 +227,13 @@
 
 					<!-- additional deco -->
 					<img
-						src="/svgs/deco-lines.svg"
+						src="svgs/deco-lines.svg"
 						alt="decoration"
 						class="absolute top-69 -left-32 -z-10 h-[190px] object-cover md:-left-24"
 					/>
 
 					<img
-						src="/svgs/deco-lines.svg"
+						src="svgs/deco-lines.svg"
 						alt="decoration"
 						class="absolute top-24 -right-32 -z-10 h-[220px] rotate-150 object-cover md:-right-24"
 					/>
@@ -248,7 +248,7 @@
 				id="contact-me"
 				data-scrollindex="3"
 				class="separator relative z-10 h-[80px] w-full object-cover"
-				src="/images/sep-3.png"
+				src="images/sep-3.png"
 				alt="separation"
 			/>
 
@@ -259,7 +259,7 @@
 					class="sticky top-0 h-[75vh] w-full translate-y-36 overflow-x-hidden overflow-y-hidden"
 				>
 					<img
-						src="/images/bg-4.png"
+						src="images/bg-4.png"
 						alt="bg-4"
 						class="-z-20 h-full w-full object-cover opacity-30"
 					/>
@@ -277,7 +277,7 @@
 
 					<!-- additional deco -->
 					<img
-						src="/svgs/deco-halftone.svg"
+						src="svgs/deco-halftone.svg"
 						alt="decoration"
 						class="absolute -right-48 -bottom-25 -z-10 h-[310px] object-cover md:-right-36"
 					/>
@@ -304,7 +304,7 @@
 	<div class="relative">
 		<!-- header image -->
 		<img
-			src="/svgs/header-grid.svg"
+			src="svgs/header-grid.svg"
 			alt="header-grid"
 			class="h-[160px] w-full object-cover object-left opacity-40"
 		/>
@@ -316,7 +316,7 @@
 		</h1>
 		<!-- additional deco -->
 		<img
-			src="/svgs/code-text.svg"
+			src="svgs/code-text.svg"
 			alt="decoration"
 			class="absolute top-0 -right-55 h-[160px] object-cover sm:-right-35 md:right-0"
 		/>
@@ -327,7 +327,7 @@
 	<div class="relative">
 		<!-- header image -->
 		<img
-			src="/svgs/header-strip.svg"
+			src="svgs/header-strip.svg"
 			alt="header-strip"
 			class="h-[160px] w-full object-cover object-left opacity-40"
 		/>
@@ -344,7 +344,7 @@
 	<div class="relative">
 		<!-- header image -->
 		<img
-			src="/svgs/header-dots.svg"
+			src="svgs/header-dots.svg"
 			alt="header-dots"
 			class="h-[160px] w-full object-cover object-left opacity-65"
 		/>

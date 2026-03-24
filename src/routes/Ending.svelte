@@ -30,7 +30,7 @@
 
 <div class="w-full overflow-hidden">
 	<img
-		src="/images/bg-5.png"
+		src="images/bg-5.png"
 		alt="bg-5"
 		id="ending-image"
 		class="-z-8 min-h-[75vh] w-full scale-110 object-cover duration-1200 ease-out"

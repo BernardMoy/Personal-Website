@@ -1,45 +1,45 @@
 [
 	{
-		"image": "/project-images/personal-website.png",
+		"image": "project-images/personal-website.png",
 		"title": "Personal Website",
 		"tags": ["Svelte", "JavaScript", "HTML", "Tailwind CSS"],
 		"github": "https://github.com/BernardMoy/Personal-Website",
 		"description": "This beautiful website :)"
 	},
 	{
-		"image": "/project-images/nlp.png",
+		"image": "project-images/nlp.png",
 		"title": "PCL Classification",
 		"tags": ["NLP", "PyTorch", "Language Models"],
 		"github": "https://github.com/BernardMoy/NLP-PCL-Classification",
 		"description": "Fine-tuning an ensemble of BERT and RoBERTa model for Patronizing and Condescending Language (PCL) classification."
 	},
 	{
-		"image": "/project-images/robot.png",
+		"image": "project-images/robot.png",
 		"title": "Robot Controller",
 		"tags": ["Reinforcement Learning", "PyTorch"],
 		"description": "Used robot learning / behavioural cloning algorithms to navigate a robot to the goal while avoiding obstacles."
 	},
 	{
-		"image": "/project-images/mlswe.png",
+		"image": "project-images/mlswe.png",
 		"title": "Acute Kidney Injury Classifier",
 		"tags": ["Python", "Sklearn", "SQLAlchemy"],
 		"description": "A pager system that accepts HL7 messages, and page patients that are predicted to have acute kidney injury based on history results."
 	},
 	{
-		"image": "/project-images/dl.png",
+		"image": "project-images/dl.png",
 		"title": "Deep Learning",
 		"tags": ["PyTorch"],
 		"description": "Implemented Variational Autoencoder and Latent Diffusion Model to generate hotdog images using PyTorch."
 	},
 	{
-		"image": "/project-images/advent-of-code.png",
+		"image": "project-images/advent-of-code.png",
 		"title": "Advent of Code",
 		"tags": ["Data Structures", "Algorithms"],
 		"github": "https://github.com/BernardMoy/Advent-of-Code-2025",
 		"description": "I participate in the Advent of Code programming challenges over the Christmas period every year."
 	},
 	{
-		"image": "/project-images/cs310.png",
+		"image": "project-images/cs310.png",
 		"title": "Lost and Found Mobile App",
 		"tags": ["Java", "Kotlin", "Jetpack Compose", "Firebase", "TensorFlow", "Testing"],
 		"github": "https://github.com/BernardMoy/Lost-and-Found",
@@ -47,110 +47,110 @@
 	},
 
 	{
-		"image": "/project-images/speed-reader.png",
+		"image": "project-images/speed-reader.png",
 		"title": "Speed Reader",
 		"tags": ["Node.js", "React", "TypeScript"],
 		"github": "https://github.com/BernardMoy/Speed-Reader-II",
 		"description": "A website that displays words in the same position, at increasing speeds, allowing us to read in a higher WPM."
 	},
 	{
-		"image": "/project-images/job-tracker.png",
+		"image": "project-images/job-tracker.png",
 		"title": "Job Tracker",
 		"tags": ["React", "TypeScript", "Firebase", "Web Scraping"],
 		"github": "https://github.com/BernardMoy/Job-Tracker",
 		"description": "A job tracker website prototype, as an extension to Trackr, designed for entry-level job seekers."
 	},
 	{
-		"image": "/project-images/map-app.png",
+		"image": "project-images/map-app.png",
 		"title": "Route Finder and Visualisation Website",
 		"tags": ["React", "TypeScript", "vis.js", "Algorithms", "Material UI"],
 		"github": "https://github.com/BernardMoy/Fun-Map-App",
 		"description": "A visualiser of a transport network, including showing the shortest path between two points using Dijkstra's algorithm."
 	},
 	{
-		"image": "/project-images/cs325.png",
+		"image": "project-images/cs325.png",
 		"title": "Mini-C Compiler",
 		"tags": ["C++", "LLVM"],
 		"description": "A parser for a C-like mini-C language to generate abstract syntax trees, and a LLVM IR generator."
 	},
 	{
-		"image": "/project-images/gamejam.png",
+		"image": "project-images/gamejam.png",
 		"title": "The Ground Tilter",
 		"tags": ["Unity", "C#"],
 		"github": "https://github.com/BernardMoy/GameJam",
 		"description": "A Unity game that moves the player to the goal by tilting the ground."
 	},
 	{
-		"image": "/project-images/recipe-app.png",
+		"image": "project-images/recipe-app.png",
 		"title": "Recipe App",
 		"tags": ["Java", "XML", "Algorithms"],
 		"github": "https://github.com/BernardMoy/Recipe-App",
 		"description": "A recipe and meal planning app for university life, with an algorithm to recommend recipes by utilising leftover ingredients."
 	},
 	{
-		"image": "/project-images/cs261.png",
+		"image": "project-images/cs261.png",
 		"title": "Wallstreet Whisperer",
 		"tags": ["Python", "Flask", "PostgreSQL", "Testing", "Docker"],
 		"description": "A website that visualises stock prices and news articles from APIs, and make prediction on prices using sentiment analysis."
 	},
 	{
-		"image": "/project-images/cs262.png",
+		"image": "project-images/cs262.png",
 		"title": "Resolution (Logic) Solver",
 		"tags": ["Prolog"],
 		"description": "A resolution (logic) solver to determine if a conjunctive normal form sentence is a tautology."
 	},
 	{
-		"image": "/project-images/cs258.png",
+		"image": "project-images/cs258.png",
 		"title": "Gig System Database Design",
 		"tags": ["PostgreSQL", "Java", "JDBC"],
 		"description": "Implemented database design with complex queries, for a gig event system."
 	},
 	{
-		"image": "/project-images/cs255.png",
+		"image": "project-images/cs255.png",
 		"title": "Agent for the Connect Game",
 		"tags": ["Python", "Algorithms"],
 		"description": "An AI agent to play the connect game (an expansion of connect four), using the minimax algorithm with alpha-beta pruning."
 	},
 	{
-		"image": "/project-images/cs241.png",
+		"image": "project-images/cs241.png",
 		"title": "Intrusion Detection System",
 		"tags": ["C", "Multithreading"],
 		"description": "A multithreaded system that identifies SYN attacks and ARP cache poisoning attacks, by parsing TCP headers."
 	},
 	{
-		"image": "/project-images/discord-bot.png",
+		"image": "project-images/discord-bot.png",
 		"title": "Personal Discord Bot",
 		"tags": ["Python", "SQLite"],
 		"github": "https://github.com/BernardMoy/Discord-Bot-2025",
 		"description": "A lightweight Discord Bot providing utility features that friendly servers may need."
 	},
 	{
-		"image": "/project-images/cs139.png",
+		"image": "project-images/cs139.png",
 		"title": "The Giginator Website",
 		"tags": ["HTML", "CSS", "Python", "Flask", "SQLite", "SQLAlchemy"],
 		"github": "https://github.com/BernardMoy/The-Giginator-Website",
 		"description": "An event and ticket creation and management system, with users classified into regular users and admins."
 	},
 	{
-		"image": "/project-images/cs141.png",
+		"image": "project-images/cs141.png",
 		"title": "The Bean's Gambit Game",
 		"tags": ["Haskell"],
 		"description": "An AI player for the Bean's Gambit game implemented using Haskell, which is a game similar to chess."
 	},
 	{
-		"image": "/project-images/cs126.png",
+		"image": "project-images/cs126.png",
 		"title": "Warwick Plus Movie Platform",
 		"tags": ["Java", "Data Structures"],
 		"description": "A platform to display and query movies, ratings and casts efficiently using data structures such as an AVL tree."
 	},
 	{
-		"image": "/project-images/cs132.png",
+		"image": "project-images/cs132.png",
 		"title": "Robot Arm Tower of Hanoi Solver",
 		"tags": ["C"],
 		"description": "A moving robot arm to solve the Tower of Hanoi problem, controlled using C."
 	},
 	{
-		"image": "/project-images/cs118.png",
+		"image": "project-images/cs118.png",
 		"title": "Robot Maze Navigator",
 		"tags": ["Java", "Algorithms"],
 		"description": "A Java robot controller to navigate in a maze, using different approaches such as Depth-first search."

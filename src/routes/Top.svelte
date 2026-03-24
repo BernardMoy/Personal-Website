@@ -137,7 +137,7 @@
 					<!-- scale within container -->
 					<button
 						aria-label={bg.name}
-						class="group h-[64px] w-[160px] cursor-pointer overflow-hidden"
+						class="group h-[64px] w-[120px] cursor-pointer overflow-hidden md:w-[160px]"
 						onclick={() => {
 							setIndex(index);
 

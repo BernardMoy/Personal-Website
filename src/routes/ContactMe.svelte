@@ -12,7 +12,7 @@
 				class="group flex flex-row items-center justify-center gap-4 duration-200 ease-out hover:-translate-y-1"
 			>
 				<svg
-					class="shrink-0"
+					class=" shrink-0"
 					viewBox="0 0 {contact.w} {contact.h}"
 					width={contact.w}
 					height={contact.h}
@@ -20,7 +20,7 @@
 					><path fill="var(--color-on-background)" d={contact.svgData} class="svg-icon" /></svg
 				>
 
-				<p class="font-body glow text-[1.5rem] text-on-background">
+				<p class="font-body glow text-[1.25rem] text-on-background md:text-[1.5rem]">
 					<span class="contact-text">
 						{contact.text}
 					</span>

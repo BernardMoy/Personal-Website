@@ -10,6 +10,8 @@
 							entry.target.classList.remove('scale-110');
 							entry.target.classList.add('scale-100');
 						}, 250);
+
+						observer.disconnect();
 					}
 				});
 			},

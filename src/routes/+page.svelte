@@ -69,13 +69,17 @@
 			{ rootMargin: '-100% 0px 0px 0px', threshold: 0 } // trigger the event when the separator touches the bottom y of the screen
 		);
 
-		// observe all separator elements from navigation.json
-		for (const nav of navigations) {
-			const sep = document.getElementById(nav.navigationId);
-			if (sep) observerForward.observe(sep);
-			if (sep) observerBackward.observe(sep);
-			// if (sep) observerSnap.observe(sep);
-		}
+		// observe all separator elements from navigation.json when loading has finished
+		$effect(() => {
+			if (!isLoading) {
+				for (const nav of navigations) {
+					const sep = document.getElementById(nav.navigationId);
+					if (sep) observerForward.observe(sep);
+					if (sep) observerBackward.observe(sep);
+					// if (sep) observerSnap.observe(sep);
+				}
+			}
+		});
 
 		// function to be called when everything is loaded
 		const handleLoaded = () => {

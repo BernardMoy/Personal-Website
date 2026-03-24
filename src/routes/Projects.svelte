@@ -6,6 +6,7 @@
 	import projectsParagraph from '../data/projects-paragraph.json';
 	import Rectangle from './Rectangle.svelte';
 	import FadeIn from './FadeIn.svelte';
+	import { asset } from '$app/paths';
 
 	// stores a list of indices with overlay turned on, initially all false
 	let overlayStates = $state(new Array<boolean>(projects.length).fill(false));
@@ -46,7 +47,7 @@
 						<!-- image -->
 						<div class="group relative">
 							<img
-								src={project.image}
+								src={asset(project.image)}
 								alt={project.title}
 								class="h-[220px] w-full rounded-tl-xl rounded-tr-xl object-cover"
 							/>

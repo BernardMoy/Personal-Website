@@ -5,6 +5,7 @@
 	import { fade, scale } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import FadeIn from './FadeIn.svelte';
+	import { asset } from '$app/paths';
 
 	// the scrollIndex is passed from the root page to here
 	// to stop the transition when it is not 0 (Top)
@@ -85,7 +86,7 @@
 	<!-- large background image -->
 	{#key currentIndex}
 		<img
-			src={backgrounds[currentIndex].url}
+			src={asset(backgrounds[currentIndex].url)}
 			alt={backgrounds[currentIndex].name}
 			class="absolute top-0 left-0 h-screen w-full object-cover"
 			in:scale={{ start: 1.05, duration: 1500 }}
@@ -149,7 +150,7 @@
 						}}
 					>
 						<img
-							src={bg.url}
+							src={asset(bg.url)}
 							alt={bg.name}
 							class="h-full w-full object-cover object-center duration-500 group-hover:scale-110"
 						/>

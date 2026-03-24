@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { asset } from '$app/paths';
 
 	onMount(() => {
 		let observer = new IntersectionObserver(
@@ -30,7 +31,7 @@
 
 <div class="w-full overflow-hidden">
 	<img
-		src="images/bg-5.png"
+		src={asset('/images/bg-5.png')}
 		alt="bg-5"
 		id="ending-image"
 		class="-z-8 min-h-[75vh] w-full scale-110 object-cover duration-1200 ease-out"

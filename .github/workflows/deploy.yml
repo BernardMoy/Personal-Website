@@ -24,5 +24,10 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Setup Git
+        run: |
+          git config --global user.name "BernardMoy"
+          git config --global user.email "bernardmoy3@gmail.com"
+
       - name: Deploy
         run: npx gh-pages -d build

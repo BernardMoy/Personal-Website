@@ -1,4 +1,7 @@
 {
+	"homepage": "https://bernardmoy.github.io/Personal-Website/",
+	"predeploy": "npm run build",
+	"deploy": "gh-pages -d build",
 	"name": "personal-website",
 	"private": true,
 	"version": "0.0.1",
@@ -37,6 +40,7 @@
 		"vite": "^7.3.1"
 	},
 	"dependencies": {
+		"gh-pages": "^6.3.0",
 		"svelte-intersection-observer": "^1.1.1"
 	}
 }

@@ -9,7 +9,7 @@
 	import navigations from '../data/navigations.json';
 	import Ending from './Ending.svelte';
 	import Loading from './Loading.svelte';
-	import { fade } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 
 	/* whether the page is loading. If yes, the entire screen is filled with a loading wheel */
 	let isLoading: boolean = $state(true);
@@ -127,7 +127,8 @@
 	function getLoadOptions() {
 		if (document.cookie.indexOf('visited') == -1) {
 			document.cookie = 'visited';
-			return { delay: 500, duration: 400 };
+			// the delay is intentional, to slow the user down :)
+			return { delay: Math.random() * (800 - 400) + 400, duration: 400 };
 		} else {
 			return { delay: 0, duration: 0 };
 		}

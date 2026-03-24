@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -24,10 +29,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Setup Git
-        run: |
-          git config --global user.name "BernardMoy"
-          git config --global user.email "bernardmoy3@gmail.com"
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
 
-      - name: Deploy
-        run: npx gh-pages -d build
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

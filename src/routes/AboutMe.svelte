@@ -1,3 +1,4 @@
+<!-- Content of the about me section -->
 <script>
 	import skills from '../data/skills.json';
 	import aboutMe from '../data/about-me.json';

@@ -1,3 +1,4 @@
+<!-- Individual project cards, used to display projects in the PROJECTS section-->
 <script lang="ts">
 	//@ts-nocheck
 	const {

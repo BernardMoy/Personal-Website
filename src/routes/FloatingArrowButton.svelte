@@ -1,4 +1,4 @@
-<!-- the circular floating downward arrow button, used to navigate to the next page -->
+<!-- The circular floating downward arrow button, used to navigate to the next page -->
 <!-- Currently limited to primary color here -->
 <script lang="ts">
 	import { onMount } from 'svelte';

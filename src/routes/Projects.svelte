@@ -1,3 +1,4 @@
+<!-- Content of the projects section -->
 <script lang="ts">
 	// @ts-nocheck
 

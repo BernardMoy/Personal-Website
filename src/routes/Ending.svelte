@@ -1,3 +1,4 @@
+<!-- Content of ending section -->
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { asset } from '$app/paths';

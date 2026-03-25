@@ -1,4 +1,4 @@
-<!--Rectangular button with sliding hovering effect, fixed to holo pink color -->
+<!--Rectangular button with sliding hovering effect, fixed to holo pink color. Used in PROJECTS section -->
 <script lang="ts">
 	let {
 		text,

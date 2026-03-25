@@ -1,3 +1,5 @@
+<!-- A fade in wrapper that wraps children HTML content.-->
+<!-- When wrapped, content fades in (optionally with effect) when initially appears on the page -->
 <script lang="ts">
 	import { type Snippet } from 'svelte';
 

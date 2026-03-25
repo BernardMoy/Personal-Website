@@ -1,3 +1,4 @@
+<!-- Content of contact me section -->
 <script>
 	import contacts from '../data/contacts.json';
 </script>

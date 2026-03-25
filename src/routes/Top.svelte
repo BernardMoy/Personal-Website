@@ -1,3 +1,4 @@
+<!-- Content of the Top (landing page) section -->
 <script lang="ts">
 	import Circle from './Circle.svelte';
 	import top from '../data/top.json';

@@ -1,11 +1,10 @@
-<!--Rectangular button with sliding hovering effect -->
-<!-- Currently fixed to the color of holo pink. Parameterise it, by exlicitly listing out the class instead of parameterise them (classes only generate at runtime)-->
+<!--Rectangular button with sliding hovering effect, fixed to holo pink color -->
 <script lang="ts">
 	let {
 		text,
 		onclick,
 		selected = false
-	}: { text: string; onclick: () => void; selected: boolean; color: string } = $props();
+	}: { text: string; onclick: () => void; selected: boolean } = $props();
 </script>
 
 <!-- Fixed blue circle right now -->

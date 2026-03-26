@@ -1,3 +1,4 @@
+<!-- The static, fixed toolbar at the top that overlaps content -->
 <script lang="ts">
 	import navigations from '../data/navigations.json';
 

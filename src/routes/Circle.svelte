@@ -1,4 +1,4 @@
-<!--Circular button with sliding hovering effect -->
+<!--Circular button with sliding hovering effect, with primary color, used in TOP -->
 <script lang="ts">
 	let {
 		text,

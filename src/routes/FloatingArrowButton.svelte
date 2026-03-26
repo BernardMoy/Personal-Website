@@ -1,3 +1,5 @@
+<!-- The circular floating downward arrow button, used to navigate to the next page -->
+<!-- Currently limited to primary color here -->
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import navigations from '../data/navigations.json';

@@ -1,4 +1,4 @@
-<!-- full page loading screen -->
+<!-- Full page loading screen, used in the initial loading -->
 <script lang="ts">
 </script>
 

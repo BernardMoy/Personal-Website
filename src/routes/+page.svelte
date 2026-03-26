@@ -136,6 +136,7 @@
 	}
 </script>
 
+<!-- Content have z value 2, bg z -20, deco z-1 -->
 {#if isLoading}
 	<main class="fixed z-80" out:fade={getLoadOptions()}>
 		<Loading />
@@ -186,12 +187,12 @@
 					<img
 						src={asset('/svgs/deco-circle-dot.svg')}
 						alt="decoration"
-						class="absolute top-12 -left-60 -z-10 scale-75 rotate-90"
+						class="absolute top-12 -left-60 z-1 scale-75 rotate-90 opacity-0 sm:opacity-100"
 					/>
 					<img
 						src={asset('/svgs/deco-circle-dot.svg')}
 						alt="decoration"
-						class="absolute -right-48 -bottom-4 -z-10 rotate-260"
+						class="absolute -right-48 -bottom-4 z-1 rotate-260 opacity-0 sm:opacity-100"
 					/>
 				</div>
 			</div>
@@ -230,13 +231,13 @@
 					<img
 						src={asset('/svgs/deco-lines.svg')}
 						alt="decoration"
-						class="absolute top-69 -left-32 -z-10 h-[190px] object-cover md:-left-24"
+						class="absolute top-69 -left-32 z-1 h-[190px] object-cover opacity-0 sm:opacity-100 md:-left-24"
 					/>
 
 					<img
 						src={asset('/svgs/deco-lines.svg')}
 						alt="decoration"
-						class="absolute top-24 -right-32 -z-10 h-[220px] rotate-150 object-cover md:-right-24"
+						class="absolute top-24 -right-32 z-1 h-[220px] rotate-150 object-cover opacity-0 sm:opacity-100 md:-right-24"
 					/>
 				</div>
 			</div>
@@ -280,7 +281,7 @@
 					<img
 						src={asset('/svgs/deco-halftone.svg')}
 						alt="decoration"
-						class="absolute -right-48 -bottom-25 -z-10 h-[310px] object-cover md:-right-36"
+						class="absolute -right-48 -bottom-25 z-1 h-[310px] object-cover opacity-0 sm:opacity-100 md:-right-36"
 					/>
 				</div>
 			</div>
@@ -307,11 +308,11 @@
 		<img
 			src={asset('/svgs/header-grid.svg')}
 			alt="header-grid"
-			class="h-[160px] w-full object-cover object-left opacity-40"
+			class="h-[120px] w-full object-cover object-left opacity-40 sm:h-[160px]"
 		/>
 		<!-- header title -->
 		<h1
-			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[3rem] text-holo-blue"
+			class="font-title glow no-selection absolute top-1/2 left-8 -translate-y-1/2 text-[3rem] text-holo-blue sm:left-16"
 		>
 			About Me
 		</h1>
@@ -319,7 +320,7 @@
 		<img
 			src={asset('/svgs/code-text.svg')}
 			alt="decoration"
-			class="absolute top-0 -right-55 h-[160px] object-cover sm:-right-35 md:right-0"
+			class="absolute top-0 -right-55 h-full object-cover sm:-right-35 md:right-0"
 		/>
 	</div>
 {/snippet}
@@ -330,11 +331,11 @@
 		<img
 			src={asset('/svgs/header-strip.svg')}
 			alt="header-strip"
-			class="h-[160px] w-full object-cover object-left opacity-40"
+			class="h-[120px] w-full object-cover object-left opacity-40 sm:h-[160px]"
 		/>
 		<!-- header title -->
 		<h1
-			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[3rem] text-holo-pink"
+			class="font-title glow no-selection absolute top-1/2 left-8 -translate-y-1/2 text-[3rem] text-holo-pink sm:left-16"
 		>
 			Projects
 		</h1>
@@ -347,11 +348,11 @@
 		<img
 			src={asset('/svgs/header-dots.svg')}
 			alt="header-dots"
-			class="h-[160px] w-full object-cover object-left opacity-65"
+			class="h-[120px] w-full object-cover object-left opacity-65 sm:h-[160px]"
 		/>
 		<!-- header title -->
 		<h1
-			class="font-title glow no-selection absolute top-1/2 left-16 -translate-y-1/2 text-[3rem] text-holo-orange"
+			class="font-title glow no-selection absolute top-1/2 left-8 -translate-y-1/2 text-[3rem] text-holo-orange sm:left-16"
 		>
 			Contact Me
 		</h1>

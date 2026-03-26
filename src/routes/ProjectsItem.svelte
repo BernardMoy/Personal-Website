@@ -36,13 +36,13 @@
 			<img
 				src={asset(project.image)}
 				alt={project.title}
-				class="h-[220px] w-full rounded-tl-xl rounded-tr-xl object-cover"
+				class="h-[160px] w-full rounded-tl-xl rounded-tr-xl object-cover sm:h-[220px]"
 			/>
 
 			<!-- overlay -->
 			<div
-				class="font-body absolute top-0 z-30 flex h-[220px] w-full origin-bottom scale-y-0 items-center justify-center rounded-tl-xl rounded-tr-xl bg-on-background/90 p-6 text-center text-[1rem]
-						break-normal text-on-primary transition-transform duration-200 ease-out {overlayStates[index]
+				class="font-body absolute top-0 z-30 flex h-[160px] w-full origin-bottom scale-y-0 items-center justify-center rounded-tl-xl rounded-tr-xl bg-on-background/90 p-6 text-center text-[1rem] break-normal
+						text-on-primary transition-transform duration-200 ease-out sm:h-[220px] {overlayStates[index]
 					? 'scale-y-100'
 					: 'scale-y-0'}"
 			>
@@ -51,7 +51,7 @@
 		</div>
 
 		<!-- title -->
-		<div class="flex flex-row items-start justify-start gap-4 px-6 py-4">
+		<div class="flex flex-row items-start justify-start gap-4 px-4 py-4 sm:px-6">
 			{#if project.github}
 				<a
 					class="group flex flex-row items-start justify-start gap-4 self-start"
@@ -107,7 +107,7 @@
 		</div>
 
 		<!-- tags -->
-		<ul class="flex max-w-full flex-wrap gap-x-4 gap-y-2 px-6">
+		<ul class="flex max-w-full flex-wrap gap-x-2 gap-y-2 px-4 sm:gap-x-4 sm:px-6">
 			{#each project.tags as tag}
 				<li
 					class="font-body px-2 text-[1rem] text-on-background"

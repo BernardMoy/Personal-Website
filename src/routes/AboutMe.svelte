@@ -5,7 +5,10 @@
 	import FadeIn from './FadeIn.svelte';
 </script>
 
-<div class="relative mx-16 flex flex-col items-start justify-center gap-16 py-16 md:flex-row">
+<!-- Gap 16 here is an exception compared to other pages, because it looks less crowded -->
+<div
+	class="relative z-2 mx-8 flex flex-col items-start justify-center gap-16 py-8 sm:mx-16 sm:gap-16 sm:py-16 md:flex-row"
+>
 	<!-- left paragraph -->
 	<FadeIn delay={500}>
 		<div class="flex flex-1 flex-col items-start justify-start gap-8 lg:flex-3">

@@ -3,7 +3,7 @@
 	import contacts from '../data/contacts.json';
 </script>
 
-<div class="mx-12 flex flex-col gap-16 py-16 md:mx-16">
+<div class="z-2 mx-8 flex flex-col gap-8 py-8 sm:mx-16 sm:gap-16 sm:py-16">
 	<!-- the row of contact sources -->
 	<div class="flex w-full flex-col items-center justify-around gap-16 lg:flex-row lg:gap-0">
 		{#each contacts as contact}

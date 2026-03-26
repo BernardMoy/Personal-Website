@@ -24,7 +24,7 @@
 	let displayedProjects = $derived(projects.slice(0, limit));
 </script>
 
-<div class="mx-12 flex flex-col gap-16 py-16 md:mx-16">
+<div class="mx-8 flex flex-col gap-8 py-8 sm:mx-16 sm:gap-16 sm:py-16">
 	<!-- intro paragraph -->
 	<FadeIn delay={500}>
 		<div class="flex flex-col items-start justify-start gap-8">

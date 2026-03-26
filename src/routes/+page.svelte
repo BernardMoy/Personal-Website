@@ -308,7 +308,7 @@
 		<img
 			src={asset('/svgs/header-grid.svg')}
 			alt="header-grid"
-			class="h-[160px] w-full object-cover object-left opacity-40"
+			class="h-[120px] w-full object-cover object-left opacity-40 sm:h-[160px]"
 		/>
 		<!-- header title -->
 		<h1
@@ -320,7 +320,7 @@
 		<img
 			src={asset('/svgs/code-text.svg')}
 			alt="decoration"
-			class="absolute top-0 -right-55 h-[160px] object-cover sm:-right-35 md:right-0"
+			class="absolute top-0 -right-55 h-full object-cover sm:-right-35 md:right-0"
 		/>
 	</div>
 {/snippet}
@@ -331,7 +331,7 @@
 		<img
 			src={asset('/svgs/header-strip.svg')}
 			alt="header-strip"
-			class="h-[160px] w-full object-cover object-left opacity-40"
+			class="h-[120px] w-full object-cover object-left opacity-40 sm:h-[160px]"
 		/>
 		<!-- header title -->
 		<h1
@@ -348,7 +348,7 @@
 		<img
 			src={asset('/svgs/header-dots.svg')}
 			alt="header-dots"
-			class="h-[160px] w-full object-cover object-left opacity-65"
+			class="h-[120px] w-full object-cover object-left opacity-65 sm:h-[160px]"
 		/>
 		<!-- header title -->
 		<h1

@@ -7,7 +7,7 @@
 
 <!-- Gap 16 here is an exception compared to other pages, because it looks less crowded -->
 <div
-	class="relative mx-8 flex flex-col items-start justify-center gap-16 py-8 sm:mx-16 sm:gap-16 sm:py-16 md:flex-row"
+	class="relative z-2 mx-8 flex flex-col items-start justify-center gap-16 py-8 sm:mx-16 sm:gap-16 sm:py-16 md:flex-row"
 >
 	<!-- left paragraph -->
 	<FadeIn delay={500}>

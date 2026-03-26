@@ -30,7 +30,7 @@
 	});
 </script>
 
-<div class="w-full overflow-hidden">
+<div class="z-2 w-full overflow-hidden">
 	<img
 		src={asset('/images/bg-5.png')}
 		alt="bg-5"

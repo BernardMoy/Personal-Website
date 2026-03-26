@@ -187,12 +187,12 @@
 					<img
 						src={asset('/svgs/deco-circle-dot.svg')}
 						alt="decoration"
-						class="absolute top-12 -left-60 z-1 scale-75 rotate-90"
+						class="absolute top-12 -left-60 z-1 scale-75 rotate-90 opacity-0 sm:opacity-100"
 					/>
 					<img
 						src={asset('/svgs/deco-circle-dot.svg')}
 						alt="decoration"
-						class="absolute -right-48 -bottom-4 z-1 rotate-260"
+						class="absolute -right-48 -bottom-4 z-1 rotate-260 opacity-0 sm:opacity-100"
 					/>
 				</div>
 			</div>
@@ -231,13 +231,13 @@
 					<img
 						src={asset('/svgs/deco-lines.svg')}
 						alt="decoration"
-						class="absolute top-69 -left-32 z-1 h-[190px] object-cover md:-left-24"
+						class="absolute top-69 -left-32 z-1 h-[190px] object-cover opacity-0 sm:opacity-100 md:-left-24"
 					/>
 
 					<img
 						src={asset('/svgs/deco-lines.svg')}
 						alt="decoration"
-						class="absolute top-24 -right-32 z-1 h-[220px] rotate-150 object-cover md:-right-24"
+						class="absolute top-24 -right-32 z-1 h-[220px] rotate-150 object-cover opacity-0 sm:opacity-100 md:-right-24"
 					/>
 				</div>
 			</div>
@@ -281,7 +281,7 @@
 					<img
 						src={asset('/svgs/deco-halftone.svg')}
 						alt="decoration"
-						class="absolute -right-48 -bottom-25 z-1 h-[310px] object-cover md:-right-36"
+						class="absolute -right-48 -bottom-25 z-1 h-[310px] object-cover opacity-0 sm:opacity-100 md:-right-36"
 					/>
 				</div>
 			</div>

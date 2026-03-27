@@ -136,7 +136,7 @@
 	}
 </script>
 
-<!-- Content have z value 2, bg z -20, deco z-1 -->
+<!-- Content have z = 2, bg z = -20, deco z = 1, loading screen z = 80, separators z = 10, floating button z = 50 -->
 {#if isLoading}
 	<main class="fixed z-80" out:fade={getLoadOptions()}>
 		<Loading />

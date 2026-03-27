@@ -13,7 +13,7 @@
 	<FadeIn delay={500}>
 		<div class="flex flex-1 flex-col items-start justify-start gap-8 lg:flex-3">
 			{#each aboutMe as para}
-				<p class="font-body glow text-[18px] text-on-background">
+				<p class="font-body glow text-[1rem] text-on-background">
 					{@html para.replaceAll('[', '<span class="text-holo-blue">').replaceAll(']', '</span>')}
 				</p>
 			{/each}
@@ -31,7 +31,7 @@
 			<!-- skills list -->
 			<ul class="grid w-full grid-cols-2 gap-x-4">
 				{#each skills as skill}
-					<li class="font-body primary-selection text-[18px] text-on-primary">
+					<li class="font-body primary-selection text-[1rem] text-on-primary">
 						<span class="no-selection">⋄&nbsp</span>{skill}
 					</li>
 				{/each}

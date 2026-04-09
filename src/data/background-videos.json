@@ -1,0 +1,22 @@
+[
+	{
+		"name": "vid-1",
+		"url": "/videos/vid-1.mp4",
+		"primary-color": "var(--color-bg-1)",
+		"thumbnailUrl": "/video-thumbnails/vid-1-thumbnail.png"
+	},
+
+	{
+		"name": "vid-2",
+		"url": "/videos/vid-2.mp4",
+		"primary-color": "var(--color-bg-2)",
+		"thumbnailUrl": "/video-thumbnails/vid-2-thumbnail.png"
+	},
+
+	{
+		"name": "vid-3",
+		"url": "/videos/vid-3.mp4",
+		"primary-color": "var(--color-bg-3)",
+		"thumbnailUrl": "/video-thumbnails/vid-3-thumbnail.png"
+	}
+]

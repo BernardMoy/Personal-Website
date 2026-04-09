@@ -91,9 +91,9 @@
 
 	/* the primary colors are changed to these based on bg colors */
 	--color-bg-1: #5194ea;
-	--color-bg-2: #73b5cd;
-	--color-bg-3: #6b7fb6;
-	--color-bg-4: #38629e;
+	--color-bg-2: #59afd1;
+	--color-bg-3: #3f5e7f;
+	/* --color-bg-4: #38629e; */
 
 	/* background (main) color */
 	--color-main: #ffffff;

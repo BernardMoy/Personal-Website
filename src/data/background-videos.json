@@ -18,5 +18,12 @@
 		"url": "/videos/vid-3.mp4",
 		"primary-color": "var(--color-bg-3)",
 		"thumbnailUrl": "/video-thumbnails/vid-3-thumbnail.png"
+	},
+
+	{
+		"name": "vid-4",
+		"url": "/videos/vid-4.mp4",
+		"primary-color": "var(--color-bg-4)",
+		"thumbnailUrl": "/video-thumbnails/vid-4-thumbnail.png"
 	}
 ]

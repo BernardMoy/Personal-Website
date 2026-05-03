@@ -1,5 +1,12 @@
 [
 	{
+		"image": "/project-images/nexttube.png",
+		"title": "NextTube",
+		"tags": ["React Native", "TypeScript", "REST APIs", "XML"],
+		"github": null,
+		"description": "A Tube (London Underground) arrival prediction app, that utilises multiple APIs to display more accurate and extended data than existing solutions."
+	},
+	{
 		"image": "/project-images/personal-website.png",
 		"title": "Personal Website",
 		"tags": ["Svelte", "JavaScript", "HTML", "Tailwind CSS"],

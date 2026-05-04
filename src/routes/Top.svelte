@@ -23,6 +23,9 @@
 	var interval: NodeJS.Timeout;
 	var progressBar: HTMLElement | null;
 
+	// store the top video element, which re-runs when the current index (controls the displayed video) changes
+	let topVideo = $state<HTMLVideoElement | null>(null);
+
 	// create an interval for the switching images that triggers by incrementing index
 	function createInterval() {
 		// call the set index function immediately
@@ -58,7 +61,6 @@
 		progressBar?.classList.add('scale-x-100');
 	}
 
-	// increments the index every certain seconds
 	onMount(() => {
 		progressBar = document.getElementById('progress-bar');
 		// createInterval();
@@ -73,11 +75,16 @@
 	$effect(() => {
 		const index = props.scrollIndex;
 		// re-create the interval if index changes to 0, else clear it
+		// initially, clear the interval and paurse the video
 		if (interval) {
 			clearInterval(interval);
+			topVideo?.pause();
 		}
+		// if index = 0, then create / recreate the interval and resume the video
+		// also handles the initial creation, when the page lands at scroll index = 0
 		if (index === 0) {
-			createInterval(); // also handles the initial creation, when the page lands at scroll index = 0
+			createInterval();
+			topVideo?.play();
 		}
 
 		// cleanup function
@@ -88,9 +95,10 @@
 </script>
 
 <div class="relative h-screen w-full overflow-x-clip text-center">
-	<!-- large background image -->
+	<!-- large background image (video) - bind it to the video state so it updates with current index -->
 	{#key currentIndex}
 		<video
+			bind:this={topVideo}
 			src={asset(backgroundVideos[currentIndex].url)}
 			class="absolute top-0 left-0 h-screen w-full object-cover"
 			in:scale={{ start: 1.05, duration: 1500 }}

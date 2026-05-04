@@ -3,7 +3,7 @@
 		"image": "/project-images/nexttube.png",
 		"title": "NextTube",
 		"tags": ["React Native", "TypeScript", "REST APIs", "XML"],
-		"github": null,
+		"link": "https://nexttube.expo.app/",
 		"description": "A Tube (London Underground) arrival prediction app, that utilises multiple APIs to display more accurate and extended data than existing solutions."
 	},
 	{

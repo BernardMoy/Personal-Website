@@ -2,11 +2,15 @@
 <script lang="ts">
 	import Circle from './Circle.svelte';
 	import top from '../data/top.json';
-	import backgrounds from '../data/backgrounds.json';
+	import backgroundVideos from '../data/background-videos.json';
 	import { fade, scale } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import FadeIn from './FadeIn.svelte';
 	import { asset } from '$app/paths';
+
+	// constants
+	const IMAGE_DISPLAY_TIME: number = 6000;
+	// the progress bar scale time is image display time-500, not shown here because its a tailwind class
 
 	// the scrollIndex is passed from the root page to here
 	// to stop the transition when it is not 0 (Top)
@@ -19,6 +23,9 @@
 	var interval: NodeJS.Timeout;
 	var progressBar: HTMLElement | null;
 
+	// store the top video element, which re-runs when the current index (controls the displayed video) changes
+	let topVideo = $state<HTMLVideoElement | null>(null);
+
 	// create an interval for the switching images that triggers by incrementing index
 	function createInterval() {
 		// call the set index function immediately
@@ -27,8 +34,8 @@
 		// create the interval
 		interval = setInterval(() => {
 			// display the next image
-			setIndex((currentIndex + 1) % backgrounds.length);
-		}, 8000);
+			setIndex((currentIndex + 1) % backgroundVideos.length);
+		}, IMAGE_DISPLAY_TIME);
 	}
 
 	function setIndex(index: number) {
@@ -37,7 +44,7 @@
 		// change the primary color to match the index
 		document.documentElement.style.setProperty(
 			'--color-primary',
-			backgrounds[index]['primary-color']
+			backgroundVideos[index]['primary-color']
 		);
 
 		// reset the progress bar
@@ -54,7 +61,6 @@
 		progressBar?.classList.add('scale-x-100');
 	}
 
-	// increments the index every certain seconds
 	onMount(() => {
 		progressBar = document.getElementById('progress-bar');
 		// createInterval();
@@ -69,11 +75,16 @@
 	$effect(() => {
 		const index = props.scrollIndex;
 		// re-create the interval if index changes to 0, else clear it
+		// initially, clear the interval and paurse the video
 		if (interval) {
 			clearInterval(interval);
+			topVideo?.pause();
 		}
+		// if index = 0, then create / recreate the interval and resume the video
+		// also handles the initial creation, when the page lands at scroll index = 0
 		if (index === 0) {
-			createInterval(); // also handles the initial creation, when the page lands at scroll index = 0
+			createInterval();
+			topVideo?.play();
 		}
 
 		// cleanup function
@@ -84,15 +95,21 @@
 </script>
 
 <div class="relative h-screen w-full overflow-x-clip text-center">
-	<!-- large background image -->
+	<!-- large background image (video) - bind it to the video state so it updates with current index -->
 	{#key currentIndex}
-		<img
-			src={asset(backgrounds[currentIndex].url)}
-			alt={backgrounds[currentIndex].name}
+		<video
+			bind:this={topVideo}
+			src={asset(backgroundVideos[currentIndex].url)}
 			class="absolute top-0 left-0 h-screen w-full object-cover"
 			in:scale={{ start: 1.05, duration: 1500 }}
 			out:fade={{ duration: 1000 }}
-		/>
+			autoplay
+			muted
+			loop
+			playsinline
+		>
+			Your browser does not support the video tag.</video
+		>
 	{/key}
 
 	<!-- centered text -->
@@ -112,7 +129,7 @@
 
 	<!-- number buttons on the left -->
 	<div class="no-selection absolute top-0 z-26 m-4 mt-[96px] flex flex-col gap-4">
-		{#each { length: backgrounds.length } as _, index}
+		{#each { length: backgroundVideos.length } as _, index}
 			<FadeIn delay={200 * (index + 1)}>
 				<Circle
 					text={(index + 1).toString()}
@@ -131,10 +148,10 @@
 		{/each}
 	</div>
 
-	<!-- the rectangles on the top right displayed in 2 columns -->
+	<!-- the rectangles on the top right displayed in 2 columns, showing video thumbnails -->
 	<div class="absolute top-0 right-0 z-25 mt-[80px] flex flex-col">
 		<div class="no-selection grid grid-cols-2">
-			{#each backgrounds as bg, index}
+			{#each backgroundVideos as bg, index}
 				<FadeIn delay={200 * index + 50} effect="none">
 					<!-- scale within container -->
 					<button
@@ -151,7 +168,7 @@
 						}}
 					>
 						<img
-							src={asset(bg.url)}
+							src={asset(bg.thumbnailUrl)}
 							alt={bg.name}
 							class="h-full w-full object-cover object-center duration-500 group-hover:scale-110"
 						/>
@@ -165,7 +182,7 @@
 			id="progress-bar"
 			class=" no-selection h-1 w-full origin-left scale-x-0 bg-on-primary opacity-75
 			shadow-2xl/50 shadow-primary transition-transform
-			duration-7500 ease-linear"
+			duration-5500 ease-linear"
 		></div>
 	</div>
 </div>

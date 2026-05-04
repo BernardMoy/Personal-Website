@@ -20,6 +20,9 @@
 	0 = top, 1 = about me, 2 = projects, 3 = contact me (according to the order in navigations.json)
 	which is used to control the change of primary colors. 
 	Changed when over 50% of the area is scrolled to the next page. 
+
+	Intersection observer changes the scroll index, which other elements depend on
+	such as color, video playback state, interval state, depend on the scroll index only. 
 	*/
 	let scrollIndex: number = $state(0);
 

@@ -80,10 +80,43 @@
 					const sep = document.getElementById(nav.navigationId);
 					if (sep) observerForward.observe(sep);
 					if (sep) observerBackward.observe(sep);
-					// if (sep) observerSnap.observe(sep);
 				}
 			}
 		});
+
+		const waitForVideos = () => {
+			return new Promise<void>((resolve) => {
+				// get all video elements
+				const videos = Array.from(document.querySelectorAll('video'));
+
+				// if no videos are found, return
+				if (videos.length === 0) {
+					resolve();
+					return;
+				}
+
+				let count = 0;
+
+				const onVideoReady = () => {
+					count += 1;
+					if (count === videos.length) {
+						resolve();
+					}
+				};
+
+				// for each video element
+				for (const video of videos) {
+					if (video.readyState >= 3) {
+						// call ready if ready state = HAVE FUTURE DATA
+						// can be played without buffering
+						onVideoReady();
+					} else {
+						// set up listener here
+						video.addEventListener('canplay', onVideoReady, { once: true });
+					}
+				}
+			});
+		};
 
 		// function to be called when everything is loaded
 		const handleLoaded = () => {
@@ -92,9 +125,9 @@
 
 		// if already loaded, directly call it, else add event listener
 		if (document.readyState === 'complete') {
-			handleLoaded();
+			waitForVideos().then(handleLoaded);
 		} else {
-			window.addEventListener('load', handleLoaded);
+			window.addEventListener('load', () => waitForVideos().then(handleLoaded));
 		}
 
 		return () => {
@@ -131,8 +164,9 @@
 	function getLoadOptions() {
 		if (document.cookie.indexOf('visited') == -1) {
 			document.cookie = 'visited';
-			// the delay is intentional, to slow the user down :)
-			return { delay: Math.random() * (800 - 400) + 400, duration: 400 };
+			// the delay is intentional, to slow the user down :) - currently unused
+			const randomDelay = Math.random() * (800 - 400) + 400;
+			return { delay: 0, duration: 400 };
 		} else {
 			return { delay: 0, duration: 0 };
 		}

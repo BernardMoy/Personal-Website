@@ -1,42 +1,27 @@
-# sv
+# Personal Website
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A website showing a list of technical projects I have done, and my adventures abroad!?
 
-## Creating a project
+Deployed at https://bernardmoy.github.io/Personal-Website/.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Preview 
+<img width="1907" height="892" alt="image" src="https://github.com/user-attachments/assets/9782657d-cde8-4241-95d9-9ce920c650a3" />
 
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv create --template minimal --types ts --add prettier eslint tailwindcss="plugins:typography" --install npm ./
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+## Tech Stack 
+Svelte is used for its simplicity over React and the built-in Svelte transition library. 
+- Svelte framework
+- TypeScript
+- Tailwind CSS
+- Vite
+  
+## Features 
+- Full responsive design
+- Dynamic color change across sections
+- Buttons hover animations
+  
+## Local Setup
+Using `npm`: 
+```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.

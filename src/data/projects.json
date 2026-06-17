@@ -7,6 +7,13 @@
 		"description": "A Tube (London Underground) arrival prediction app, that utilises multiple APIs to display more accurate and extended data than existing solutions."
 	},
 	{
+		"image": "/project-images/finnovator.png",
+		"title": "UKFinnovator SAiFE System",
+		"tags": ["Reinforcement Learning", "Algorithms", "Problem Solving"],
+		"github": "https://github.com/BernardMoy/SaiFE-Sandbox-Challenge",
+		"description": "Implemented liquidity provision strategies for Uniswap v3 to maximise profits in the UKFinnovator hackathon, including arbitrage-based algorithms and PPO reinforcement learning techniques."
+	},
+	{
 		"image": "/project-images/personal-website.png",
 		"title": "Personal Website",
 		"tags": ["Svelte", "JavaScript", "HTML", "Tailwind CSS"],

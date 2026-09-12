@@ -44,5 +44,8 @@
 	"Haskell": "#ecd1ff",
 	"Data Structures": "#cffff4",
 	"Problem Solving": "#ffe59e",
+	"Generative AI": "#ffefcc",
+	"LLM Agents": "#ccf0ff",
+	"Software Design": "#ffcce6",
 	"default": "#dedede"
 }

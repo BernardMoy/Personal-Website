@@ -1,7 +1,14 @@
 [
 	{
+		"image": "/project-images/modular-swe.png",
+		"title": "Multi-Agent LLM for Software Quality",
+		"tags": ["LLM Agents", "Generative AI", "Software Design"],
+		"github": "https://github.com/BernardMoy/Modular-SWE",
+		"description": "A Multi-agent LLM framework, for mitigating the iterative quality degradation in LLM-generated code. Evaluated our framework against direct agent-based coding and against popular GitHub repositories."
+	},
+	{
 		"image": "/project-images/nexttube.png",
-		"title": "NextTube",
+		"title": "NextTube / London Underground App",
 		"tags": ["React Native", "TypeScript", "REST APIs", "XML"],
 		"link": "https://nexttube.expo.app/",
 		"description": "A Tube (London Underground) arrival prediction app, that utilises multiple APIs to display more accurate and extended data than existing solutions."
